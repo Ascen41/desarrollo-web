@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!--https://tutobasico.com/basicos-4-javascript/ -->
+
+	<meta charset="utf-8">
+	<title>JS Ejemplo reemplazar cadena texto con guión</title>
+
+<!--INI--STYLES ----------------------------------------------------------->
+	<style type="text/css">
+		.cadena{
+			border: 1px solid red;
+			font-size: 3em;
+			text-align: center;
+		}
+	</style>
+
+<!--INI--JS --------------------------------------------------------------->
+	<script type="text/javascript">
+		window.onload = function(){
+			var gcadena = prompt('Escriba una cadena guión:');
+
+			cadenaguion('cadena1',gcadena); // ejercicio 2
+			cadenaparentesis('cadena2',gcadena); //ejercicio 4
+			cadenainvetida('cadena3', gcadena);
+		} 
+	</script>
+</head>
+
+<body>
+	<br>
+	<div id="cadena1" class= "cadena"></div>
+	<div id="cadena2" class= "cadena"></div>
+	<div id="cadena3" class= "cadena"></div>
+
+</body>
+
+<!--INI--JS FUNCIONES------------------------------------------------------>
+<script type="text/javascript">
+
+	function cadenaguion(idparam, cadena){
+	//2. Realiza un script que pida una cadena de texto y la muestre poniendo el signo – entre cada carácter sin usar el método replace. Por ejemplo, si tecleo “hola qué tal”, deberá salir “h-o-l-a- -q-u-e- -t-a-l”.
+		
+		var result = "";
+		/*    
+		for (var i = 0; i < cadena.length; i++) {
+			if (i < (cadena.length -1 )){
+			 	//document.write(cadena[i] + "-");
+			 	result += cadena[i] + "-";
+			}else{
+				//document.write(cadena[i]);
+				result += cadena[i]
+				;
+			}
+		}
+		document.getElementById("cadena").innerHTML=result;
+		*/
+
+		result = cadena.split("");// "" separa por caracteres, si ponemos " " separa por palabras
+		document.getElementById(idparam).innerHTML=result.join("-");
+	}
+
+	function cadenaparentesis(idparam, cadena) {
+	//4.Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un script que extraiga la cadena que se encuentra entre los paréntesis. Ejemplo: Si escribimoe el texto “Hola (que) tal” se mostrará “que”. Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo “(“pero no el signo “)” mostrará desde el primer paréntesis hasta el final.
+
+		var result = "";
+		
+		/*
+		var ini = cadena.indexOf("(");
+		var fin = cadena.indexOf(")");
+
+		if (ini > 0){
+			ini ++;
+	        if (fin == -1){
+	        	fin = cadena.length;
+	        }
+			result = cadena.substring(ini, fin);
+		}else{
+			result = " --- ";
+		}
+		*/
+		
+		var copiar = false;
+
+		for (var i = 0; i < cadena.length; i++) {
+			car = cadena.charAt(i);    //recupera el caracter i del string.
+			if (car == ")") {
+	            copiar = false;
+	        }
+	        if (copiar) {
+	            result = result + car;
+	        }
+	        if (car == "(") {
+	            copiar = true;
+	        }
+	    }
+		
+		if (result.length == 0){
+			result = " --- ";
+		}
+
+		document.getElementById(idparam).innerHTML=result;
+	}
+
+	function cadenainvetida(idparam, cadena){
+	//5. Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
+
+		var result = "";
+		/*
+		var l_array = cadena.split("");// transforma la cadena en un array
+		l_array.reverse(); //invertir array
+		result = l_array.join("");
+		*/
+		
+		for (var i = 0; i < cadena.length; i++) {
+			car = cadena.charAt(i);    //recupera el caracter i del string.
+			result =  car + result;
+		}
+		
+		document.getElementById(idparam).innerHTML=result;
+	}
+
+</script>
+<!--FIN--JS FUNCIONES------------------------------------------------------>
+
+</html>

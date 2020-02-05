@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>APUNTES LOAD</title>
+	<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+
+<ol id="proyecto"></ol>
+
+<script type="text/javascript">
+	$("#proyecto").load("./ejemploload.html #projects li:last-child"); //carga elementos del otro documento en función de lo que se le pida.
+	
+</script>
+
+<b>Successful Response (should be blank):</b>
+<div id="success"></div>
+<b>Error Response:</b>
+<div id="error"></div>
+ 
+<script>
+$( "#success" ).load( "/not-here.php", function( response, status, xhr ) {
+  if ( status == "error" ) {
+    var msg = "Sorry but there was an error: ";
+    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+  }
+});
+
+</script>
+
+
+
+
+</body>
+
+<script type="text/javascript">
+	/* diferencias entre /html, ./html y ../html:
+
+la "/" va a buscar la dirección absoluta de un archivo.
+
+la "./" sirve para decir al sistema que debe buscar un archivo a partir del punto en el que estamos.
+	La diferencia con solo "/" depende del sistema operativo. Con "./" siempre va a funcionar.
+
+la "../" sirve para echar para atrás un directorio desde el que estamos.
+
+*/
+
+
+
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,36 @@
+<DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+	#mostrar {width:100px;height:100px;background-repeat:no-repeat;border:2px solid Red;}
+	</style>
+</head>
+ 
+<body>
+ 
+<img src="img/img_1.jpg">
+<img src="imgimg_2.jpg">
+<img src="imgimg_3.jpg">
+ 
+<div id="mostrar"></div>
+ 
+<script>
+	var imagenes=document.getElementsByTagName("img");
+	for(var i=0;i<imagenes.length;i++)
+	{
+	 
+		// Creamos el evento mouseover para cada imagen
+		imagenes[i].addEventListener("mouseover", function(e){
+			document.getElementById("mostrar").style.backgroundImage="url('"+e.target.currentSrc+"')";
+		});
+	 
+		// Creamos el evento mouseout para cada imagen
+		imagenes[i].addEventListener("mouseout", function(e){
+			document.getElementById("mostrar").style.backgroundImage="";
+		});
+	}
+</script>
+ 
+</body>
+</html>

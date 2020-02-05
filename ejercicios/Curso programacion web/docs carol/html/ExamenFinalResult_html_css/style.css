@@ -1,0 +1,187 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+body{
+	width: 770px;
+	margin: auto;
+	padding: 0px;
+}
+/*-- Cabecera ---------------------------------------------------*/
+header h2{
+	float: left;
+	padding-left: 20px;
+	padding-top: 40px;
+	margin: 0;
+}
+header div{
+	float: right;
+	padding-top: 40px;
+	padding-right: 20px;
+}
+/*-- Menu ---------------------------------------------------*/
+nav{
+	float: left;
+	width: 100%;
+}
+/*-- contenido pagina ---------------------------------------------------*/
+#content{
+	float: left;
+	width: 100%;
+	padding-top: 20px;
+}
+/*-- seccion principal ---------------------------------------------------*/
+section{
+	width: 530px;
+	float: left;
+}
+article{
+	margin-left: 20px;
+	float: left;
+}
+/*-- sección lateral ---------------------------------------------------*/
+aside{
+	width: 200px;
+	float: left;
+
+}
+.clear{
+	clear: both;
+}
+/*-- Pie de página ---------------------------------------------------*/
+
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+body{
+  	font-family: Verdana;
+  	font-size: 0.9em;
+  	color: #192666;
+  	background-image: linear-gradient(to bottom,#BCBCFF,white);
+}
+
+header{
+  	height: 100px;
+   	background:url("imagen/cabecera.jpg") no-repeat;
+}
+
+nav ul#menu{
+	clear: both; 
+	float: left;
+	width: 100%; 
+	height: 50px;
+	list-style: none; 
+	background-color: #192666;
+	margin: 0px;
+	padding: 0px; 
+}
+
+nav ul#menu li{
+	float: left;
+	width: 80px;
+	height: 39px;
+	background-color: #253575;
+	margin: 10px 10px 0 10px;
+}
+
+nav ul#menu li a{
+	display:block; 
+	text-decoration: none; 
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 10%; 
+}
+
+nav ul#menu li:hover{
+	background-color: #FFFFFF;
+	color: black;
+}
+
+nav ul#menu li a:hover{
+	color: orange;
+}
+
+div#content article{
+	border-top-left-radius: 15px;
+	background: url("imagen/fondo_articulo.jpg") no-repeat;
+	padding-left: 10px;
+}
+
+div#content h1{
+	width: 98%;
+	background-color: rgb(222,230,252);
+	text-decoration: underline;
+	padding: 5px;
+}
+
+div#content ul{
+	clear: both; 
+	float: left;
+	width: 100%;
+	list-style: none;
+	background-color: #FFFFFF; 
+	margin: 0px;
+	padding: 0px; 
+}
+
+div#content ul li{
+	float: left;
+	font-size: 0.75em;
+	margin: 10px;
+}
+
+aside {
+	border-top-right-radius: 15px;
+	background-color: #CBD9F9;
+	background: url("imagen/fondo_columna.gif") no-repeat;
+}
+
+aside div h4{
+	width: 93%;	
+	background-color: rgb(160,185,243);
+	text-decoration: underline;
+	padding: 5px 5px 5px 10px;
+}
+
+aside div img{
+	clear: both;
+	float: left;
+	margin: 0px 10px 0px 10px;
+}
+
+aside div p{
+	font-size: 0.8em;
+}
+
+aside div ul{
+	margin:0px;
+	padding:0px;
+}
+
+aside div ul li{
+	width: 95%;
+	background-color: #CBD9F9;
+	margin: 0px!important;
+	padding: 5px;
+}
+
+aside div a{
+		padding-left: 10px;
+}
+
+aside div ul li a{
+	display: block;
+	text-decoration: none;
+	background: url("imagen/icono_categoria.gif") no-repeat;
+}
+
+aside div ul li a:hover{
+	font-weight: bold;
+	background-color: #DEE3F5;
+	background-image: url("imagen/icono_elemento_seleccionado.gif");
+	background-repeat: no-repeat;
+}
+
+

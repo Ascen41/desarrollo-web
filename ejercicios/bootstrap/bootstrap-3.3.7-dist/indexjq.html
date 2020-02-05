@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf8">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#menu li a").click(function() {
+                $("#content").load($(this).attr("data-link"), function(response, status, xhr) {
+                    if (status == "success") {
+                        var msg = "NINGUN ERROR, contenido cargado con éxito ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                    if (status == "error") {
+                        var msg = "UPS!!! Hemos tenido un fallo: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                })
+            });
+        });
+
+
+
+        function tratamiento_error(responseTxt, statusTxt, xhr) {
+            if (staturTxt == "success")
+                $("#error").html("External content loaded successfully!");
+            if (statusTxt == "error") {
+                $("#content").html("ups");
+            }
+        }
+        /*
+        $(document).ready(function() {
+            $("#news").click(function() {
+                $("#content").load("load.html #projects li  ", function(response, status, xhr) {
+                    if (status == "success") {
+                        var msg = "NINGUN ERROR, contenido cargado con éxito ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                    if (status == "error") {
+                        var msg = "UPS!!! Hemos tenido un fallo: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        });
+        $(document).ready(function() {
+            $(".active").click(function() {
+                $("#content").load("load.html #projects li  ", function(response, status, xhr) {
+                    if (status == "success") {
+                        var msg = "NINGUN ERROR, contenido cargado con éxito ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                    if (status == "error") {
+                        var msg = "UPS!!! Hemos tenido un fallo: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        });
+        $(document).ready(function() {
+            $(".active").click(function() {
+                $("#content").load("load.html #projects li  ", function(response, status, xhr) {
+                    if (status == "success") {
+                        var msg = "NINGUN ERROR, contenido cargado con éxito ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                    if (status == "error") {
+                        var msg = "UPS!!! Hemos tenido un fallo: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        });*/
+    </script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li><a class="active" data-link="test0.html">Home</a></li>
+        <li><a id="news" data-link="test0.html">News</a></li>
+        <li><a id="contact" data-link="test03.html">Contact</a></li>
+        <li><a id="about" data-link="test02.html">About</a></li>
+    </ul>
+
+    <div id="content"></div>
+    <div id="error"></div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Examen Javascript / Ejercico 4</title>
+    <style>
+        div {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="Texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque
+        massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna
+        consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</div>
+
+    <button type="button" id="1" onclick="MasGrande()">+</button>
+    <button type="button" id="2" onclick="MasPequeño()">-</button>
+    <button type="button" id="3" onclick="Reset()">DEFAULT</button>
+
+</body>
+
+<script>
+    var fontSize = 14;
+
+    function MasGrande() {
+        fontSize += 1;
+        document.getElementById("Texto").style.fontSize = fontSize + "px";
+
+    }
+
+    function MasPequeño() {
+        fontSize -= 1;
+        document.getElementById("Texto").style.fontSize = fontSize + "px";
+    }
+
+    function Reset() {
+        document.getElementById("Texto").style.fontSize = 14 + "px";
+    }
+</script>
+
+</html>

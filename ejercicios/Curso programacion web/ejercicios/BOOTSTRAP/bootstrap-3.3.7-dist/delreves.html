@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>del reves</title>
+    <script type="text/javascript">
+        /* Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
+
+
+                                                                                var cadena = prompt("Introduce un Texto:");
+                                                                                var numchar = cadena.length;
+                                                                                var j;
+                                                                                var car;
+                                                                                var salida = "";
+                                                                                for (j = 0; j < numchar; j++) {
+                                                                                    car = cadena.charAt(j); //recupera el caracter i del string.
+                                                                                    salida = car + salida;
+                                                                                }
+                                                                                document.write(salida);*/
+
+        window.onload = function() {
+
+                var cadenatexto = prompt("Introduce una cadena de texto:");
+                var palabras = cadenatexto.split("");
+                var reves = palabras.reverse();
+                var vacio = reves.join("");
+                document.getElementById("delreves").innerHTML = vacio;
+            }
+            //si quieres que te muestre texto original y texto del reves
+
+        /*function voltear(texto) {
+            var caracter = "";
+            var salida = "";
+            for (var i = 0; i < texto.length; i++) {
+                caracter = texto.charAt(i);
+                salida = caracter + salida;
+            }
+            return salida;
+        }
+
+        var texto = prompt("Introduce un texto");
+        var reves = voltear(texto);
+        document.write("Texto original: " + texto);
+        document.write("Texto del revés: " + reves);*/
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

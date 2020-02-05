@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Primera vocal</title>
+    <script type="text/javascript">
+        /*Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado*/
+
+        //DECLARACIÓN DEL ARRAY DE VOCALES
+        var vocales = ["a", "e", "i", "o", "u"];
+        var texto = prompt("Introduce un texto");
+        //PASAMOS EL TEXTO A MINÚSCULAS
+        var textomin = texto.toLowerCase();
+        //DECLARAMOS LA VARIABLE posicion DONDE GUARDAREMOS LA POSICIÓN DE LA VOCAL
+        var posicion = 0;
+        //DECLARAMOS UNA BANDERA Y LA INICIALIZAMOS A FALSE
+        var parar = false;
+        //BUCLE QUE RECORRE EL TEXTO
+        for (var i = 0; i < textomin.length; i++) {
+            //BUCLE QUE RECORRE EL ARRAY DE VOCALES
+            for (var j = 0; j < vocales.length; j++) {
+                //SI LA VOCAL i ESTÁ EN EL ARRAY DE VOCALES
+                if (vocales[j] == textomin.charAt(i)) {
+                    //GUARDAMOS LA POSICIÓN
+                    posicion = i;
+                    //PONEMOS LA BANDERA EN TRUE
+                    parar = true;
+                    //CORTAMOS LA EJECUCIÓN DEL BUCLE INTERIOR
+                    break;
+                }
+            }
+            //SI LA BANDERA ESTÁ EN TRUE
+            if (parar) {
+                //CORTAMOS LA EJECUCIÓN DEL BUCLE EXTERIOR
+                break;
+            }
+        }
+        //IMPRIMIMOS EL RESULTADO
+        document.write("La primera vocal está en la posición " + posicion);
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

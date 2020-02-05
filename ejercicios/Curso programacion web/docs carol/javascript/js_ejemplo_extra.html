@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicios extra JavaScript</title>
+</head>
+
+<script type="text/javascript">
+/*
+//Ejerecicio 1: Pedir edad
+	var edad = parseInt(prompt("Introduce tu edad: "));
+	if (edad >= 18){
+		alert("Tienes la edad para poder conducir");
+	}
+	else{
+		alert("Todavía te queda un poquillo para poder conducir");
+	}
+
+// Ejerecicio 2: Qué número es el mayor
+ 	var numero1 = parseInt(prompt("Numero1: "));;
+	var numero2 = parseInt(prompt("Numero2: "));;
+
+	if (numero1 > numero2){
+		alert("El número más grande es " + numero1);
+	}
+	else{
+		alert("El número más grande es " + numero2);
+	}
+
+// Ejerecicio 3: Pide una nota
+	var nota = parseInt(prompt("Introduce nota(0-10): "));
+
+    // para comparar si una var está entre un rango se ha de usar TRUE
+	switch(true){
+		case ((nota>=0) && (nota<3)):
+			alert("Muy deficiente");
+			break;
+		case ((nota>=3) && (nota<=5)):
+			alert("Insuficiente");
+			break;
+		case ((nota>=5) && (nota<6)):
+			alert("Suficiente");
+			break;
+		case ((nota>=6) && (nota<7)):
+			alert("Bien");
+			break;
+		case ((nota>=7) && (nota<9)):
+			alert("Notable");
+			break;
+		case ((nota>=9) && (nota<10)):
+			alert("Sobresaliente");
+			break;
+		default:
+			alert("La nota no es válida ha de ser del 0 al 10");
+			break;
+	}
+*/
+
+// Ejerecicio 4: Bucle cadenas de texto
+
+	var texto = []; // le estoy diciendo que es un array
+	do{
+		var intro = prompt("Intruduzca un texto: ");
+		// Cuadno cancelamos, la variable toma el valor NULL, ponemos == por si el usuario entra la 
+		// la palabra null lo cuente como string y no el valor del cancelar. 
+		if (intro!==null){
+		// la instrucción push sirver para ir entrando el string de la variable "intro" a la
+		// var "texto" como un array, es decir, texto = [string1, string2, ...]
+		texto.push(intro); 
+		}
+		//console.log(texto);
+	}while (intro !== null)
+
+	var result = texto.join(" / ");
+	alert(result);
+
+</script>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+		h1,p.cl-green{
+			color: green;
+			text-decoration: underline;
+		}
+		#cl-rojo{
+			color: red
+		}	
+		
+		.cl-blue{
+			color:blue;
+		}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Formulario de registro - Mi web</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+    <script>
+        /*Ejercicio 2 (2pt) Crea un programa que pregunte al usuario de introducir una palabra y que muestre por pantalla la siguiente información sobre la palabra elegida. Este sería el resultado para la palabra "Booleano".
+                                                                                                                         la cadena booleano continene 8 caracteres
+                                                                                                                         la cadena mayusculas es BOOLEANO
+                                                                                                                         la cadena minusculas es booleano   
+                                                                                                                        la palabra booleano contiene 5 vocales*/
+
+        var cadena = prompt("Introduce una cadena de texto:");
+        var numcaracteres = cadena.length;
+        cadena = cadena.toUpperCase();
+        var car;
+        var contador = 0;
+        var i;
+        for (i = 0; i < numcaracteres; i++) {
+            car = cadena.charAt(i);
+            if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+                contador++;
+            }
+        }
+        document.write("Número de Vocales: " + contador++ + ".");
+
+        document.write(cadena.toUpperCase() + "es mayusculas");
+
+        document.write(cadena.toLowerCase() +
+            "es minusculas");
+        document.write("numero de caracteres" + numcaracteres);
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

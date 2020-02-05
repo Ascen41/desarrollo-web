@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+      function validar(){
+          alert("enviar los datos introducidos");
+          return true;
+      }
+ 
+</script>
+
+</head>
+
+<body>
+        <form method="get" onsubmit="return validar();">
+        <label> Nombre </label>
+        <input type="text" name="nom" id="nom">
+        <p id="error_nom" class="error"style="display:none;">texto mayor de 5 letras</p> 
+        <label> Apellidos </label>
+        <input type="text"name="apellidos" id="apellidos" >
+        <p id="error_apellidos" class="error"style="display:none">debe contener un guion</p>
+        <input type="submit" value="Enviar"> 
+    </form>
+        
+</body>
+</html>

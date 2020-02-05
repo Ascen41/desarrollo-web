@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+		<meta charset="UTF-8">
+		<meta name="description" content="Formulario">
+		<title>Formulario de registro - Mi web</title>
+		<style>
+			label:not(.inline), input:not(.inline), textarea{
+				display: block;
+			}
+			.error{
+				color:red; 
+				font-size:15px;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="GET" action="#" name="miForm" onsubmit="return validar();">
+			<h2>Formulario de registro</h2>
+
+			<label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50" onchange="return validar_obligatorio(this.id,'error_nom')"></label>
+			<p id="error_nom" class="error"> *Campo obligatorio </p>
+
+			<label for="lapellido1"><strong>Primer apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50" onchange="return validar_obligatorio(this.id,'error_ap1')"></label>
+			<p id="error_ap1" class="error"> *Campo obligatorio </p>
+
+			<label for="lapellido2"><strong>Segundo apellido</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50" onchange="return validar_obligatorio(this.id,'error_ap2')"></label>
+			<p id="error_ap2" class="error"> *Campo obligatorio </p>
+				
+			<label for="edad"><strong>Edad:</strong>
+				<input id="edad" type="text" name="edad" maxlength="50" size="50" onkeypress="return validar_num(event,this.id,'error_num')" onchange="return validar_edad(this.id,'error_edad')">
+				<p id="error_edad" class="error"> *El rango de edad es de 18 a 65 años </p>
+				<p id="error_num"  class="error"> *No está permitido los caracteres </p>				
+			</label>
+				
+			<label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onchange="return validar_edad(this.id,'error_telf')">
+			<p id="error_telf" class="error"> *Formato incorrecto (+34 999-99-99-99) </p>
+
+			<label><strong>Género:</strong></label>
+			<label for="idhombre" class="inline">Hombre</label>
+			<input type="radio" id="idhombre" name="sexo" class="inline">			
+			<label for="idmujer" class="inline">Mujer</label>
+			<input type="radio" id="idmujer" name="sexo" class="inline">
+			<p id="error_genero" class="error"> *Se ha de seleccionar una de las opciones del género </p>
+
+			<label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion" onchange="return validar_poblacion(this.id,'error_sel')">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+			</select>
+			<p id="error_select" class="error">* Obligatorio seleccionar una población</p>
+
+			<label><strong>Comentarios:</strong></label><textarea name="comentarios" rows="10" cols="50">Tus comentarios aquí... </textarea>
+				
+			<input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline" >Deseo recibir información sobre novedades y ofertas.</label>
+			<br>
+			<br>
+			<input id="laceptar" type="checkbox" name="aceptar" class="inline"><label for="laceptar" class="inline">Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos. </label>
+			<p id="error_check" class="error">* Obligatorio aceptar las condiciones generales</p>
+
+			<input type="submit" name="envio" value="Enviar">
+	</body>
+
+<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+		//Validaciones de los parámetros que se han entrado en el formulario
+		function validar(){
+			var l_res = true;
+
+			if (!validar_obligatorio('lnombre','error_nom')){
+				l_res = false;
+			}
+
+			if (!validar_obligatorio('lapellido1','error_ap1')){
+				l_res = false;
+			}
+
+			if (!validar_obligatorio('lapellido2','error_ap2')){
+				l_res = false;
+			}
+
+			if (!validar_edad('edad','error_edad')){
+				l_res = false;
+			}
+			
+			if (!validar_telefono('ltelefono','error_telf')){
+				l_res = false;
+			}
+			
+			if (!validar_genero()){
+				l_res = false;
+			}
+			
+			if (!validar_poblacion('lsel','error_sel')){
+				l_res = false;
+			}
+				
+			if (!validar_checkbox('laceptar','error_check')){
+				l_res = false;
+			}	
+
+			return l_res;
+		}
+
+
+		function validar_obligatorio(id,error){
+			var texto = document.getElementById(id).value;
+            
+			if ( (texto.length == 0) || (/^\s+$/.test(texto)) ) {
+				document.getElementById(error).style.display="inline";
+				document.getElementById(id).style.border="2px solid red";	
+				return false;
+			}else{
+				document.getElementById(error).style.display="none";
+				document.getElementById(id).style.border="2px solid grey";
+				return true;
+			}
+		}
+
+		function validar_num(p_event,id,error){
+
+			// Obtener la tecla pulsada
+			var l_evento = p_event || window.p_event;
+ 			var l_codchar = l_evento.charCode || l_evento.keyCode; 
+ 			var l_tecla = String.fromCharCode(l_codchar);
+
+		    if (isNaN(l_tecla)){
+		    	// Si no es un número	
+		    	document.getElementById("error_num").style.display="inline";
+				document.getElementById("edad").style.border="2px solid red";	
+		    	return false;
+		    }else{
+		    	document.getElementById("error_num").style.display="none";
+				document.getElementById("edad").style.border="2px solid grey";
+		    	return true; 
+			}
+		}//<--validar_num(p_event)
+
+		function validar_edad(id,error){
+			// Validad que úniacamente permita números y que esté en el rango de 18 a 65 años
+			var l_edad = document.getElementById(id).value;
+			
+			if ( (l_edad < 18 ) || (l_edad > 65) ){
+				document.getElementById(error).style.display="inline";
+				document.getElementById(id).style.border="2px solid red";
+				return false;
+			}else{
+				document.getElementById(error).style.display="none";
+				document.getElementById(id).style.border="2px solid grey";
+				return true;
+			}
+
+		}//<--validar_edad()
+
+		function validar_telefono(id,error){
+			var telefono = document.getElementById(id).value;
+			console.log(telefono);
+
+			// +34 999-99-99-99.
+			if( !(/^\+\d{2,3}\s\d{3}\-\d{2}\-\d{2}\-\d{2}$/.test(telefono)) ) {
+				document.getElementById(error).style.display="inline";
+				document.getElementById(id).style.border="2px solid red";
+			  	return false;
+			}else{
+				document.getElementById(error).style.display="none";
+				document.getElementById(id).style.border="2px solid grey";
+				return true;
+			}
+
+		}//<-- validar_telefono(id,error)
+
+		function validar_genero(){
+			var elemento = document.getElementsByName('sexo');
+
+			var l_checked = false;
+			
+			for(var i=0; i < elemento.length; i++) {
+			  if(elemento[i].checked){ //no hace falta poner ==true pq esto incia ya true
+			  	l_checked = true;
+			  	break;
+			  }
+			}
+
+			if (l_checked){
+				document.getElementsById("error_genero").style.display="none";	
+			}else{
+				document.getElementById("error_genero").style.display="block";
+			}
+
+			return l_checked;
+
+		}//<--validar_genero(name,error)
+
+		function validar_poblacion(id,error){
+
+			// Obtener la referencia a la lista
+			var lista = document.getElementById("lsel");
+
+			if (lista.selectedIndex == 0) {
+				document.getElementById("error_select").style.display="block";
+				return	false;
+			}else{
+				document.getElementById("error_select").style.display="none";
+				return	true;
+			}
+		}//<--validar_poblacion
+
+		function validar_checkbox(id,error){
+
+			if (document.getElementById(id).checked) {
+				document.getElementById(error).style.display="none";
+				return true;
+			}else{
+				document.getElementById(error).style.display="block";
+				return false;
+			}
+		}
+
+	</script>
+</html>

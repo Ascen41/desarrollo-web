@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Documento prueba cajas</title>
+	<style type="text/css">
+
+		ul.menu{
+		/*con viñeta personalizada, es conveniente indicar la viñeta automática 
+		que se mostrará cuando no se pueda cargar la imagen. En este caso hemos puesto SQUARE*/
+		/*list-style-image: url(imagenes/check.png); no funciona muestra siempre SQUARE, si lo quito ok*/
+
+			width: 100%; /*Ponemos 100% para que ocupe todo el ancho de la página*/
+			list-style: none; /*quita lo bullets que tiene la lista por defecto*/
+			margin: 0px;
+			padding: 0px;
+			border: 1px solid blue;
+			clear: both; /*No se permiten elementos flotantes ni en el lado izquierdo 
+			ni en el derecho.*/
+			float: left; /*El elemento flota a la izquierda de su contenedor*/
+		}
+
+		ul.menu li{
+			float: left;
+			border-right: 1px solid blue;
+			
+		}
+		ul.menu li a{
+			display:block; /*hace que toda la línea que ocupa el enlace sea clicable, es decir
+			tb sus espacios en blanco de la parte derecha*/
+			padding: 18px 20px 10px 40px;
+			text-decoration: none; /*le quita el subrayado típico de los enlaces*/
+			color: green;
+			/*background-image: url("imagenes/check.png");
+			background-repeat: no-repeat; */
+			background: url("imagenes/check.png") no-repeat;
+		}
+		ul.menu li a:hover{
+		/*Cambia diseño del enlace al pasar el cursor por encima*/
+			background: url("imagenes/ok.jpg") no-repeat;
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="menu">
+	<!--Si añadimos el target="_blank" a un enlace abre una nueva ventana al clicar -->
+		<li><a href="#" title="Enlace Elemento 1" target="_blank">Elemento 1</a></li>
+		<li><a href="#" title="Enlace Elemento 2">Elemento 2</a></li>
+		<li><a href="#" title="Enlace Elemento 3">Elemento 3</a></li>
+		<li><a href="#" title="Enlace Elemento 4">Elemento 4</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Palíndromo</title>
+    <script type="text/javascript">
+        /*Realiza un script que pida un texto e indique si es un palíndromo. Ejemplo de palíndromo: “Dabale arroz a la zorra el abad”.
+
+                                        var cadena = prompt("Introduce un Texto para Comprobar si es un Palíndromo:");
+                                        var numchar = cadena.length;
+                                        //Ponemos la cadena en minúsculas
+                                        cadena = cadena.toLowerCase();
+                                        var j;
+                                        var car;
+                                        var salida = "";
+                                        var cadena_espac = "";
+                                        var cadena_reves = "";
+                                        //Bucle que recorre toda la cadena y va concatenando en dos variables y eliminando espacios
+                                        for (i = 0; i < numchar; i++) {
+                                            car = cadena.charAt(i);
+                                            //Si el caracter es un espacio
+                                            if (car != " ") {
+                                                cadena_espac += car;
+                                                cadena_reves = car + cadena_reves;
+                                            }
+                                        }
+                                        if (cadena_espac == cadena_reves) {
+                                            document.write("El texto es un palíndromo");
+                                        } else {
+                                            document.write("El texto No es un palíndromo");
+                                        }*/
+
+        function palindromo(cadena) {
+            cadena = cadena.toUpperCase();
+            var cadena = cadena.replace(/ /g, "");
+            console.log(cadena);
+            var array = cadena.split("");
+            array.reverse()
+            var cadenainvertida = array.join("");
+
+            if (cadena == cadenainvertida) {
+                res = "Palindromo";
+            } else {
+                res = "No palindromo";
+            }
+            return res;
+        }
+        var x = prompt("Introduce una frase");
+        var res = palindromo(x);
+        var mensaje = "La ruta nos aportó otro paso natural";
+        alert("la frase " + x + " es " + res);
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

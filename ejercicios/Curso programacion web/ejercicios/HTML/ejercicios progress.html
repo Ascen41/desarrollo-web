@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comparativa de reproductores MP3</title>
+	<META charset="utf-8">
+	<META name="description" content="your description">
+	<title>ejercicios progress</title>
+	<!--progress-->
+</head>
+
+<body>
+	<h1>FORMULARIOS ATRIBUTOS</h1>
+	<form method="get" enctype="multipart/form-data">
+	<h2>progress</h2>
+	<progress max=“100” value=“30”></progress>
+	<!-- Permet afegir una barra de progrés-->
+	<h2>meter</h2>
+	<meter min=“0” max=“150” low=“50” high=“90” optimum=“75” value=“95”></meter>
+	<!-- rango permitido-->
+	<!--Molt similar a <progress>, s'utilitza per introduir una barra que representi un valor estàtic. Consta de tres atributs més: low i high, per representar els valors inferior i superior del rang, i optimum per al valor ideal. A més, aquí també pot usar-se min per al límit inferior.Si el valor indicat a value es troba fora del rang indicat entre low i high, la barra es mostrarà en un altre color. En el següent exemple, que podria ser un indicador de pes, per exemple, apareixerà de color groc per estar fora del rang.-->
+	<!--type Indica el tipus de control que s'inclou en el formulari-->
+	<!--input type=“text | password | email | url | search | date | time | datetime | month | week | number | range | tel | color | image ”-->
+	<!--name Assigna un nom al control (és imprescindible perquè el servidor pugui processar el formulari). xj.
+		<input name=“txt1” type=“text”>-->
+	<!-- value Valor inicial del control. xj.
+	<input value=“Hola Mundo” type=“text” >-->
+
+
+	<!--Input 
+	size
+	Tamany inicial del control (pels camps de text i de contrasenya es refereix al nombre de caràcters, en la resta de controls es refereix a la seva mida en píxels)	
+	<input size=“9” type=“text”>
+
+	maxlength
+	Màxim nombre de caràcters per als controls de text i password.
+	<input maxlength=“10” type=“text” >
+	
+	src
+	Per al control que permet crear botons amb imatges, indica la URL de la imatge que s'empra com botó de formulari.
+	<input type="image" src="/carpeta/submit.png">
+	
+	alt
+	Descripció del control. 
+	<input alt=“campo para introducir nombre” type=“text” >-->
+	<!--Atributs
+
+	checked
+    Per als controls checkbox i radiobutton permet indicar quina opció apareix preseleccionada. 	
+
+	disabled
+    El control apareix deshabilitat i el seu valor no s'envia al servidor juntament amb la resta de dades.
+	<input type=“text” disabled>
+	
+	readonly
+    El contingut del control no es pot modificar.
+	<input type=“text" readonly>
+	list y <datalist>
+
+	ermeten afegir una llista a un camp de text amb elements predefinits, que apareixeran quan el text introduït coincideixi amb l'inici dels mateixos.
+
+	<input id=“txt1” type=“text” list=“lst1”>
+	<datalist id=“lst1”>
+		<option label=“Principal” value=“Opción 1”>
+		<option label=“Secundaria” value=“Opción 2”>
+	</datalist>
+-->
+	<h2>datalist</h2>
+	<input id="txt1" type="text" list="lst1"name="txt1" />
+		<datalist id="lst1">
+		<option label="Principal" value="Opción 1">1</option>
+		<option label="Secundaria" value="Opción 2">2</option>
+		</datalist>
+	<h2>autofocus</h2>
+	<!--Permet que un element obtingui el focus de manera automàtica en Carregar la pàgina. Nomes s'a d'aplicar sobre un ÚNIC element.-->
+	<input id="txt1" type="text" autofocus>
+	<h2>placeholder</h2>
+	<!--Permet afegir un text d'ajuda a un camp de text.-->
+	<input id="txt1" type="text" placeholder="Introduzca el texto">
+	<h2>required</h2>
+	<!--Impedeix que es envii un formulari sense unc ampo amb l'atribut required no ha estat emplenat.-->
+	<input id="txt1" type="text" required>
+	<h2>multiple</h2>
+	<!--Permet introduir més d'un valor en certs tipus de camps, com email, url, file ...
+-->
+	<input id="txt1" type="file" multiple>
+	<h2>autocomplete</h2>
+	<!--Permet activar o desactivar l'autocompletat del camp.-->
+	<input id="txt1" type="text" autocomplete="off">
+	<h2>min y max</h2>
+	<!--Permet controlar el rang de valors a introduir en un camp-->
+	<input type="date" min="2000-01-01" max="2013-12-31">
+	<h2>step</h2>
+	<!--Permet definir la unitat dels "passos" d'un element de tipus range-->
+	<input type="range" min="0" max="100" step="5">
+	<h2>pattern</h2>
+	<!--Permet controlar el format del text introduït mitjançant expressions regulars (en format Javascript). Per exemple, per introduir un nombre seguit de tres lletres majúscules-->
+	<input id="txt1" type="text" pattern="[0-9][A-Z]{3}">
+	<h1>Etiquetas elements</h1>
+	
+
+
+
+
+
+
+
+
+
+	</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario de registro - Mi web</title>
+	<style type="text/css">
+		form{
+			width: 60%;
+		}
+		label.tabular{
+			width: 15%;
+			display: inline-block;
+		}
+		div{
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Formulario de registro</h1>
+	<form method="get" action=" ">
+		<div>
+			<label class="tabular" for="idfname">Nombre: </label>
+			<input id="idfname" type="text" name="v_fname" maxlength="50" placeholder="Introdir nombre...">
+		</div>
+		<div>
+			<label class="tabular" for="idlname">Apellidos: </label> 
+			<input id="idlname" type="text" name="v_lname" maxlength="50" placeholder="Introducir 1er y 2do apellido...">
+		</div>
+		<div>
+			<label>Sexo:</label>
+			<div>
+				<input id="idman" type="radio" name="v_sexo" checked="checked"/>
+				<label for="idman">Hombre</label>
+			</div>
+			<div>
+				<input id="idwoman" type="radio" name="v_sexo"/>
+				<label for="idwoman">Mujer</label>
+			</div>
+		</div>
+
+		<div>
+			<label class="tabular" for="idmail">Email: </label>
+			<input id="idmail" type="email" name="v_email" placeholder="nombre@direccion.com...">
+		</div>
+
+		<div>
+			<label class="tabular">Población:</label>
+			<select name="v_lista">
+				<option disabled selected>--</option>
+				<option>Alicante</option>	
+				<option>Madrid</option>
+				<option>Sevilla</option>
+				<option>Valencia</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="idcmm">Descripción del producto</label>
+			<br>
+			<textarea id="idcmm" name="v_comment" rows="10" cols="60" placeholder="Descripción..."></textarea>
+		</div>
+
+		<div>
+			<input id="idverif" type="checkbox" name="v_verif" checked />
+			<label for="idverif">Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos</label>
+		</div>
+
+		<hr>
+		<div>
+			<input type="submit" name="b_enviar" value="Registrar">
+		</div>
+	</form>
+</body>
+</html>

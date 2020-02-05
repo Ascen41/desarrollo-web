@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+    <script>
+        // <p>Nombre:<span class="aster" style="color: red;">*</span> </p>
+        //         <input type="text" name="text" id="text" style="display:block">
+        //         <p id="texterror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+        //  IMPORTANTE .value   
+        function nombre() {
+            var valor = document.getElementById("text");
+            if (valor.value.length >= 1 && !(/^\s+$/.test(valor.value))) {
+                document.getElementById("texterror").style.display = "none";
+                console.log("nomber Entra true");
+                return true;
+            } else {
+                document.getElementById("texterror").style.display = "inline";
+                console.log("nombre Entra false");
+                return false;
+            }
+        }
+
+
+        //<p>Edad</p>
+        //<input type="text" name="text" id="edad" onkeyup="edad_()" style="display:block">
+        // <p id="edadok" style="color: red; display: none;font-size: 9px;">Tienes que estar en el rango de 18 o 75 años</p>
+
+
+
+
+
+        function edad() {
+            var valor = document.getElementById("edad");
+            if (!isNaN(valor.value)) {
+                if ((valor.value >= 18 && valor.value <= 75) || (valor.value.length == 0)) {
+                    console.log("Entra true");
+                    document.getElementById("edadok").style.display = "none";
+                    return true;
+                } else {
+                    document.getElementById("edadok").innerHTML = "Tienes que estar en el rango de 18 o 75 años";
+                    document.getElementById("edadok").style.display = "inline";
+                    console.log("Entra false");
+                    return false;
+                }
+            } else {
+                document.getElementById("edadok").innerHTML = "Sólo números";
+                document.getElementById("edadok").style.display = "inline";
+                valor.value = '';
+                return false;
+            }
+
+        }
+
+        //<p>Direccion Email<span class="aster" style="color:red">*</span></p>
+        //<input type="text" id="email" name="Direccion Email">
+        // <p id="email_error" style="color: red; display:none;font-size: 9px;">formato erroneo</p>
+        function email() {
+            var valor = document.getElementById("email");
+            if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(valor.value)) {
+
+                document.getElementById("email_error").style.display = "none";
+                console.log("Entra true");
+                return true;
+            } else {
+
+                document.getElementById("email_error").style.display = "inline";
+                console.log("Entra false");
+                return false;
+            }
+        }
+
+        // <p>Contraseña <span class="aster" style="color:red">*</span></p>
+        // <input type="text" id="password" name="Password">
+        // <p id="pass_error" style="color: red; display:none;font-size: 9px;">formato erroneo</p>
+
+        function contraseña() {
+            var valor = document.getElementById("password");
+
+            if (valor.value.length >= 8) {
+
+                var mayuscula = false;
+                var minuscula = false;
+                var numero = false;
+                for (var i = 0; i < valor.value.length; i++) {
+
+                    if (valor.value.charCodeAt(i) >= 65 && valor.value.charCodeAt(i) <= 90) {
+                        mayuscula = true;
+                    } else if (valor.value.charCodeAt(i) >= 97 && valor.value.charCodeAt(i) <= 122) {
+                        minuscula = true;
+                    } else if (valor.value.charCodeAt(i) >= 48 && valor.value.charCodeAt(i) <= 57) {
+                        numero = true;
+                    }
+                }
+                if (mayuscula == true && minuscula == true && numero == true) {
+                    console.log("Correcta");
+                    document.getElementById("pass_error").style.display = "none";
+                    return true;
+                }
+            } else {
+                console.log("Incorrecta");
+                document.getElementById("pass_error").style.display = "inline";
+                return false;
+            }
+        }
+        //<p>Comentarios</p>
+        //<textarea name="comentarios" id="comment" onkeypress="return hola()" rows="2" //cols="60"></textarea>
+        //<p id="coment_error" style="color: red; display:none;font-size: 9px;">Hasta 50 caracteres</p>
+        //<input type="submit" value="Enviar" style="display: block;">
+
+        //IMPORTANTE PARA ACTIVAR LA FUNCION EN ESTE CASO, EL ONKEYPRESS
+
+
+
+        function hola() {
+
+            var valor = document.getElementById("comment");
+            console.log(valor.value.length);
+            if (valor.value.length <= 50) {
+                document.getElementById("coment_error").style.display = "none";
+                return true;
+            } else {
+                document.getElementById("coment_error").style.display = "inline";
+                return false;
+            }
+        }
+
+        function HaEscrito() {
+            var valor = document.getElementById("comment");
+            if (valor.value.length >= 1) {
+                document.getElementById("coment_error").style.display = "none";
+                return true;
+            } else {
+                document.getElementById("coment_error").style.display = "inline";
+                return false;
+            }
+        }
+
+        function validar() {
+
+            nombre();
+            edad();
+            contraseña();
+            email();
+            HaEscrito();
+
+            if ((nombre() && edad() && contraseña() && email() && HaEscrito())) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form method="POST" onsubmit="return validar();" action="../PhpArchvos/agente.php">
+        <p>Nombre:<span class="aster" style="color: red;">*</span> </p>
+        <input type="text" name="text" id="text" style="display:block">
+        <p id="texterror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+        <p id="texterror-b" style="color: red; display: none;font-size: 9px;">*Mínimo de 5 letras</p>
+
+        <p>Edad</p>
+        <input type="text" name="text" id="edad" style="display:block">
+        <p id="edadok" style="color: red; display: none;font-size: 9px;">Tienes que estar en el rango de 18 o 75 años</p>
+
+        <p>Direccion Email<span class="aster" style="color:red">*</span></p>
+        <input type="text" id="email" name="Direccion Email">
+        <p id="email_error" style="color: red; display:none;font-size: 9px;">formato erroneo</p>
+
+        <p>Contraseña <span class="aster" style="color:red">*</span></p>
+        <input type="password" id="password" name="Password">
+        <p id="pass_error" style="color: red; display:none;font-size: 9px;">formato erroneo</p>
+
+
+        <p>Comentarios</p>
+        <textarea name="comentarios" id="comment" onkeypress="return hola()" rows="2" cols="60"></textarea>
+        <p id="coment_error" style="color: red; display:none;font-size: 9px;">Hasta 50 caracteres</p>
+        <input type="submit" value="Enviar" style="display: block;">
+    </form>
+</body>
+
+</html>

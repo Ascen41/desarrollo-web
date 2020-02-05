@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        window.onload = function() {
+                var fecha = new Date();
+                document.getElementById("reloj").innerHTML = fecha;
+                console.log(fecha.getHours()); //hora
+                console.log(fecha.getMinutes()); //minuto
+                console.log(fecha.getSeconds()); // segundos
+                console.log(fecha.getDay()); // dia de la semana
+                console.log(fecha.getMonth()); //mes
+                console.log(fecha.getDay()); //dia del mes
+                console.log(fecha.getFullYear()); //año
+                console.log(fecha.getDate()); //dia del mes
+            }
+            //cambiarlo de idioma 
+
+        var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+        var fecha = new Date();
+
+
+        var mescat = new Array("Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Septembre", "Octubre", "Novembre", "Decembre");
+        var diasSemcat = new Array("Diumenge", "Dilluns", "Dimars", "Dimecres", "Dijous", "Divendres", "Disapte");
+
+        var idioma = prompt("¿en que idioma quieres que se muestre Español o Catalán");
+        // if (idioma == "Español") {
+        //  document.write(diasSemana[fecha.getDay()] + ", " + fecha.getDate() + " de " + meses//[fecha.getMonth()] + " de " + fecha.getFullYear());
+        // } else {
+        //    document.write(diasSemcat[fecha.getDay()] + ", " + fecha.getDate() + " de " + meses[fecha.getMonth()] + " de " + fecha.getFullYear());
+        //}
+
+        switch (idioma) {
+            case "Español":
+                document.write(diasSemana[fecha.getDay()] + ", " + fecha.getDate() + " de " + meses[fecha.getMonth()] + " de " + fecha.getFullYear());
+                break;
+            case "Catalán":
+                document.write(diasSemcat[fecha.getDay()] + ", " + fecha.getDate() + " de " + meses[fecha.getMonth()] + " de " + fecha.getFullYear());
+                break;
+            default:
+                alert("no es un idioma correcto")
+
+                break;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="reloj"></div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, odio soluta. Reiciendis, dolore ea alias, doloribus consequuntur deserunt voluptas harum itaque earum officiis veniam, eligendi ratione consectetur repellat sit facilis!</p>
+
+</body>
+
+</html>

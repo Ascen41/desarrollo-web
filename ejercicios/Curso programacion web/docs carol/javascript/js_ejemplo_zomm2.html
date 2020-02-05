@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 4: modificar tamaño texto</title>
+	<style type="text/css">
+		body{
+			font-size: 14px;
+		}
+		.letra{
+			font-weight: bold;
+			font-size: 1em; /*Si lo poemos en px, siempre tendrá el mismo tamaño*/
+		}
+
+	</style>
+	<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+
+		var size = 14;
+
+		function tamaño_letra(accion){
+			
+			switch(accion){
+				case '+':
+					size += 1;
+					break;
+				case '-':
+					size -= 1;
+					break;
+				case 'reset':
+				    size = 14;
+					break;
+			}
+
+			document.body.style.fontSize = size + "px";
+		}
+	</script>
+</head>
+<body>
+	<h1> Augmentar o disminuir el tamaño de la letra</h1>
+	<div>
+		<p><span class="letra">Lorem ipsum</span> dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci.
+		Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo
+		ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+		Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit
+		amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+		urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+		consectetuer adipiscing elit. Duis scelerisque.</p>
+
+		<button type="button" onclick="tamaño_letra('+')"> + </button>
+		<button type="button" onclick="tamaño_letra('-')"> - </button>
+		<button type="button" onclick="tamaño_letra('reset')"> Reset</button>
+	</div>
+</body>
+</html>

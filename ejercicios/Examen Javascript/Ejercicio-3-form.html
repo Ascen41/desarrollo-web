@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Formulario de registro - Mi web</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = validar;
+        /*A partir del código HTML proporcionado, cread la función javascript para validar el formulario.
+        La función que valida el formulario sólo lo enviará en caso de que se cumplan las siguientes condiciones. Si alguna no se cumple, se deberá informar al usuario mostrando el error alado del elemento e impedir el envío:1. Todos los elementos del formulario son obligatorios y no pueden dejarse en blanco, menos “comentarios” y “Deseo recibir información sobre novedades y ofertas” 2. Además, El campo edad debe ser un número y su valor entre 18 y 65  3. El campo teléfono debe contener un número de teléfono con el formato +34 999-99 99-99.
+        4. Para el campo Genero y Población, es obligatorio elegir una de las opciones.
+        5. El campo de tipo checkbox debe estar marcado (del tipo “Declaro haber leído y aceptar las condiciones…”
+        La validación del formulario se tiene que ejecutar tanto en el momento del envío, como cada vez que se modifique un campo.*/
+
+        /*<label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50"></label> <p id="nomerror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>*/
+
+
+        function nombre() {
+            var valor = document.getElementById("lnombre");
+            if (valor.value.length >= 1 && !(/^\s+$/.test(valor.value))) {
+                document.getElementById("nomerror").style.display = "none";
+                console.log("nombre Entra true");
+                return true;
+            } else {
+                document.getElementById("nomerror").style.display = "inline";
+                console.log("nombre Entra false");
+                return false;
+            }
+        }
+        /*<label for="lapellido1"><strong>Primer apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50"></label>
+        		<p id="aperror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>*/
+        function primerapellido() {
+            var valor = document.getElementById("lapellido1");
+            if (valor.value.length >= 1 && !(/^\s+$/.test(valor.value))) {
+                document.getElementById("aperror").style.display = "none";
+                console.log("nombre Entra true");
+                return true;
+            } else {
+                document.getElementById("aperror").style.display = "inline";
+                console.log("nombre Entra false");
+                return false;
+            }
+        }
+        /*<label for="lapellido2"><strong>Segundo apellido</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50"></label>
+        <p id="aperror2" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>*/
+        function segunapellido() {
+            var valor = document.getElementById("lapellido2");
+            if (valor.value.length >= 1 && !(/^\s+$/.test(valor.value))) {
+                document.getElementById("aperror2").style.display = "none";
+                console.log("nombre Entra true");
+                return true;
+            } else {
+                document.getElementById("aperror2").style.display = "inline";
+                console.log("nombre Entra false");
+                return false;
+            }
+        }
+
+
+
+        /*2. Además, El campo edad debe ser un número y su valor entre 18 y 65
+		<label for="edad"><strong>Edad:</strong><input id="edad" type="text" name="apellido1" maxlength="50" size="50"></label>
+        <p id="edadok" style="color: red; display: none;font-size: 9px;">Tienes que estar en el rango de 18 o 65 años</p>*/
+        function edad() {
+            var valor = document.getElementById("edad");
+            if (!isNaN(valor.value)) {
+                if ((valor.value >= 18 && valor.value <= 65) || (valor.value.length == 0)) {
+                    console.log("Entra true");
+                    document.getElementById("edadok").style.display = "none";
+                    return true;
+                } else {
+                    document.getElementById("edadok").innerHTML = "Tienes que estar en el rango de 18 o 65 años";
+                    document.getElementById("edadok").style.display = "inline";
+                    console.log("Entra false");
+                    return false;
+                }
+            } else {
+                document.getElementById("edadok").innerHTML = "Sólo números";
+                document.getElementById("edadok").style.display = "inline";
+                valor.value = '';
+                return false;
+            }
+
+        }
+        /*El campo teléfono debe contener un número de teléfono con el formato +34 999-99-
+99-99.
+ <label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50"><p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>*/
+
+        function telefono() {
+            var valor = document.getElementById("ltelefono");
+            if (/^d{3}-\d{3}-\d{3}$/i.test(valor.value)) {
+                document.getElementById("telerror").style.display = "none";
+                console.log("Entra true");
+                return true;
+            } else {
+                document.getElementById("telerror").style.display = "inline";
+                console.log("Entra false");
+                return false;
+            }
+        }
+        /* Para el campo Genero y Población, es obligatorio elegir una de las opciones.
+		<label><strong>Género:</strong></label>
+        <label for="idhombre" class="inline">Hombre</label>
+        <input type="radio" id="idhombre" name="sexo" class="inline">
+        <label for="idmujer" class="inline">Mujer</label>
+        <input type="radio" id="idmujer" name="sexo" class="inline">
+        <label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+				</select>*/
+        function genero() {
+            var seleccionado = false;
+            var elementos = document.getElementsByName("sexo")
+            for (i = 0; i < elementos.length; i++) {
+                if (elementos[i].checked) {
+                    seleccionado = true;
+                    document.getElementById("error_radio").style.dysplay = "none";
+                    break;
+                }
+            }
+            if (!seleccionado) {
+                getElementById("error_radio")
+                    .style.dysplay = "block";
+            }
+            return seleccionado;
+        }
+        /* <label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion">
+        <option value="">---------</option>
+        <option value="Alicante" >Alicante</option>
+        <option value="Madrid" >Madrid</option>
+        <option value="Sevilla" >Sevilla</option>
+        <option value="Valencia" >Valencia</option>
+        </select>
+        <p id="error_poblacion" style="color: red; display:none;font-size: 9px;">*Debe elegir al menos una opción</p>*/
+        function poblacion() {
+            var seleccionado = false;
+            var lista = document.getElementById("lsel");
+            var indiceseleccionado = lista.selectedIndex;
+            if (indiceseleccionado != 0) {
+                seleccionado = true;
+                document.getElementById("error_poblacion").style.display = "none";
+            } else {
+                document.getElementById("error_poblacion").style.display = "block";
+            }
+            return seleccionado;
+        }
+        /*<input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+novedades y ofertas.</label>
+        <br>
+        <input id="laceptar" type="checkbox" name="aceptar" class="inline"><label for="laceptar" class="inline">Declaro haber leido y aceptar las
+condiciones generales del programa y la normativa sobre protección de
+datos. </label>*/
+        function aceptar() {
+            var seleccionado = false;
+            if (document.getElementById("laceptar").checked) {
+                seleccionado = true;
+            } else {
+                alert("Debes aceptar las condiciones");
+            }
+            return seleccionado
+        }
+
+        function validar() {
+
+            nombre();
+            primerapellido();
+            segunapellido();
+            edad();
+            telefono();
+            genero();
+            poblacion();
+            aceptar()
+
+            if ((nombre() && edad() && telefono() && genero() && poblacion() && aceptar())) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form method="GET" action="#" name="miForm">
+        <h2>Formulario de registro</h2>
+        <label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50"></label>
+        <p id="nomerror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+
+        <label for="lapellido1"><strong>Primer apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50"></label>
+        <p id="aperror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+        <label for="lapellido2"><strong>Segundo apellido</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50"></label>
+        <p id="aperror2" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+
+
+        <label for="edad"><strong>Edad:</strong><input id="edad" type="text" name="apellido1" maxlength="50" size="50"></label>
+        <p id="edadok" style="color: red; display: none;font-size: 9px;">Tienes que estar en el rango de 18 o 65 años</p>
+
+        <label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50">
+        <p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+        <label><strong>Género:</strong></label>
+
+        <label for="idhombre" class="inline">Hombre</label>
+        <input type="radio" id="idhombre" name="sexo" class="inline">
+
+        <label for="idmujer" class="inline">Mujer</label>
+        <input type="radio" id="idmujer" name="sexo" class="inline">
+        <p id="error_radio" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+
+        <label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+				</select>
+        <p id="error_poblacion" style="color: red; display:none;font-size: 9px;">*Debe elegir al menos una opción</p>
+
+        <label><strong>Comentarios:</strong></label><textarea name="comentarios" rows="10" cols="50">Tus comentarios aquí...
+			</textarea>
+
+        <input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+novedades y ofertas.</label>
+        <br>
+        <input id="laceptar" type="checkbox" name="aceptar" class="inline"><label for="laceptar" class="inline">Declaro haber leido y aceptar las
+condiciones generales del programa y la normativa sobre protección de
+datos. </label>
+
+        <input type="submit" name="envio" value="Enviar">
+
+
+
+
+</body>
+
+</html>

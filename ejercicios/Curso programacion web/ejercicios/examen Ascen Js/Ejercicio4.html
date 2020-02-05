@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Formulario de registro - Mi web</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+    <script>
+        /*Desarrollar un script que modifica el tamaño del siguiente texto
+                        Para agrandar texto pulsa , para reducir el texto pulsa para volver al tamaño original pulsa
+                        El tamaño original del texto es de 14px, cada vez que se pulse el botón de agrandar o reducir tiene que incrementar o decrementar un píxel el tamaño del texto.*/
+        function modificaTexto() {
+            texto1.style.fontSize = "10pt";
+        }
+
+        function restauraTexto() {
+            texto1.style.fontSize = "17pt";
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>lorem</legend>
+
+            <p>
+                <div id="texto1" style="font-size:17pt" onmouseover="modificaTexto()" onmouseout="restauraTexto()">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque
+                    massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+                    odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</div>
+            </p>
+            <!--he de crear los botones + y menos y un default y a traves -->
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>

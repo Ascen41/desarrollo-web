@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 4: modificar tamaño texto</title>
+	
+	<!-- ESTILOS --------------------------------------------->
+	<style type="text/css">
+		body{
+			font-size: 14px;
+		}
+	</style>
+	
+<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+		
+		var size = 14;
+
+
+		function tamaño_letra(accion){
+
+
+		/* Tomamos el tamaño que tiene el body para así no tener que poner una variable global a 14. De esta manera si modificamos el CSS no tenemos que tocar el código del js.
+		(<---No acaba de funcionar--->) https://javascript.info/styles-and-classes
+		console.log(document.body);
+		let style = getComputedStyle(document.body);
+		console.log(style);
+
+		var size = (style.fontSize).substring(0,2);
+		console.log(size);*/
+
+
+			switch(accion){
+				case '+':
+					size += 1;
+					break;
+				case '-':
+					size -= 1;
+					break;
+				case 'reset':
+				    size = 14;
+					break;
+			}
+
+			document.body.style.fontSize = size + "px";
+		}
+	</script>
+</head>
+<body>
+	
+	<div>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci.
+		Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo
+		ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+		Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit
+		amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+		faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+		urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+		consectetuer adipiscing elit. Duis scelerisque.</p>
+
+		<button type="button" onclick="tamaño_letra('+')"> + </button>
+		<button type="button" onclick="tamaño_letra('-')"> - </button>
+		<button type="button" onclick="tamaño_letra('reset')"> Reset</button>
+	</div>
+</body>
+
+</html>

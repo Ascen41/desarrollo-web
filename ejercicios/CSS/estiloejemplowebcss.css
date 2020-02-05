@@ -1,0 +1,52 @@
+body {
+    font-family:Arial;
+    font-size:13px;
+}
+#divContenedor {
+     position:relative;
+    height:124px;
+    width:340px;
+    margin:0 auto;
+    background-color:blue;
+}
+#divTitulo, #lbl1, #txt1, #lbl2, #txt2, #btnSubmit {
+     position:absolute;
+}
+#divTitulo {
+    height:16px;
+    width:340px;
+    color:yellow;
+    text-align:center;
+    font-weight:bold;
+    background-color:red;
+}
+#lbl1, #lbl2 {
+    width:70px;
+    background-color:lightgray;
+}
+#txt1, #txt2 {
+    width:200px;
+    border:1px solid black;
+}
+#lbl1 {
+    top:33px;
+    left:30px;
+}
+#txt1 {
+    top:30px;
+    left:104px;
+}
+#lbl2 {
+    top:63px;
+    left:30px;
+}
+#txt2 {
+    top:60px;
+    left:104px;
+}
+#btnSubmit {
+    width:110px;
+    top:90px;
+    left:120px;
+    cursor:pointer;
+}

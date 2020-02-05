@@ -1,0 +1,91 @@
+*{
+	box-sizing: border-box;
+}
+#contenedor{
+	width: 100%;
+}
+#sec1{
+	clear:both;
+	float: left;
+	width: 20%;
+	border: 1px solid;	
+}
+#sec2{
+	float:left;
+	width:80%;
+	border: 1px solid;
+}
+
+/*-- Menu ---------------------------------------------------*/
+nav ul#menu{
+	clear: both; 
+	float: left;
+	width: 100%; 
+	list-style: none; /*Elimina los bullets típicos del menu*/
+	background-color: rgb(34,60,145);
+	margin: 0px;
+	padding: 0px; 
+}
+nav ul#menu li{
+	float: left;
+	border: 1px solid red;
+	width: 25%;
+	height: 100%;
+}
+nav ul#menu li a{
+	display:block;		
+	color: white;
+	text-align: center;
+	text-decoration: none; /*Elimina el subrayado de los enlaces*/			
+	padding: 10px;
+}
+.menu_hover li a:hover{
+	background-color: rgb(51,153,255);
+	font-weight: bold;
+}
+/*-- Menu Lateral -------------------------------------------*/
+ul#menu_lateral{
+	width: 100%; 
+	list-style: none; /*Elimina los bullets típicos del menu*/
+	background-color: rgb(34,60,145);
+	margin: 0px;
+	padding: 0px; 
+}
+ul#menu_lateral li{
+	border: 1px solid red;
+}
+ul#menu_lateral li a{
+	display:block; 
+	color: white;
+	text-align: center;
+	text-decoration: none; 
+	padding: 14px 0 10px 0px;
+}
+/*-- Sección 2 ----------------------------------------------*/
+
+#sec2 div{
+ 	border: 1px solid;
+ 	margin-left: 20px;
+ 	margin-bottom: 20px;
+}
+
+#sec2 h1{
+	color: blue;
+	text-decoration: underline;
+	font-size: 2.5em;
+}
+
+.btnsec2{
+	margin-left: 70px;
+	cursor: pointer;	
+}
+
+#sec2 table{
+	border-collapse: collapse; /* quita el marco doble de la tabla*/
+}
+
+#sec2 table td{
+	width: 250px;
+	height: 80px;
+}
+

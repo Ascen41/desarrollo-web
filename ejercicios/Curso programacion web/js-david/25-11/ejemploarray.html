@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var dnil = prompt("Introduzca su DNI");
+        dnil=dnil.toUpperCase();
+    var letra =  dnil.substring(dnil.length - 1,dnil.length );
+    var numero = dnil.substring(0, dnil.length - 1);
+    if (isNaN(numero) ) {
+        alert("No has escrito un número")
+        
+    }else{
+    if (numero < 0 || numero > 99999999){
+    alert("El DNI introducido no es correcto");   
+    
+}
+var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D',
+'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E',
+'T'];
+var resto = numero%23;
+if (letras[resto]!=letra) {
+    alert("La letra de su DNI no es correcta");
+}else {
+    alert("Su DNI " + dnil + " es correcto.");
+}
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+     function cambiocolor(element){
+        
+         console.log(getComputedStyle(element).backgroundColor);
+         document.body.style.backgroundColor=getComputedStyle(element).backgroundColor;
+     }
+     function titulo(element){
+        document.title= element;
+     }
+     
+
+ </script>
+ <style>
+        ul.navega li {
+              display: inline-block;
+              float: none;
+              border: 1px solid purple;
+              background: navy;
+              color:white;
+              text-align: center;
+              width: 23%;
+              height: 3em;
+
+        }
+        .vertical{
+            list-style-type:none;
+            float: left;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+        }
+        ol.vertical li{
+            border: 1px solid purple;
+            background: navy;
+            color:white;
+            text-align: center;
+            display: block;
+            height: 3em;
+        }
+        #tabla{
+            float:right;
+            width: 80%; 
+            margin: auto; 
+            padding: auto;
+            margin-top: 100px; 
+        }
+        #a{
+            background: black;
+            width: 150px;
+            height: 50px ;
+        }
+        #b{
+            background: blue;
+            width: 150px;
+            height: 50px ;
+        }
+        #c{
+            background: yellowgreen;
+            width: 150px;
+            height: 50px;
+        }
+        #d{
+            background: red;
+            width: 150px;
+            height: 50px;
+        }
+        #e{
+            background: pink;
+            width: 150px;
+            height: 50px;
+        }
+        #f{
+            background: lightblue;
+            width: 150px;
+            height: 50px;
+        }
+        #g{
+            background: yellow;
+            width: 150px;
+            height: 50px;
+        }
+        #h{
+            background: darkgreen;
+            width: 150px;
+            height: 50px;
+        }
+        #i{
+            background: darkgrey;
+            width: 150px;
+            height: 50px;
+        }
+        #caja1{
+            border: solid 2px navy;
+            float: left;
+            width: 80%;
+            height: 500px;
+            margin-top: 20px;
+            
+        }
+        #menuvertical{
+            border: solid 2px navy;
+            float: left;
+            width: 20%;
+            margin-top: 20px;
+            height: 500px;
+        }
+        form{
+            text-align: center;
+        }
+        p{
+            font-size: 40px;
+            margin-top: 80px;
+            margin-left: 80px;
+        }
+      </style>
+</head>
+
+<body>
+    <img src= "img/oceanic.jpg">
+        <ul class="navega">
+                <li>Inicio</li>
+                <li>Viajes</li>
+                <li>Registro</li>
+                <li>Contacto</li>
+        </ul>
+        <div id="menuvertical">
+        <ol class="vertical">
+                <li>Vuelo</li>
+                <li>Hotel</li>
+                <li>Vuelo+hotel</li>
+                <li>Escapadas</li>
+                <li>Camping</li>
+        </ol>
+        </div>
+        <div id="caja1">
+        <p>Cambiando el titulo y color de fondo</p>
+        <form>
+            <input type="button"onclick="titulo(this.value)" value="Pagina 1">
+            <input type="button"onclick="titulo(this.value)" value="Oceanic Airlines">
+            <input type="button"onclick="titulo(this.value)" value="Curso de JavaScript">
+            <input type="button"onclick="titulo(this.value)" value="Alberto">
+          </form>
+        <div id="tabla">
+        <table>
+                <tr>
+                  <td id="a" onmouseover="cambiocolor(this)"></td>
+                  <td id="b" onmouseover="cambiocolor(this)"></td>
+                  <td id="c" onmouseover="cambiocolor(this)"></td>
+                </tr>
+                <tr>
+                  <td id="d"onmouseover="cambiocolor(this)"></td>
+                  <td id="e"onmouseover="cambiocolor(this)"></td>
+                  <td id="f"onmouseover="cambiocolor(this)"></td>
+                </tr>
+                <tr>
+                  <td id="g"onmouseover="cambiocolor(this)"></td>
+                  <td id="h"onmouseover="cambiocolor(this)"></td>
+                  <td id="i"onmouseover="cambiocolor(this)"></td>
+                </tr>
+        </table>
+        </div>
+        </div>    
+</body>
+</html>

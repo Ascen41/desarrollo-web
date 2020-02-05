@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio extra Formularios</title>
+</head>
+<body>
+	<h1>Revista abierta</h1>
+	<form>
+		<fieldset>
+			<legend>Datos personales</legend>
+			<label for="idfname">Nombre:</label>
+			<input id="idfname" type="text" name="v_fname">
+			<label for="idlname1">1er apellido</label>
+			<input id="idlname1" type="text" name="v_lname1">
+			<label for="idlname2">2do apellido</label>
+			<input id="idlname2" type="text" name="v_lname2">
+			<br/><br/>
+			<label for="idadrs">Dirección:</label>
+			<input id="idadrs" type="text" name="v_adress" style="width:500px" placeholder="Calle o plaza, número y piso ...">
+			<br/><br/>
+			<label for="idemail">Email: </label>
+			<input id="idemail" type="email" name="v_email" placeholder="Introduce tu correo...">
+			<br><br>
+			<LABEL for="idpsw">Contraseña</LABEL>
+			<input id="idpsw" type="password" name="v_psw">
+			<br><br>
+			<label>Sexo:</label><br/>
+			<input type="radio" name="v_sexo" id="idman" checked="checked" /><label for="idman">Varón</label><br/>
+			<input type="radio" name="v_sexo" id="idwoman" /><label for="idwoman">Mujer</label><br/>
+			<br/><br>
+		</fieldset>
+		<br>
+
+		<fieldset>
+			<legend>Nivel de estudios e interses</legend>
+
+			<!-- Radiobutton...-->
+			<label>Nivel de estudios:</label><br/>
+			<input type="radio" name="v_radio" id="idcert" checked="checked"/><label for="idcert">Certificado escolar</label>
+			<br/>
+			<input type="radio" name="v_radio" id="ideso" /><label for="ideso" >Graduado ESO</label><br/>
+			<input type="radio" name="v_radio" id="idbatx"/><label for="idbatx">Bachiller+formación profesional</label><br/>
+			<input type="radio" name="v_radio" id="iddipl"/><label for="iddipl">Diplomado</label><br/>
+			<input type="radio" name="v_radio" id="iddoct"/><label for="iddoct">Licenciado o Doctorado</label><br/>
+			<br>
+
+			<!-- checkbox...-->
+			<label>Recibir artículos sobre los siguientes temas:</label><br/>
+			<input type="checkbox" name="v_music" id="idmusic" /><label for="idmusic">Música</label><br/>
+			<input type="checkbox" name="v_sport" id="idsport" /><label for="idsport">Deportes</label><br/>
+			<input type="checkbox" name="v_cinem" id="idcinem" /><label for="idcinem">Cine</label><br/>
+			<input type="checkbox" name="v_sport" id="idbooks" /><label for="idsport">Libros</label><br/>
+			<input type="checkbox" name="v_cinem" id="idscien" /><label for="idscien">Ciencia</label><br/>
+			<br/>
+
+		</fieldset>
+		<br>
+
+		<fieldset>
+			<legend>Datos sobre la revista</legend>
+		</fieldset>
+		<br>
+		
+		<fieldset>
+			<legend>Comenzar de nuevo</legend>	
+		</fieldset>
+		<br>
+
+		<fieldset>
+			<legend>Enviar</legend>	
+		</fieldset>
+		<br>
+
+	</form>
+</body>
+</html>

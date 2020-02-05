@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Petición de números hasta pulsar cancelar mostrandote el sumatorio de todos los valores introducidos</title>
+
+    <script type="text/javascript">
+        //Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+
+
+        //declaramos primero una variable llamada suma
+        var suma = 0;
+        //creamos un bucle do...while para introducir varios valores
+        do {
+            //solicitamos a trraves de un prompt que el ususario introduzca un número
+            var numero = prompt("Introduce un numero");
+            //debemos comprobar que realmente el valor inroducido sea un número a traves de un if (si un número es igual a un número)
+            if (Number(numero) == numero) {
+                //convertimos el numero en un número entero
+                numero = Number(numero);
+                //sumamos lo que hay en la variable suma con ese número
+                suma = suma + numero;
+            }
+            //si no se pulsa ningun número, entonces (While....)
+            else {
+                //si pulsamos aceotar y no introducimos un valor válido segun la condicion if ha de ser un valor numerico si nó, nos devolverá a traves de un alert un mensaje q nos mostrará una frase que nos indicara que Numero + "no es un número"
+                if (numero != undefined) {
+                    alert(numero + " No es un numero");
+                }
+            }
+            //VOLVEMOS ARRIBA MIENTRAS NO SE PULSE CANCELAR
+        } while (numero != undefined);
+        //SI SE PULSÓ CANCELAR SALE DEL BUCLE E IMPRIME EL RESULTADO que será la suma de todos los números introducidos
+        document.write(suma);
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

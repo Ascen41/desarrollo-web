@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+		<meta charset="UTF-8">
+		<meta name="description" content="Formulario">
+		<title>Formulario de registro - Mi web</title>
+		<style>
+			label:not(.inline), input:not(.inline), textarea{
+				display: block;
+			}
+		</style>
+		<script>
+
+		function vnombre(){
+			res=false;
+			var valor=document.getElementById("lnombre").value;
+			var espacios = /^\s+$/;
+
+			if (valor.length==0 || espacios.test(valor)){
+				document.getElementById("lnombre_error").style="color:red; font-size:10px;display:block";
+				document.getElementById("lnombre").style="border:1px solid red";
+				res=false;
+				
+			}else{
+				document.getElementById("lnombre_error").style="color:red; font-size:10px;display:none";
+				document.getElementById("lnombre").style="border:1px solid grey";
+				res=true;
+				
+			}	
+			return res;
+		}
+
+
+		function vapellido1(){
+			res=false;
+			var valor=document.getElementById("lapellido1").value;
+			var espacios = /^\s+$/;
+
+			if (valor.length==0 || espacios.test(valor)){
+				document.getElementById("lapellido1_error").style="color:red; font-size:10px;display:block";
+				document.getElementById("lapellido1").style="border:1px solid red";
+				res=false;
+				
+			}else{
+				document.getElementById("lapellido1_error").style="color:red; font-size:10px;display:none";
+				document.getElementById("lapellido1").style="border:1px solid grey";
+				res=true;
+			}	
+			return res;
+		}
+
+
+		function vapellido2(){
+			res=false;
+			var valor=document.getElementById("lapellido2").value;
+			var espacios = /^\s+$/;
+
+			if (valor.length==0 || espacios.test(valor)){
+				document.getElementById("lapellido2_error").style="color:red; font-size:10px;display:block";
+				document.getElementById("lapellido2").style="border:1px solid red";
+				res=false;
+			}else{
+				document.getElementById("lapellido2_error").style="color:red; font-size:10px;display:none";
+				document.getElementById("lapellido2").style="border:1px solid grey";
+				res=true;
+			}	
+			return res;
+		}
+
+
+		function vedad(){
+			res=false;
+			var valor=document.getElementById("edad").value;
+			var espacios=/^\s+$/;
+			var digitos=/^\d+$/;
+
+			if(valor.length==0 || espacios.test(valor)){
+				document.getElementById("edad_error1").style="color:red; font-size:10px;display:block";
+				document.getElementById("edad_error2").style="color:red; font-size:10px;display:none";
+				document.getElementById("edad_error3").style="color:red; font-size:10px;display:none";
+				document.getElementById("edad").style="border:1px solid red";
+				res=false;
+				}else if(!digitos.test(valor)){
+					document.getElementById("edad_error1").style="color:red; font-size:10px;display:none";
+					document.getElementById("edad_error2").style="color:red; font-size:10px;display:block";
+					document.getElementById("edad_error3").style="color:red; font-size:10px;display:none";
+					document.getElementById("edad").style="border:1px solid red";
+					res=false;
+					}else if(valor<18 || valor>65){
+						document.getElementById("edad_error1").style="color:red; font-size:10px;display:none";
+						document.getElementById("edad_error2").style="color:red; font-size:10px;display:none";
+						document.getElementById("edad_error3").style="color:red; font-size:10px;display:block";
+						document.getElementById("edad").style="border:1px solid red";
+						res=false;
+					}else{
+						document.getElementById("edad_error3").style="color:red; font-size:10px;display:none";
+						document.getElementById("edad").style="border:1px solid grey";
+						res=true;
+					}
+					return res;
+			}
+
+			function vtelef(){
+				res=false;
+				var valor=document.getElementById("ltelefono").value;
+				var espacios = /^\s+$/;
+				var tel=/^\+\d{2}\s\d{3}-\d{2}-\d{2}-\d{2}$/;
+
+				if (valor.length==0 || espacios.test(valor)){
+					document.getElementById("ltelefono_error1").style="color:red; font-size:10px;display:block";
+					document.getElementById("ltelefono_error2").style="color:red; font-size:10px;display:none";
+					document.getElementById("ltelefono").style="border:1px solid red";
+					res=false;
+					}else if(!tel.test(valor)){
+						document.getElementById("ltelefono_error1").style="color:red; font-size:10px;display:none";
+						document.getElementById("ltelefono_error2").style="color:red; font-size:10px;display:block";
+						document.getElementById("ltelefono").style="border:1px solid red";
+						res=false;
+					}else{
+						document.getElementById("ltelefono_error2").style="color:red; font-size:10px;display:none";
+						document.getElementById("ltelefono").style="border:1px solid grey";
+						res=true;
+					}
+					return res;
+					
+			}
+
+			function vgenero(){
+				res=false;
+				opciones = document.getElementsByName("sexo");
+				cantidad = opciones.length;
+				for(var i=0; i<cantidad; i++) {
+					 if(opciones[i].checked) {
+							document.getElementById("genero_error").style="color:red; font-size:10px;display:none";
+						  res = true;
+						  break; 
+						  }else{
+							document.getElementById("genero_error").style="color:red; font-size:10px;display:block";
+							res=false;
+						  }
+				}
+				return res;
+			}
+
+			function vpoblacion(){
+				res=false;
+				var indice= document.getElementById("lsel").selectedIndex;
+				if (indice==0) {
+					document.getElementById("lista_error").style="color:red; font-size:10px;display:block";	
+					document.getElementById("lsel").style="border:1px solid red";
+					res=false;
+				}else{
+					document.getElementById("lista_error").style="color:red; font-size:10px;display:none";
+					document.getElementById("lsel").style="border:1px solid grey";
+					res=true;
+				}
+				return res;
+				
+			}
+			function vcondiciones(){
+				var res=false;
+				var elemento = document.getElementById("laceptar").checked
+				if (elemento) {
+					document.getElementById("laceptar_error").style="color:red; font-size:10px;display:none";
+					res=true;
+				}else{
+					document.getElementById("laceptar_error").style="color:red; font-size:10px;display:block";
+					res=false;
+				}
+				return res;
+
+			}
+			function validar() {
+				var validado=false;
+				var res1 = vnombre();
+				var res2 = vapellido1();
+				var res3 = vapellido2();
+				var res4 = vedad();
+				var res5 = vtelef();
+				var res6 = vgenero();
+				var res7 = vpoblacion();
+				var res8 = vcondiciones();
+				
+				if (res1 && res2 && res3 && res4 && res5 && res6 && res7 && res8) {
+					validado=true;
+				}
+				console.log(validado)
+				return validado;
+			}
+
+		
+		</script>
+	</head>
+	<body>
+		<form method="GET" action="#" name="miForm" onsubmit="return validar()">
+				<h2>Formulario de registro</h2>			
+				<label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50" onkeyup="vnombre()"></label>
+				<p id="lnombre_error" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				
+				<label for="lapellido1"><strong>Primer apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50" onkeyup="vapellido1()"></label>
+				<p id="lapellido1_error" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				
+				<label for="lapellido2"><strong>Segundo apellido</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50" onkeyup="vapellido2()"></label>
+				<p id="lapellido2_error" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				
+				<label for="edad"><strong>Edad:</strong><input id="edad" type="text" name="edad" maxlength="50" size="50" onkeyup="vedad()"></label>
+				<p id="edad_error1" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				<p id="edad_error2" style="color:red; font-size:10px;display:none">El formato introducido es incorrecto</p>
+				<p id="edad_error3" style="color:red; font-size:10px;display:none">Debes tener entre 18 y 65 años</p>
+				
+				<label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onkeyup="vtelef()">
+				<p id="ltelefono_error1" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				<p id="ltelefono_error2" style="color:red; font-size:10px;display:none">El formato introducido es incorrecto</p>
+				<label><strong>Género:</strong></label>
+				
+				<label for="idhombre" class="inline">Hombre</label>
+				<input type="radio" id="idhombre" name="sexo" class="inline" onclick="vgenero()">
+				
+				<label for="idmujer" class="inline">Mujer</label>
+				<input type="radio" id="idmujer" name="sexo" class="inline" onclick="vgenero()">
+				<p id="genero_error" style="color:red; font-size:10px;display:none">Este campo es obligatorio</p>
+				<label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion" onchange="vpoblacion()">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+				</select>
+				<p id="lista_error" style="color:red; font-size:10px;display:none">Debe elegir una opción</p>
+				<label><strong>Comentarios:</strong></label><textarea name="comentarios" rows="10" cols="50">Tus comentarios aquí...
+			</textarea>
+				
+				<input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+novedades y ofertas.</label>
+<br>
+			 	<input id="laceptar" type="checkbox" name="aceptar" class="inline" onclick="vcondiciones()"><label for="laceptar" class="inline" >Declaro haber leido y aceptar las
+condiciones generales del programa y la normativa sobre protección de
+datos. </label>
+<p id="laceptar_error" style="color:red; font-size:10px;display:none">Debe aceptar las condiciones</p>
+				
+				<input type="submit" name="envio" value="Enviar">
+
+			
+
+
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0294)http://localhost/Ejercicios/HTML/Ejercicio%20comp%20formularios.html?nom=&Primer+Apellido=&Segundo+Apellido=&Direccion=&password=&boton=Mujer&Nivel+de+estudios=diplomado&Aficiones=Libros&Frecuencia%5B%5D=Mensual&Examinar=&comentarios=Escribe+tu+comentario%0D%0A%09&enviar=Enviar+este+formulario -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ejercicio comp</title>
+	
+</head>
+<body>
+	<h1>Revista abierta</h1>
+	<form method="get" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Datos personales</legend>
+			<label for="nom"><p>Nombre:</p></label>
+			<input id="nom" type="test" name="nom" placeholder="Introduce tu nombre">
+			<label for="Primer Apellido">Primer Apellido: </label>
+			<input id="Primer Apellido" type="test" name="Primer Apellido" placeholder="Primer Apellido">
+			<label for="Segundo Apellido">Segundo Apellido: </label>
+			<input id="Segundo Apellido" type="test" name="Segundo Apellido" placeholder="Segundo Apellido">
+<br>
+<br>
+	<label for="Direccion">Direccion </label>
+	<input id="Direccion" type="Direccion" name="Direccion" placeholder="Direccion">
+<br>
+<br>
+	<label for="password">Contraseña: </label>
+	<input id="password" type="password" name="password" placeholder="Introduce tu Contraseña">
+<br>
+<br>
+	<label for="sexo"><p>Sexo</p></label>
+	<input name="boton" type="radio" id="Varon" value="Varon">
+	<label for="boton">Varón
+	</label>
+	<input name="boton" type="radio" id="Mujer" value="Mujer" checked="checked">
+	<label for="boton">Mujer
+	</label>
+</fieldset>
+<fieldset>
+	<legend>Nivel de estudios e intereses</legend>
+	<label for="Nivel de Estudios">Nivel de estudios</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Certificado escolar" value="Certificado escolar">
+	<label for="Certificado escolar">Certificado escolar
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Graduado en ESO" value="Graduado en ESO">
+	<label for="Graduado en ESO">Graduado en ESO
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Bachiller" value="Bachiller">
+	<label for="Bachiller">Bachiller-Formación Profesional
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Diplomado" value="diplomado" checked="checked">
+	<label for="Diplomado">Diplomado
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Licenciado" value="Licenciado">
+	<label for="Licenciado">Licenciado o Doctorado
+	</label>
+<br>
+<br>
+	<label for="Aficiones">Recibir articulos sobre los siguientes temas</label>
+<br>
+	<input name="Aficiones" type="checkbox" id="Musica" value="Musica">
+	<label for="Musica">Musica
+	</label>
+<br>
+	<input name="Aficiones" type="checkbox" id="Deportes" value="Deportes">
+	<label for="Deportes">Deportes
+	</label>
+<br>
+	<input name="Aficiones" type="checkbox" id="Cine" value="Cine">
+	<label for="Cine">Cine
+	</label>
+<br>
+	<input name="Aficiones" type="checkbox" id="Libros" value="Libros" checked="checked">
+	<label for="Libros">Libros
+	</label>
+<br>
+	<input name="Aficiones" type="checkbox" id="Ciencia" value="Ciencia">
+	<label for="Ciencia">Ciencia
+	</label>
+</fieldset>
+<fieldset>
+	<legend>Datos sobre la Revista</legend>
+	<label for="Frecuencia">Frecuencia con la que se recibirá la revista:</label>
+	<select name="Frecuencia[]">
+			<option value="">Semanal</option>
+			<option selected="selected">Mensual</option>
+			<option value="">Trimestral</option>
+			<option value="">Semestral</option>
+			<option value="">Anual</option>
+	</select>
+<br>
+<br>
+Enviar este formulario
+	<input type="file" name="Examinar" value="">
+<br>
+<br>
+<p>Si deseas mandar simplemente una opcion o comentario escribelo aqui</p>
+	<textarea name="comentarios" placeholder="Escribe tu comentario:" rows="2" cols="60">Escribe tu comentario
+	</textarea>
+</fieldset>
+<fieldset>
+	<legend>Comenzar de nuevo</legend>
+	Borrar todos los datos del formulario y volver a empezar: <input type="reset" name="reset" value="reestablecer este formulario">
+</fieldset>
+<fieldset>
+	<legend>Enviar</legend>
+	<p>Enviar formulario por correo electrónico: Al pulsar en el botón de abrirá la página de envío de correo: en esa página pulsa enviar:</p>
+	<input type="submit" name="enviar" value="Enviar este formulario">
+</fieldset>
+
+
+
+</form></body></html>

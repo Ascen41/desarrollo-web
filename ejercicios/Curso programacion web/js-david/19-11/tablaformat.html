@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            
+            width: 50%;
+            margin: auto;
+            margin-top: 100px;;
+        }
+        table, th, td{
+            border: 3px dashed mediumturquoise;
+            border-collapse: collapse;
+
+        }
+    th{
+        background-color: lightblue;
+        height: 100px;
+        font-size: 24px;
+    }
+    td{
+        width: 100px;
+        text-align: center;
+    }
+    tr:first-child th{
+        background-color: lightgrey;
+       
+    }
+    tr:nth-child(even) td{
+        background-color: lightyellow;
+    }
+    tr:nth-child(2) th{
+        background: url("../../imagenes/monedas/euro.png")
+        no-repeat;
+        background-size: 33px 33px;
+        background-position:2px 35px;
+        background-color: lightblue;
+    }
+    tr:nth-child(3) th{
+        background: url("../../imagenes/monedas/dolar.png")
+        no-repeat;
+        background-size: 28px 28px;
+        background-position:4px 35px;
+        background-color: lightblue; 
+    }
+    tr:nth-child(4) th{
+        background: url("../../imagenes/monedas/pound.png")
+        no-repeat;
+        background-size: 28px 28px;
+        background-position:4px 35px;
+        background-color: lightblue; 
+    }
+    tr:nth-child(5) th{
+        background: url("../../imagenes/monedas/yen.png")
+        no-repeat;
+        background-size: 37px 37px;
+        background-position:0px 33px;
+        background-color: lightblue; 
+    }
+    p{
+        margin-left:35px;
+    }
+
+    </style>
+</head>
+<body>
+   <div id=container>
+        <table>
+            <tr>
+                <th>Cambio</th>
+                <th>Compra</th>
+                <th>Venta</th>
+                <th>Máximo</th>
+                <th>Mínimo</th>
+            </tr>
+            <tr>
+                <th><p>Euro/Dolar</p></th>
+                <td>1.2524</td>
+                <td>1.2527</td>
+                <td>1.2539</td>
+                <td>1.2488</td>
+            </tr>
+            <tr>
+                <th><p>Dolar/Yen</p></th>
+                <td>119.01</td>
+                <td>119.05</td>
+                <td>119.82</td>
+                <td>119.82</td>
+            </tr>
+            <tr>
+                <th><p>Libra/Dolar</p></th>
+                <td>1.8606</td>
+                <td>1.8611</td>
+                <td>1.8651</td>
+                <td>1.8522</td>
+            </tr>
+            <tr>
+                <th><p>Euro/Yen</p></th>
+                <td>149.09</td>
+                <td>149.13</td>
+                <td>149.79</td>
+                <td>148.96</td>
+                </tr>
+        </table>
+   </div>
+</body>
+</html>

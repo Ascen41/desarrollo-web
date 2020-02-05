@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+
+/*
+function incrementar(){
+    
+    var defecto = document.getElementById("texto").style.fontSize;
+    var numero = defecto.substring(0,defecto.length-2);
+    ++numero;
+    var final=numero+"px";
+    document.getElementById("texto").style.fontSize=final;
+}
+
+function disminuir(){
+    
+    var defecto = document.getElementById("texto").style.fontSize;
+    var numero = defecto.substring(0,defecto.length-2);
+    --numero;
+    var final=numero+"px";
+    document.getElementById("texto").style.fontSize=final;  
+}    
+
+function defecto(){
+    document.getElementById("texto").style.fontSize="14px"; 
+}
+    */
+    function cambiarTamany(e){
+    
+    var defecto = document.getElementById("texto").style.fontSize;
+    var numero = defecto.substring(0,defecto.length-2);
+
+    switch(e.tecxtConten){
+        case'+':
+            ++numero;
+        break;
+        case'-':
+            --numero;
+        break;
+        case'Default':
+            numero=14;
+        break;
+    }
+    
+ 
+    var final=numero+"px";
+    document.getElementById("texto").style.fontSize=final;
+}
+   
+
+</script>
+
+
+
+
+
+
+
+
+
+        
+    
+
+</script>
+<body>
+    <p id ="texto" style="font-size:14px">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci.
+        Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo
+        ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+        Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit
+        amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+        faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio
+        urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Duis scelerisque.</p>
+
+        <!--<button  type="button" onclick="incrementar()">+</button>
+        <button  type="button"onclick="disminuir()">-</button>
+        <button  type="button"onclick="defecto()">Default</button>-->
+
+
+        <button  type="button" onclick="cambiarTamany(this)">+</button>
+        <button  type="button"onclick="cambiarTamany(this)">-</button>
+        <button  type="button"onclick="cambiarTamany(this)">Default</button>
+
+</body>
+</html>

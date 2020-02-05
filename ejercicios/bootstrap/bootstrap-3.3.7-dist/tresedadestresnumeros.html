@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>3 edades y 3 números</title>
+
+    <script type="text/javascript">
+        /*Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor*/
+
+        //PEDIMOS TODOS LOS DATOS
+        var nombre1 = prompt("Nombre 1:");
+        var edad1 = Number(prompt("Edad 1:"));
+
+        var nombre2 = prompt("Nombre 2:");
+        var edad2 = Number(prompt("Edad 2:"));
+
+        var nombre3 = prompt("Nombre 3:");
+        var edad3 = Number(prompt("Edad 3:"));
+
+        //Función max() devuelve el mayor de los argumentos pasados.
+        var maximo = Math.max(edad1, edad2, edad3);
+
+        if (maximo == edad1) {
+            document.write("El mayor es: " + nombre1);
+        }
+        if (maximo == edad2) {
+            document.write("El mayor es: " + nombre2);
+        }
+        if (maximo == edad3) {
+            document.write("El mayor es: " + nombre3);
+        }
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

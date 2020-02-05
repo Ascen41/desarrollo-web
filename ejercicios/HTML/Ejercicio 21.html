@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio21</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Informacion del producto</h1>
+	<form method="get" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Datos básicos</legend>
+			<label for="nom"/><p>Nombre:</p></label>
+			<input id="nom" type="test"name="nom" placeholder="Introduce tu nombre" />
+			<label for="Descripcion"><p>Descripcion</p>
+		</label>
+		<textarea name="Descripcion" placeholder="Comentarios" rows="2" cols="60">
+		</textarea>
+<br>
+<br>
+		<label for="Foto"/>Foto:
+		<input type="file" name="Elegir..."/>
+<br>
+<br>
+		<input name="VIsitas" type="checkbox" id="Peli" />
+				<label for="Visitas"/>Añadir contador de visitas
+				</label>
+<br>
+<br>
+</fieldset>
+<fieldset>
+	<legend>Datos económicos</legend>
+	<label for="Precio">Precio
+		<input type="number" name="numero" /> €
+	</label>
+	<label for="Impuestos">Impuestos
+		<select name="porcentajes">
+			<option>4%</option>
+			<option selected="selected">7%</option>
+			<option>16%</option>
+		</select>
+	</label>
+	<br>
+<br>
+	<label for="promocion">Promocion
+	<p>
+  <input type="radio" name="boton" value="1">Transporte gratuito<br>
+  <input type="radio" name="boton" value="2">Descuento del 5%<br>
+  <input type="radio" name="boton" value="0" checked>Ninguno
+</p>
+</fieldset>
+
+</body>
+</html>

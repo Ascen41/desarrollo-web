@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>REGISTRO</title>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/registro.css">
+    <script type="text/javascript" src="js/registro.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>PELICULAS</h2>
+    </header>
+    <nav>
+        <nav>
+            <ul id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+            </ul>
+        </nav>
+    </nav>
+    <div id="content">
+        <form method="GET" action="#" name="miForm" onsubmit="return validar()">
+            <fieldset>
+                <legend>Información personal</legend>
+
+                <div>
+                    Nombre *<input type="text" name="nombre" id="lnombre" onkeyup="minombre()">
+                    <p id="nomerror" class="escondido">Por favor introduce tu nombre</p>
+                </div>
+                <div>
+                    Apellidos *<input type="text" name="apellidos" id="lapellidos" onkeyup="miapellido()">
+                    <p id="aperror" class="escondido">Por favor introduce tu apellido</p>
+                </div>
+                <div>
+                    Dirección <input type="text" name="direccion">
+                </div>
+                <div>
+                    Teléfono * <input type="text" name="telefono" id="ltelefono" onkeyup="mitelefono()">
+                    <p id="telerror" class="escondido">Por favor introduce tu teléfono</p>
+                </div>
+                <div>
+                    Fecha de nacimiento * <input type="date" name="nat" id="lnat" onkeyup="micumple()">
+                    <p id="daterror" class="escondido">Por favor introduce tu fecha de nacimiento</p>
+                </div>
+                <div>
+                    Género <input type="radio" name="sexo" value="Hombre" id="macho" onchange="migenero()">Hombre
+                    <input type="radio" name="sexo" value="Mujer" id="hembra" onchange="migenero()">Mujer
+                    <p id="generror" class="escondido">Por favor escoge una opción</p>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Información laboral</legend>
+                <div>
+                    Profesión <select name="prof">
+						<option>--</option>
+						<option>administrativo</option>
+						<option>profesor</option>
+						<option>Medico</option>
+						<option>Informatico</option>
+						<option>Ingeniero</option>
+						</select>
+                </div>
+                <div>
+                    Dirección <input type="text" name="direcciontr">
+                </div>
+                <div>
+                    Teléfono * <input type="text" name="telefono2" id="otelefono" onkeyup="sutelefono()">
+                    <p id="telrror" class="escondido">Por favor introduce tu teléfono</p>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Datos Registro</legend>
+                <div>
+                    Email <input type="mail" name="email" id="correo" onkeyup="miemail()">
+                    <p id="errormail" class="escondido">Por favor introduce tu mail</p>
+                </div>
+                <div>
+                    Contraseña <input type="password" name="contraseña" id="pass" onkeyup="mipassword()">
+                    <p id="errorpass" class="escondido">Por favor introduce tu contraseña</p>
+                </div>
+            </fieldset>
+
+            <div>
+                <span class=texto><p><strong>Protección de datos de carácter personal</strong></p>
+                <p>En cumplimiento con lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, sobre protección de datos de carácter personal, le informamos que sus datos personales recogidos por medio de los formularios de este web serán tratados
+                    de forma confidencial y quedarán incorporados a los archivos de la Universidad Politécnica de Catalunya parra llevar a cabo una gestión correcta y responder a las consultas o sugerencias que propone en los formularios. De la misma
+                    manera, le informamos de que puede ejercer los derechos de acceso, rectificación, cancelación, de sorpresa y oposición ante el Servicio de Comunicación y Promoción, calle Jordi Girona, 31, Barcelona 08034, o a la dirección electrónica:
+                    <a href="">info@cdsarti.org</a>. Toss a coin to your Witcher, O'Valley of plenty, O'valley of plenty, Oooh.</p>
+                <input type="checkbox" name="condiciones" value="condiciones" id="valido" onchange="miaceptar()">Acepto las condiciones del servicio.
+                <p id="errorval" class="escondido">Campo obligatorio</p>
+            </div>
+            <div class="validar">
+                <input type="submit" name="envio" value="Registrar">
+            </div>
+        </span>
+
+            </div>
+
+            <footer>
+                <div id="pie">
+                    <span class="letra"> &copy; Películas 2020. Derechos reservados</span>
+                    <br>
+                    <span class="letra">Tel: +34 938957689</span>
+                    <br>
+                    <span class="letra">Movil: +34 636259727</span>
+                </div>
+            </footer>
+
+
+</body>
+
+</html>

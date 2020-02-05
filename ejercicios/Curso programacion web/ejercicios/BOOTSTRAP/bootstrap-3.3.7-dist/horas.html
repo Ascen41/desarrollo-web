@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+                                         window.onload = function hora() {
+                                         var hora = new Date();
+                                         document.getElementById("reloj").innerHTML = hora;
+
+
+                                        console.log(hora.getHours()); //hora
+                                        console.log(hora.getMinutes()); //minuto
+                                        console.log(hora.getSeconds()); // segundos
+                                        console.log(hora.getDay()); // dia de la semana
+                                        console.log(hora.getMonth()); //mes
+                                        console.log(hora.getDay()); //dia del mes
+                                        console.log(hora.getFullYear()); //año
+                                        console.log(hora.getDate()); //dia del mes
+                                        }
+                                        setInterval(hora, 1000); {
+                                        var horareal = new Date();
+                                        document.getElementById("reloj").innerHTML = horareal;
+                                        console.log(horareal.getHours());
+                                        console.log(horareal.getMinutes());
+                                        console.log(horareal.getSeconds());
+                                        console.log(horareal.getDay());
+                                        console.log(horareal.getMonth());
+                                        console.log(horareal.getDay());
+                                        console.log(horareal.getFullYear());
+                                        console.log(horareal.getDate());
+                                        }
+                                                                                                    */
+    </script>
+</head>
+
+<body>
+    <div id="reloj"></div>
+
+    <script>
+        function horaact() {
+            var hora = new Date();
+            var h = hora.getHours();
+            var m = hora.getMinutes();
+            var s = hora.getSeconds();
+            h = cero(h);
+            m = cero(m);
+            s = cero(s)
+            document.getElementById('reloj').innerHTML = h + ':' + m + ':' + s;
+        }
+        setInterval(horaact, 1000)
+
+        function cero(i) {
+            if (i < 10) {
+                i = '0' + i
+            };
+            return i;
+        }
+    </script>
+
+</body>
+
+</html>

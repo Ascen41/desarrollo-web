@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2 Examen UF1841</title>
+	<meta charset="utf-8">
+
+</head>
+<body>
+	<h1> Formulario de registro - Mi web.</h1>
+	<form method="get" enctype="multipart/form-data">
+		<label for="nom">Nombre:</label>
+		<input id="nom" type="test"name="nom" placeholder="Introduce tu nombre" maxlength=“50” type=“text”/>
+<br>
+<br>
+		<label for="Apellidos">Apellidos: </label>
+		<input id="apellidos"  type="test"name="apellidos" placeholder="Introduce tu apellidos" axlength=“50”/>
+<br>
+<br>
+		<label for="sexo"><p>Sexo</p></label>
+		<input name="boton" type="radio"id="Varon" value="Varon" />
+		<label for="boton">Varón
+		</label>
+		<input name="boton" type="radio" id="Mujer" value="Mujer" checked="checked" />
+		<label for="boton">Mujer
+		</label>
+<br>
+<br>
+	<label for="email">Correo electrónico </label>
+	<input id="email"  type="email" name="email" placeholder="Introduce tu Correo electronico" />
+<br>
+<br>
+<br>
+	<input name="recibirinfo" type="radio" id="recibirinfo" value="recibirinfo" checked="checked"/>
+	<label for="recibirinfo">Deseo recibir información sobre novedades y ofertas
+	</label>
+<br>
+	<input name="declaro" type="radio" id="declaro" value="declaro" />
+	<label for="declaro"/>Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos
+	</label>
+<br>
+<input type="submit" name="enviar"value="Enviar este formulario" />
+<br>
+<br>
+				<label for="provincia">Provincia</label>
+				<select name="provincia[]">
+				<option>Alicante</option>
+				<option>Madrid</option>
+				<option>Sevilla</option>
+				<option>Valencia</option>
+				</select>
+<br>
+<br>
+	
+	<textarea name="comentarios" rows="2" cols="30"> Comentarios...</textarea>
+	<label for="coentarios">Comentarios</label>
+
+</body>
+</html>

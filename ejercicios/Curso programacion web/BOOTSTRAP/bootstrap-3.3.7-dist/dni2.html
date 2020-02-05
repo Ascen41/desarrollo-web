@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>dni2</title>
+    <script type="text/javascript">
+        /* Crea una función que reciba un parámetro, un dni, y devuelva la letra del mismo. Si el dni pasado tiene algún error devolverá “”.*/
+
+        function letraDni(numero) {
+            //String con las letras del dni
+            var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            var letra = "";
+            //Si el número tiene 8 cifras
+            if ((numero > 9999999) && (numero < 100000000)) {
+                //El resto de dividir el número por 23 lo guardamos en indice
+                var indice = numero % 23;
+                //Ese indice coincide con la posición en el String
+                //La función charAt() coge el caracter de la posición indice
+                letra = letras.charAt(indice);
+            }
+            return letra;
+        }
+
+        var numero = Number(prompt("Introduce tu dni"));
+        var letra = letraDni(numero);
+        if (letra != "") {
+            document.write("La letra es " + letra);
+        } else {
+            document.write("Número erróneo");
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

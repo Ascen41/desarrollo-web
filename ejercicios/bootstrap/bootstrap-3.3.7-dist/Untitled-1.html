@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+      //Infinity, hace referencia a un valor numérico infinito y positivo (también existe el valor –Infinity para los infinitos negativos)
+    var i=10;
+    var x=0;
+    var op = i/x;
+    if(op=="Infinity") alert("la division");
+    else alert(i/x)
+    //toFixed(digitos), devuelve el número original con tantos decimales como los indicados por el parámetro digitos y realiza los redondeos necesarios.
+//NaN, (del inglés, "Not a Number") se emplea para indicar un valor numérico no definido.
+//isNaN(), permite proteger a la aplicación de posibles valores numéricos no definidos
+    //var num_dni =prompt("introduce el número");
+   //if(dni<=0|| dni>=99999999){
+    //    alert();
+   //}else{
+    //    var pos = num=dni%23;
+   //}
+  var num_dni =prompt("introduce el número");
+    do{
+        var num_dni =prompt("introduce el número");
+
+    }while(num_dni.length<8)
+
+   if(isNaN(num_dni)){
+       alert("no es numero");
+   }else{
+       if (dni<=0|| dni>=99999999){
+           alert("No esta dentro del rango");  
+       }
+        else{
+            var pos = num=dni%23;
+        }
+    }
+        //crear una funcion
+
+    var x=4;
+    var y=2;
+    var z = resta2(x,y);
+    alert(resta2(x,y))
+
+    function resta2(num1, num2){
+        var res = num1 - num2;
+        return res;
+        //alert (res); no se ejecutará nada despues del return.
+    }
+
+
+
+        
+    
+ </script>
+ 
+</head>
+<body>
+    
+</body>
+</html>

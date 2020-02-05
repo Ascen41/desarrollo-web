@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* Ejercicio Factorial 
+        var j = prompt("Introduce un número");
+        var fact = 1;
+    for (i=1 ; i<=j; i++ ) {
+         fact = fact*i;
+    }
+    alert(fact);
+*/
+
+/*Ejercicio b1
+
+var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var i= 0;
+while (i<meses.length ) {
+    alert(meses[i]);
+    i++;
+}
+*/
+
+/* Ejercicio b2
+
+var x = 2;
+ while (x<100){
+x=x*x;
+}
+alert(x);
+*/
+
+/*
+for (i=2; i<100; i*i){   
+}
+alert(i);
+*/
+
+/* Ejercicio B3
+
+var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+var x = prompt("Introduce un mes")
+for(i in meses){
+    if(meses[i]==x){
+        alert(i);
+    }  
+}
+
+
+
+/* Ejercicio b4
+
+var x = prompt("Introduce un número del 0 al 10");
+
+if(x>0 && x<=10){
+
+for (;x>0;x--){
+   var y = confirm(x);
+    if (y==false){
+        break;
+    }
+} 
+    
+
+}else{
+    alert("Número no permitido");
+
+}
+
+*/
+
+/*Ejercicio b5
+
+var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+var x = meses.length;
+for(i in meses){
+    x--;
+    alert(x);
+}
+*/
+
+/*Ejercicio b6
+var x = prompt("Inotroduce un texto de más de 5 carácteres")
+while (x.length<5 ) {
+    var x = prompt("Inotroduce un texto de más de 5 carácteres")
+}
+*/
+
+var texto = prompt("Inotroduce un texto");
+var x = 0;
+while(x<texto.length && texto.charAt(x)!="$"){
+var y = texto.charAt(x);
+alert(y);
+x++;
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ejercicio 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+    <script>
+        function validar() {
+            var valido = true;
+
+            if (validarNombre()) { //esto equivale al siguiente if else, puesto que realizamos la misma funcion  en validar nombre.
+
+            } else {
+                valido = false;
+            }
+
+            /*  if (document.getElementById("nom").value!="" && document.getElementById("nom").value.length>5){
+                  document.getElementById("error_nom").style.display="none";
+                  document.getElementById("nom").style.border="1px solid grey";
+              }else{
+                  document.getElementById("error_nom").style.display="block";
+                  document.getElementById("nom").style.border="1px solid red";
+                  valido=false;
+              }*/
+            if (document.getElementById("apellidos").value != "" && document.getElementById("apellidos").value.indexOf("-") >= 0) { //indexOf me devielve la posicion dentro de la cadena de texto
+                document.getElementById("error_apellidos").style.display = "none";
+                document.getElementById("apellidos").style.border = "1px solid grey";
+
+            } else {
+                document.getElementById("error_apellidos").style.display = "block";
+                document.getElementById("apellidos").style.border = "1px solid red";
+                valido = false;
+            }
+            return valido;
+        }
+
+        function validarNombre() {
+            if (document.getElementById("nom").value != "" && document.getElementById("nom").value.length > 5) {
+                document.getElementById("error_nom").style.display = "none";
+                document.getElementById("nom").style.border = "1px solid grey";
+                return true;
+            } else {
+                document.getElementById("error_nom").style.display = "block";
+                document.getElementById("nom").style.border = "1px solid red";
+                return false;
+            }
+        }
+        /*<form insubmint="return validar()" 
+        // en JQuery accedo al formulario que tiene que tener un id...
+        $("#miform").submit(function (event){
+            var valido=validar()
+            //declaramos la variable...
+            if(valido)
+            event.preventDefault() 
+            //impide el envio del formulario el evento por defecto...
+        })
+        //introducimos dos atributos nuevos en html, introduciomos el mensaje de error y los requisitos...mirar el xj mas abajo.*/
+    </script>
+
+</head>
+
+<body>
+    <form method="get" onsubmit="return validar();">
+        <label> Nombre </label>
+        <input type="text" name="nom" id="nom" onchange="validarNombre()" onblur="alert">
+        <!--xj  <input type="text" name="nom" id="nom" onchange="validarNombre()" onblur="alert" data-msg="" data-rule="">-->
+        <!--como usamos en onchange en el ejercicio 3 de la página 73-->
+        <p id="error_nom" class="error" style="display:none;">texto mayor de 5 letras</p>
+        <label> Apellidos </label>
+        <input type="text" name="apellidos" id="apellidos">
+        <p id="error_apellidos" class="error" style="display:none">debe contener un guion</p>
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+
+</html>

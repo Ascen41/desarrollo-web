@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Ejemplo getElementById</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+
+function changeColor(newColor) {
+   var elem = document.getElementById('para');
+   elem.style.color = newColor;
+}
+
+</script>
+
+</head>
+<body>
+    <p id="para">Cualquier texto acá</p>
+    <button onclick="changeColor('blue');">Azul</button>
+    <button onclick="changeColor('red');">Rojo</button>
+</body>
+</html>

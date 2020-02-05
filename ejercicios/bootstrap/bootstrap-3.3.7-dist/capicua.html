@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /* Realiza un script que pida una cadena de texto y la devuelva al revés.Es decir, si tecelo "hola que tal" debera mostrar "lat euq aloh"
+         */
+        window.onload = function() {
+
+            var cadenatexto = prompt("Introduce una cadena de texto:");
+            var palabras = cadenatexto.split("");
+            var reves = palabras.reverse();
+            var vacio = reves.join("");
+            document.getElementById("delreves").innerHTML = vacio;
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

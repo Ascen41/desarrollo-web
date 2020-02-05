@@ -1,0 +1,6 @@
+p::before { 
+  content: "Lee esto -";
+  background-color: lightblue;
+  color: blue;
+  font-weight: bold;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+        
+        label{
+            display: block;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .lateral{
+            width: 20%;
+            float: left;
+            
+        }
+        
+        .contenedor{
+            float: left;
+            width: 100%;
+            padding: 2%;
+           
+        }
+        
+        
+        .contenido{
+            float: left;
+            width:60%;
+            position: relative; 
+        }
+        .lateral p{
+            margin-top: 0;
+            font-weight: bold;
+        }
+        .lateral span{
+            color: red;
+            font-weight: bold;
+        }
+        
+        .contenedor:hover{
+            background-color: lightyellow;
+            color: black;
+        }
+        .hidden{
+         float: left;
+         width: 15%;
+         color: transparent;
+        }
+        .contenedor:hover  .hidden{
+            background-color: lightyellow;
+            color: black;
+           
+        }
+        
+        #lat2{
+            width: 20%;
+            float: left;
+            margin-left:20%;
+            
+        }
+        #lat3{
+            float: left;
+            
+            
+        }
+        #lat4{
+            float:left;
+            width:20% ;
+            
+           
+        }
+        #lat5{
+           float:left;
+           margin-left: 10%;
+           width:30% ;
+          
+            
+        }
+        hr{
+            clear: both;
+            color: lightgrey;
+            size: 30;
+        }
+        #submit{
+            float:right;
+            clear: both;
+        }
+        input:hover{
+            border:2px solid green;
+        }
+        select:hover{
+            border: 2px solid green;
+        }
+        input{
+            position: relative;
+        }
+        
+    </style>
+</head>
+<body>
+
+   <div id="container">
+        <form method="GET" action="dd.html">
+                <div class="contenedor">
+                    <div class="lateral">
+                    <p>Nombre y apellidos <span>*</span></p>
+                </div>
+                    <div class="contenido">
+                        
+                        <input id="nombre" type="text">
+                        
+                        <label for="nombre">Nombre</label>
+                        <input id="papellido" type="text" size="35">
+                        <label for="papellido">Primer apellido</label>
+                        <input id="sapellido" type="text" size="35">
+                        <label for="sapellido">Segundo apellido</label>
+                    </div>
+                    <div class="hidden"> Nombre escondido</div>
+                    
+                </div>
+                
+            
+    
+            <div class="contenedor">
+                    <div class="lateral">
+                    <p>Dirección <span>*</span></p></div>
+                    <div class="contenido">
+                        
+                        <input id="calle" type="text" size="50" >
+                        <label for="calle">Calle, número, piso, puerta</label>
+                    </div>
+                    <div class="hidden"> El código postal es imprescindible para poder recibir los pedidos</div>
+                        <div id=lat2>
+                            <input id="postal" type="text" required>
+                            <label for="postal">Código postal</label>
+                            <select name="provincia" id="provincia">
+                                <option value="" selected > </option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="girona">Girona</option>
+                                <option value="lledia">Lleida</option>
+                                <option value="tarragona">Tarragona</option>
+                            </select>
+                            <label for="provincia">Provincia</label>
+                        </div>
+                        <div id=lat3>
+                            <input id="municipio" type="text">
+                            <label for="municipio">Municipio</label>
+                            <select name="pais" id="pais">
+                                <option value="" selected> </option>
+                                <option value="españa">España</option>
+                                <option value="portugal">Portugal</option>
+                                <option value="francia">Francia</option>
+                                <option value="italia">Italia</option>
+                            </select>
+                            <label for="pais">País</label>
+                        </div>
+                       
+                </div>
+
+                    <div class="contenedor">
+                            <div class="lateral">
+                            <p>Email <span>*</span></p></div>
+                            <div class="contenido">
+                                <input id="mail" type="email" size="35" >
+                            </div>
+                            <div class="hidden">El email es super importante, osea</div>
+                            </div>
+                     <div class="contenedor">
+                            <div class="lateral">
+                            <p>Teléfono <span>*</span></p></div>
+                            <div id=lat4>
+                                    <input type="tel" name="fijo" id="">
+                                    <label for="fijo">Fijo</label>
+                                </div>
+                                <div id=lat5>
+                                    <input type="tel" name="movil" id="">
+                                    <label for="movil">Móvil</label>
+                    </div>
+                    <div class="hidden">Aqui los telefonos y eso</div>
+                </div>
+                <hr>
+                <input id="submit" type="submit" value="Dame de alta &#8594;">
+        </form>
+       
+       </form>
+       
+</body>
+</html>

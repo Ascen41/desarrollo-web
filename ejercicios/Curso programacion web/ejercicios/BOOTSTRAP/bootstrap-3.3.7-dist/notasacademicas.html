@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Mayor de edad</title>
+
+    <script type="text/javascript">
+        //Pide una nota (número). Muestra la calificación según la nota:
+        //0-3: Muy deficiente
+        //3-5: Insuficiente
+        //5-6: Suficiente
+        //6-7: Bien
+        //7-9: Notable
+        //9-10: Sobresaliente
+
+
+        //se ha de crear un bucle para introducir el valor de  las notas académicas a traves de un do...while
+        do {
+            //se crea una variable nota, y se pide al usuario a traves de un prompt que introduzca su nota esto queda registrado en una variable llamada nota
+            var nota = prompt("Introduce tu nota");
+            //si se introduce un número
+            if (Number(nota) == nota) {
+                //la nota debe de estar entre 0 y 10 se comprueba el rango y despues da un mensaje, muy deficiente, insuficiente, suficiente....para esto se usará el else if...else if...y con un alert mostramos el resultado del valor numerico introducido.
+                if (nota > 0 && nota <= 10) {
+                    if (nota < 3) {
+                        alert("Muy deficiente");
+                    } else if (nota < 5) {
+                        alert("Insuficiete");
+                    } else if (nota < 6) {
+                        alert("Suficiente");
+                    } else if (nota < 7) {
+                        alert("Bien");
+                    } else if (nota < 9) {
+                        alert("Notable");
+                        5
+                    } else if (nota >= 9) {
+                        alert("Sobresaliente");
+                    }
+                }
+                //si la nota estuviera fuera del rango 0 a 10 a traves del Else (entonces) creamos un alert que nos indicara que la nota es errónea.
+                else {
+                    alert("Nota erronea");
+                }
+            }
+            //si por el contrario la nota no fuera un numero if(nota != undefined) a traves de un alert indicamos que se ha de introducir un número válido
+            else {
+                //si por el contrario no introducimos nada y pulsamos aceptar el operador entiende que no es undefined respondiendonos a traves de un alert que se ha de introducir un valor valido.
+                if (nota != undefined) { //No es Undefined cuando se pulsa aceptar.
+                    alert("Introduce un numero valido");
+                }
+            }
+            //el bucle volverá arriba mientras se pulse cancelar obligando al usuario a introducir un valor válido
+        } while (nota != undefined); //Undefined es cuando se pulsa Cancelar.
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+  h1{ color: #1e9c7f; }
+ strong{
+    color:red;
+  }
+  span.destacado{
+   color: #e4a633;
+  }
+  h2{
+    color:blue;
+  }
+  p a{
+    color:red;
+  }
+  p a em{
+    color:blue;
+  }
+  span.especial{
+    color: #711e9c;
+  }
+  table,td,th{
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+  table caption{
+    color:blue;
+  }
+  th.especial{
+    color: #e4a633;
+  }
+  td,td{
+    color:green;
+  }
+  tbody tr th{
+    color:red;
+  }
+  td strong{
+    color: #e4a633;
+  }
+  tfoot th{
+    color:red;
+  }
+  div#adicional{
+    color: #a2c514;
+  }
+  div span#especial{
+    color: #f32cda;
+  }
+  div p a{
+    color: #1e9c7f;
+  }
+  th:empty{
+    background-color:red;
+
+  }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Examen Javascript / Ejercico 2</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var EntradaTexto = prompt("Introduce una palabra");
+    if (isNaN(EntradaTexto)) {
+
+        var Longuitud = EntradaTexto.length;
+        var Mayusculas = EntradaTexto.toUpperCase();
+        var Minusculas = EntradaTexto.toLowerCase();
+        var numeroVocales = EntradaTexto.match(/[aeiou]/gi).length;
+
+        console.log("la cadena " + EntradaTexto + " contiene " + Longuitud + " caracteres");
+        console.log("la cadena en mayúsculas es: " + Mayusculas);
+        console.log("la cadena en minusculas es: " + Minusculas);
+        console.log("la palabra " + EntradaTexto + " contiene " + numeroVocales + " vocales");
+
+
+
+    } else {
+        alert("No has escrito una palabra");
+    }
+</script>
+
+</html>

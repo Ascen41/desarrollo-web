@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function nombre(){
+           
+            var valor=document.getElementById("text").value;
+            if (valor.length>=5 && !(/^\s+$/.test(valor)) ) {
+                document.getElementById("text").style.border="1px solid green";
+                document.getElementById("texterror-b").style.display="none";
+                return true;
+            }else{
+                document.getElementById("text").style.border="1px solid red";
+                document.getElementById("texterror-b").style.display="inline";
+                return false;
+            }
+           
+
+        }
+
+        function apellido(){
+            var apellidoarr = document.getElementById("text2").value.split("");
+            var guion = apellidoarr.includes("-");
+            if (guion == true && document.getElementById("text2").value!="") {
+                document.getElementById("text2").style.border="1px solid green";
+                document.getElementById("texterror2-b").style.display="none";
+                return true;
+            }else{
+                document.getElementById("text2").style.border="1px solid red";
+                document.getElementById("texterror2-b").style.display="inline";
+                return false;
+            }
+        }
+        function radio(){
+            var seleccionado = false;
+            var elementos = document.getElementsByName('pregunta');
+            for(i=0; i <elementos.length; i++){
+                if (elementos[i].checked) {
+                    seleccionado = true;
+                    document.getElementById("error_radio").style.display="none";
+                    break;
+                }
+            }
+            if (!seleccionado) {
+                document.getElementById("error_radio").style.display="block";
+            }
+            return seleccionado;
+        }
+        function deportes(){
+            var seleccionado = false;
+            var elementos = document.getElementsByClassName("deportes");
+            for (i=0; i<elementos.length; i++){
+                if (elementos[i].checked){
+                    var seleccionado = true;
+                    document.getElementById("error_deportes").style.display="none";
+                    break;
+                }
+                if (!elementos[i].checked) { 
+                    document.getElementById("error_deportes").style.display="block";
+                }
+            }
+            return seleccionado;
+        }
+        function condiciones(){
+            var seleccionado = false;
+            if (document.getElementById("condiciones").checked) {
+                seleccionado = true;
+            }else{
+                alert("Debes aceptar las condiciones");
+            }
+            return seleccionado
+        }
+
+        function select(){
+            var seleccionado = false;
+            var lista = document.getElementById("instrumentos");
+            var indiceseleccionado = lista.selectedIndex;
+            if (indiceseleccionado!=0) {
+                seleccionado=true;
+                document.getElementById("error_instrumentos").style.display="none";
+                }else{
+                document.getElementById("error_instrumentos").style.display="block";
+                }
+            
+            return seleccionado;
+        }
+
+        function validar() {
+            var res=false;
+            var res1 = nombre();
+            var res2 = apellido();
+            var res3 = radio();
+            var res4 = deportes();
+            var res5 = select();
+            if (res1 && res2 && res3 && res4 && res5 && condiciones()){
+                res=true;
+            }
+            return res;
+        }       
+    </script>
+</head>
+<body>
+
+        <form method="GET" onsubmit="return validar();">
+                <p>Nombre: </p>
+                <input type="text" name="text" id="text" onkeyup="nombre()" style="display:block">
+                <p id="texterror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+                <p id="texterror-b" style="color: red; display: none;font-size: 9px;">*Mínimo de 5 letras</p>
+                <p>Apellido: </p>
+                <input type="text" name="text" id="text2" onkeyup="apellido()" style="display:block">
+                <p id="texterror2" style="color: red; display: none; font-size: 9px;">*Campo Requerido</p>
+                <p id="texterror2-b" style="color: red; display: none;font-size: 9px;">*Debe incluir un -</p>
+                <br>
+                <input type="radio" name="pregunta" id="" value="SI" onclick="radio()">SI
+                <input type="radio" name="pregunta" id="" value="NO" onclick="radio()">NO
+                <input type="radio" name="pregunta" id="" value="NS/NC" onclick="radio()" >NS/NC
+                <br>
+                <p id="error_radio" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+                <br>
+                
+                <input type="checkbox" name="futbol" id="" class="deportes" onclick="deportes()"><label for="futbol"> Futbol</label>
+                <input type="checkbox" name="tenis" id="" class="deportes" onclick="deportes()"><label for="tenis"> Tenis</label>
+                <input type="checkbox" name="basket" id="" class="deportes" onclick="deportes()"><label for="basket" > Basket</label>
+                <p id="error_deportes" style="color: red; display:none;font-size: 9px;">*Debe elegir al menos una opción</p>
+                <br>
+                <br>
+                <select name="instrumentos" id="instrumentos">
+                    <option value=""onclick="select()">--Seleccionar--</option>
+                    <option value="guitarra"onclick="select()">Guitarra</option>
+                    <option value="bateria"onclick="select()">Batería</option>
+                    <option value="bajo"onclick="select()">Bajo</option>
+                </select>
+                <p id="error_instrumentos" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+                <p>
+                    <input type="checkbox" name="condiciones" id="condiciones">
+                    <label for="condiciones">Aceptar Condiciones</label>
+                </p>
+
+                <br>
+                <input type="submit" value="Enviar" style="display: block;">
+            </form>
+
+</body>
+</html>

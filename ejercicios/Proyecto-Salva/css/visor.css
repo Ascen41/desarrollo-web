@@ -1,0 +1,65 @@
+legend{
+	text-decoration: underline; 
+	font-size: 20px; 
+	color:blue;
+}
+
+#cabecera{
+	background-color: yellow;
+}
+
+#cabecera img #ImagenGrande{
+	width: 100%;
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+#cabecera img #ImagenGrande{
+	height: 500px; 
+	width:700px;
+	margin-top: 25px;
+	margin-left: 300px; 
+	margin-bottom: 50px; 
+	border: 3px solid blue;
+	font-size: 150px; 
+	text-align: center;
+}
+
+#contenedor{
+	background-color: lightblue;
+}
+
+#cabecera img .imagen1{
+	height: 150px; 
+	width:250px; 
+	border: 2px dotted green; 
+	margin-right: 50px;
+}
+
+#cabecera img .imagen2{
+	height: 150px; 
+	width:250px; 
+	box-shadow: 5px 5px red; 
+	margin-right: 50px;
+}
+
+#cabecera img .imagen3{
+	height: 150px; 
+	width:250px; 
+	box-shadow: -7px -7px blue; 
+	margin-right: 50px;
+}
+
+#cabecera img .imagen4{
+	height: 150px; 
+	width:250px; 
+	box-shadow: 0px 0px 30px black; 
+	margin-right: 50px;
+}
+
+#cabecera img .imagen5{
+	height: 150px; 
+	width:250px; 
+	border: 2px solid yellow; 
+	margin-right: 50px;
+}

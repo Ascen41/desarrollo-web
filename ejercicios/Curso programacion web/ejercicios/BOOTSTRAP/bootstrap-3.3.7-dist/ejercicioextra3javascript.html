@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+
+  //Pide una nota (número). Muestra la calificación según la nota:  0-3: Muy deficiente  3-5: Insuficiente  5-6: Suficiente  6-7: Bien  7-9: Notable  9-10: Sobresaliente//
+ 
+  var notafinal = prompt("Escribe tu calificacion");
+  if (notafinal >= 9){
+    alert(notafinal+" Sobresaliente");
+  }else if (notafinal >=7 && notafinal<8){
+    alert(notafinal+" Notable");
+  }else if(notafinal >=5 && notafinal <6){
+    alert(notafinal+"Bien");
+  }else if (notafinal >=4 && notafinal <5){
+    alert(notafinal+ "Suficiente");
+  }else if (notafinal >=3 && notafinal <4){
+    alert(notafinal+ "Insuficiente");
+  } else if(notafinal >=0 && notafinal <3){
+    alert(notafinal+ "Muy deficiente")
+  }
+
+
+
+
+ </script>
+ 
+</head>
+<body>
+    
+</body>
+</html>

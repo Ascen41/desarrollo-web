@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>REGISTRO</title>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/registyle.css">
+    <script type="text/javascript" src="js/formjs.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>Películas</h2>
+        <div id="search">
+            <input type="search" name="search">
+            <input type="submit" name="submit" value="Buscar">
+        </div>
+    </header>
+    <nav>
+        <nav>
+            <ul id="menu">
+                <li><a href="homeproyect.html">Home</a></li>
+                <li><a href="infoproyect.html">Info</a></li>
+                <li><a href="registproyect.html">Registro</a></li>
+                <li><a href="galproyect.html">Galeria</a></li>
+            </ul>
+        </nav>
+    </nav>
+    <div id="content">
+        <form method="GET" action="#" name="miForm" onsubmit="return validar()">
+            <fieldset>
+                <legend>Info personal</legend>
+
+                <label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50"onchange="minombre()"></label>
+                <p id="nomerror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+                <label for="lapellidos"><strong>Apellidos:</strong><input id="lapellidos" type="text" name="apellido1" maxlength="50" size="50"onchange="miapellido()"></label>
+                <p id="aperror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+                <label for="ldireccion"><strong>Dirección</strong>
+                <input id="calle" maxlength="50" type="text" size="50" onchange="midireccion()"></label>
+                <label for="calle" style="font-size: 9px;">Calle, número, piso, puerta</label>
+                <p id="direrror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+                <label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onkeyup="mitelefono()">
+                <p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+                <label for="nacimiento"><strong>Fecha de nacimiento</strong></label><input id="nacimiento" name="Fdenacimiento" type="date" min=“1900-01-01” max=“2020-12-31” size="50" onkeyup="micumple()">
+                <p id="nacerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+                <label><strong>Género:</strong></label>
+                <label for="idhombre" class="inline">Hombre</label>
+                <input type="radio" id="idhombre" name="sexo" class="inline" onchange="migenero()">
+
+                <label for="idmujer" class="inline">Mujer</label>
+                <input type="radio" id="idmujer" name="sexo" class="inline" onclick="migenero()">
+                <p id="error_radio" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+            </fieldset>
+            <fieldset>
+                <legend>Info Laboral</legend>
+
+                <label for="lsel"><strong>Profesion </strong></label><select id="lsel" name="poblacion" onchange="miprofesion()">
+				<option value="">---------</option>
+				<option value="Alicante" >Administrativo</option>
+				<option value="Madrid" >Profesor</option>
+				<option value="Sevilla" >Arquitecto</option>
+				<option value="Valencia" >Ingeniero</option>
+				</select>
+                <p id="error_profesion" style="color: red; display:none;font-size: 9px;">*Debe elegir al menos una opción</p>
+
+                <label for="lapellido2"><strong>Direccion</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50"onchange="sudireccion()"></label>
+                <p id="aperror2" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+                <label for="otelefono"><strong>Teléfono:</strong></label><input id="otelefono" name="telefono" type="text" size="50" onkeyup="sutelefono()">
+                <p id="telerror2" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+            </fieldset>
+
+            <input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+novedades y ofertas.</label>
+            <br>
+            <input id="laceptar" type="checkbox" name="aceptar" class="inline" onchange="miaceptar()"><label for="laceptar" class="inline">Declaro haber leido y aceptar las
+condiciones generales del programa y la normativa sobre protección de
+datos. </label>
+
+            <input type="submit" name="envio" value="Enviar">
+
+    </div>
+    <footer></footer>
+
+</body>
+
+</html>

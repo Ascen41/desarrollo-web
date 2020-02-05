@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Formulario de registro - Mi web</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+    <script>
+        /*Se considera una persona jubilada si es mayor que 65 años. Muestre por pantalla el mensaje “Estas jubilado” o “Todavía estás trabajando o en el paro” según la edad que indica el usuario.*/
+        window.onload = edad
+        var edad = prompt("Introduce tu edad");
+        if (edad > 65) {
+            alert("estas jubilado");
+        } else {
+            alert("Todabia esta trabajando o en el paro");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+/*-- Cargar fuentes propias -----------------------*/
+@font-face{
+	font-family: "specialelite";
+	src: url(../Ejercicio_efemerides/fuentes/special-elite.woff2);
+}
+
+/*-- Estilos Genéricos ----------------------------*/
+body{
+	background-color: rgb(156,238,195);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.nombre{
+	color: red;
+	font-weight: bold;
+	font-family: "specialelite"!important;
+}
+
+.pais{
+	color: orange;
+}
+
+.azul{
+	color: blue;
+}
+
+a.enlace{
+	text-decoration:none;
+	color: green;
+	border-bottom-style: double;
+}
+
+/*-- Bordes ---------------------*/
+.allan, .roald, .yelena{
+	border: 5px solid rgb(0,180,84);
+	margin-bottom: 10px;
+}
+
+
+/*-- TITULOS --------------------*/
+.titulo{
+	font-size: 3.5em;
+}
+
+.subtitulo{
+	border: 2px solid rgb(4,118,52);
+	color: rgb(86,26,141);
+	margin: 0 5px 0 5px;
+	font-size: 2.5em;
+}
+
+.tarticulo{
+	display: block;
+	background-color: rgb(0,180,84);
+	color: white;
+	margin: 0px;
+	padding:0px;
+}
+
+/*-- IMAGENES -----------------*/
+.foto{
+	clear:both;
+	float: left;
+	border: 5px solid rgb(0,180,84);
+	border-top-right-radius: 50px;
+	border-top-left-radius: 50px; 
+	padding: 5px;
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+.im_tlscp{
+	width: 28%;
+	position: absolute;  /* Inidicar en el bloque padre(DIV Allan) que su posición
+	es relativa, de esta manera la posición absoluta es sobre el padre*/
+	right: 0px;	
+	bottom: 0px;
+}
+
+.emoji{
+	float: right;
+	width: 80px;
+	margin: 20px;
+}
+
+/*-- BLOQUES PRINCIPALES ----------------*/
+.bfotos{
+	width: 28%;
+	float: left;
+}
+
+.btexto{
+	width: 68%;
+	float: left;
+}
+
+/*-- CABECERA, CUERPO, PIE ----------------*/
+.cabecera{
+	text-align: center;
+	font-family: "specialelite"!important;
+}
+
+.pie{
+	border-top: 1px solid;
+	font-size: 12px;
+	font-style: italic
+}
+
+.tx_allan p, .tx_roald p, .tx_yelena p{
+	padding: 0 30px 0 30px;
+	text-align: justify;
+}
+
+/*-- Artículo - Allan Rex Sandage ---------------*/
+div.allan{
+	position: relative;
+}
+
+.tx_allan{
+	width: 68%;
+}
+
+/*-- Artículo - Roald Amundsen -------------------*/
+
+
+/*-- Artículo - Yelena Bonner -------------------*/

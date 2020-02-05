@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .textinput{
+        background-color: white;
+    }
+    </style>
+    <script>
+        function aviso(){
+            var x = confirm("Se va a enviar el formulario");
+            return x;
+        }
+        function colortexto(){
+            var inputs = document.getElementsByTagName("input");
+            for (i=0; i<inputs.length; i++){
+                if (inputs[i].type==("text")){
+                    console.log(inputs[i].style.backgroundColor)
+                    inputs[i].style.backgroundColor="red"
+                    console.log(inputs[i].style.backgroundColor)
+                }
+            }
+        
+        }
+        
+    </script>
+</head>
+<body>
+    <form name="miform" method="GET" onsubmit="return aviso()">
+    <label for="">Nombre </label>
+    <input type="text" name="nombre" id="nombre" class="textinput"> 
+    <label for="">Apellidos </label>
+    <input type="text" name="apellido" id="apellido" class="textinput">
+    <input type="submit" value="Enviar">
+    </form>
+    <img src="../../imagenes/lorem-ipsum.png" onmouseover="alert('Está prohibida su copia')" alt="">
+    <button onclick="colortexto()">Cambiar Color Texto</button>
+    <select name="colores" id="">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,56 @@
+    #titulo{
+      color: #599c6a;
+    }
+    p strong{
+      color: red;
+    }
+    .destacado{
+      color: orange;
+    }
+    #subtitulo{
+      color: blue;
+    }
+    a{
+      color: red;
+    }
+    p em{
+      color: blue;
+    }
+    .especial{
+      color: #7149b1;
+    }
+    caption{  
+      color: blue;
+    }
+    th.especial{
+      color: orange;
+    }
+    th {
+      color: red;
+    }
+    td {
+      color: green;
+    }
+    td strong{
+      color: orange;
+    }
+    #adicional {
+      color: #bba71afc;
+    }
+    #especial{
+      color: #ff00eb;
+    }
+    #adicional a{
+      color: green;
+    }
+
+    table {
+     border-collapse: collapse;
+    }
+
+    table, td, th {
+      border: 1px solid black;
+    }
+    th:empty{
+      background-color: yellow;
+    }

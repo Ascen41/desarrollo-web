@@ -1,0 +1,121 @@
+label:not(.inline),
+input:not(.inline),
+textarea {
+    display: block;
+}
+
+body {
+    width: 770px;
+    margin: auto;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+}
+
+header {
+    background: url(../img/CINE.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+}
+
+header h2 {
+    font-size: 50px;
+    font-family: fantasy;
+    float: left;
+    padding-left: 20px;
+    padding-top: 40px;
+    margin: 0;
+    color: rgba(65, 54, 54, 0.425);
+    text-shadow: -1px -1px 0 #b1aaaa, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000;
+}
+
+header div {
+    float: right;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+nav {
+    border-bottom: solid rgb(207, 7, 7);
+    background-color: #555050;
+    float: left;
+    width: 100%;
+}
+
+nav ul {
+    margin-bottom: 6px;
+    padding-left: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav li a {
+    background-color: #383535;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 6px 13px;
+}
+
+nav li a:hover {
+    background-color: #FFFFFF;
+    color: rgb(207, 7, 7);
+    font-weight: bold;
+}
+
+#content {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../img/fondo.jpg);
+    background-position: left top, left top, right bottom, top left;
+    background-repeat: no-repeat;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+footer .letra {
+    color: lightslategrey;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 10px;
+}
+
+#pie {
+    padding: 3px;
+    border-top: solid 2px rgb(207, 7, 7);
+    float: left;
+    width: 99%;
+}
+
+fieldset div:hover {
+    background-color: #FFFFFF;
+    color: rgb(207, 7, 7);
+    font-weight: bold;
+}
+
+legend {
+    font-size: 25px;
+    font-family: fantasy;
+    color: #b1aaaa;
+}
+
+.escondido {
+    display: none;
+    color: rgb(207, 7, 7);
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.texto {
+    font-size: 10px;
+    padding: 5px;
+}
+
+.validar {
+    float: right;
+    margin: 10px;
+    width: 13%;
+}

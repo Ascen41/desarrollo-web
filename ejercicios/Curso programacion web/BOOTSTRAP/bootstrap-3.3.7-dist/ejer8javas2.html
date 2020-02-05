@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+
+  //El factorial de un número entero n es una operación matemática que consiste en multiplicar todos los factores 
+//Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar. Mostrar por pantalla el resultado devuelto por la función.
+
+
+function ParImpar(num){
+    if (isNaN(num)) {
+        res= "error";
+    }else{
+    if((num %2)==0){
+            res= "par";
+        }else{
+            res= "impar";
+        } 
+    }
+    return res;
+}
+
+var x = prompt("Introduce un número entero");
+var res= ParImpar(x);
+//concatenamos el stream con la variable para que nos muestre el texto con el resultado
+alert ("el numero "+ x +" es "+res);
+
+ </script>
+ 
+</head>
+<body>
+</body>
+</html>

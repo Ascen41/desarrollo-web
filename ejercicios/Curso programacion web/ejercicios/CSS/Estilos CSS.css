@@ -1,0 +1,13 @@
+		h1, p.cl-rojo
+		{
+			color: red; text-decoration: underline;
+		}	
+		p, .cl-blue{
+			color: blue;
+		}
+		.cl-rojo{
+			color: green;
+		}
+		p::{
+			color: yellow;
+		}

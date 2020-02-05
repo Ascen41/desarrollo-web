@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/visor.css" />
+        <title>Proyecto-Visor</title>
+    </head>
+<script>
+    function cambiar_imagen(ruta, descripcion){
+        document.getElementById("ImagenGrande").src = ruta.src
+        document.getElementById("descripcion").textContent= descripcion.alt
+    }
+</script>
+
+<body>
+    <fieldset>
+        <legend>Galeria de imagenes</legend>
+            <div id="contenedor">
+                <div class="cabecera">
+                <img src="imagenes/futbol.jpg" id="ImagenGrande" alt="Historia del futbol" onclick="cambiar_imagen(this,this)"><p id="descripcion"></p>
+                </div>
+                
+                <div class="imagen1">
+                <img src="imagenes/futbol.jpg" alt="Historia del futbol" onclick="cambiar_imagen(this,this)">
+                </div>
+
+                <div class="imagen2">
+                <img src="imagenes/basquet.jpg" alt="baloncesto NBA" onclick="cambiar_imagen(this,this)">
+                </div>
+
+                <div class="imagen3">
+                <img src="imagenes/tenis.jpg" alt="Davis Cup" onclick="cambiar_imagen(this,this)">
+                </div>
+
+                <div class="imagen4">
+                <img src="imagenes/hockey.jpg" alt="Hockey" onclick="cambiar_imagen(this,this)">
+                </div>
+
+                <div class="imagen5">
+                <img src="imagenes/natacion.jpg" alt="Natacion" onclick="cambiar_imagen(this,this)">
+                </div> 
+            </div>
+    </fieldset>
+</body>
+</html>

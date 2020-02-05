@@ -1,0 +1,95 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 13 - DOM b?sico y atributos XHTML</title>
+
+<script type="text/javascript">
+	
+function anade() {
+var array_li = document.getElementsByTagName("li");
+ if (array_li.length==0) {
+	document.getElementById("BtnEliminar").disabled  = false;
+ }
+ var elemento = document.createElement("li");
+  var texto = document.createTextNode("Elemento de prueba");
+  elemento.appendChild(texto);
+ 
+  var lista = document.getElementById("lista");
+  lista.appendChild(elemento);
+ 
+}
+
+function eliminar() {
+ var array_li = document.getElementsByTagName("li");
+
+ var ultimo_li = array_li[array_li.length-1];
+ ultimo_li.parentNode.removeChild(ultimo_li);
+ if (array_li.length==0) {
+	document.getElementById("BtnEliminar").disabled  = true;
+ }
+}
+function cambiarBorder(elemento,color){
+	elemento.style.borderColor=color;
+}
+function cambioContenido(elemento){
+	alert("Se ha cambiado el contenido");
+	elemento.style.backgroundColor='red';
+}
+function comprobarCampo(){
+	var valor = document.getElementById("nombre").value;
+	var valor2 = document.getElementById("apellidos").value;
+	if (valor==""){ 
+		alert();
+		document.getElementById("nombre").focus();
+	}else if (valor2==""){ 
+		alert();
+		document.getElementById("nombre").focus();
+	}else{
+		document.miFormulario.submit();
+	}
+	
+}
+
+function comprobarCampos(elemento){
+	var valor = elemento.value;
+	if (isNaN(valor)==true){ 
+		elemento.value="";
+		elemento.style.backgroundColor='red';
+		elemento.focus();
+	}else{
+		elemento.style.backgroundColor='';
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	<div id="contenidos" style="width:150px; height:60px; border:thin solid silver"
+onmouseover="cambiarBorder(this,'black');"
+onmouseout="cambiarBorder(this,'silver');">
+Sección de contenidos...
+</div>
+<form name="miFormulario">
+	<input type="text" id=="nombre" onchange="cambioContenido(this)"/>
+	<input type="text" onchange="comprobarCampo(this)"//>
+	<input type="text" id="edad" onchange="comprobarCampos(this)"//>
+	<input type="text" onchange="cambioContenido(this)"//>	<input type="text" id="anys_exper" onchange="comprobarCampos(this)"//>
+	<input type="button" onclick="comprobarCampo()"/>
+</form>
+
+<ul id="lista"  style="width:150px; height:60px; border:thin solid silver" onmouseover="cambiarBorder(this,'red')" onmouseout="cambiarBorder(this,'silver');">
+	<li>Lorem ipsum dolor sit amet</li>
+	<li>Consectetuer adipiscing elit</li>
+	<li>Sed mattis enim vitae orci</li>
+	<li>Phasellus libero</li>
+	<li>Maecenas nisl arcu</li>
+</ul>
+
+<input type="button" value="Añadir elemento" onclick="anade()" >
+<input type="button" id="BtnEliminar" value="Eliminar elemento" onclick="eliminar()" >
+
+</body>
+</html>

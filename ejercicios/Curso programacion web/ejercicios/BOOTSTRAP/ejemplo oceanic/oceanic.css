@@ -1,0 +1,108 @@
+@media screen and (min-width: 991.98px) {
+    #todo {width: 80% !important; margin: auto; }
+}
+@media screen and (min-width: 0px) and (max-width: 991.98px){
+#todo img{
+    width: 100% !important;
+    margin: auto; 
+}
+h1{
+    text-align: center;
+}
+body{
+    padding: 10px;
+} 
+}
+
+#lateral{
+border-right: 2px solid blue;
+border-bottom: 2px solid blue;
+}
+#menu{
+padding: 0;
+}
+#menu li{
+padding:0.3rem;
+background: rgb(29,59,152);
+border: 1px solid violet;
+border-right: none;
+border-top: none;
+}
+#menu li:hover{
+background:rgb(0,180,199);
+font-weight: bold;
+}
+#menu li a{
+color: white;
+}
+#menu li:hover a{
+color: white;
+font-weight: bold;
+}
+#menulateral{
+width: 100%;
+margin-top: 20%;
+}
+#menulateral li{
+color: white;
+background: rgb(29,59,152);
+text-align: center;
+border: 1px solid violet;
+border-right: none;
+border-top: none;
+}
+#menulateral li a{
+color: white;
+}
+#menulateral li:hover a{
+color: white;
+font-weight: bold;
+}
+#menulateral li:hover{
+background: rgb(0,180,199);
+}
+h1{
+color:rgb(29,59,152) ;
+font-size:5vh;
+}
+#principal{
+width: 100%;
+border-bottom: 2px solid blue;
+}
+#principal ul{
+list-style-type: none;
+}
+#principal ul li{
+display: inline;
+margin: 2rem;
+}
+.container{
+margin-left: 0;
+}
+
+body{
+padding-top: 2rem;
+padding-bottom:2rem;
+}
+#todo{
+background: rgba(255, 255, 255, 0.85);
+margin:auto;
+}
+#jumbotron{
+
+background: rgba(255, 255, 255, 0); 
+}
+table{
+margin: 10%;
+}
+td{
+width: 15rem;
+height: 6rem;   
+}
+td:hover{
+cursor:crosshair;
+}
+footer{
+color:rgb(29,59,152);
+padding: 1rem;
+}

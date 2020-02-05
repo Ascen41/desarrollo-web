@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ejercicio 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+    <style>
+        .validation {
+            color: red;
+            font-size: 9px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#miForm").submit(function(event) {
+                $(this).children("input:not(input[type=submit])").each(function() {
+                    var i = $(this);
+                    //this, en este caso, es el quivalente al formulario, con el .children me devolvera los hijos de mi formulario.para acotar dentro del children introducimos input, y asi filtramos para que me devielvan los hijos de tipo input.por el hecho que esta dentro del bucle el this en ese caso se refereiria a los inputs
+                    //con el .each(function())se recorre el array
+                    console.log("hola");
+                });
+                event.preventDefault();
+            });
+
+        });
+        /*<form insubmint="return validar()" 
+                                // en JQuery accedo al formulario que tiene que tener un id...
+                                $("#miform").submit(function (event){
+                                    var valido=validar()
+                                    //declaramos la variable...
+                                    if(valido)
+                                    event.preventDefault() 
+                                    //impide el envio del formulario el evento por defecto...
+                                })
+                                //introducimos dos atributos nuevos en html, introduciomos el mensaje de error y los requisitos...mirar el xj mas abajo.*/
+    </script>
+
+</head>
+
+<body>
+    <form id="miForm">
+        <label for="name"> Nombre </label>
+        <input type="text" name="name" id="name" data-msg="Por favor entra al menos 4 caracteres" data-rule="minlen:4">
+        <!--xj  <input type="text" name="nom" id="nom" onchange="validarNombre()" onblur="alert" data-msg="" data-rule="">-->
+        <!--como usamos en onchange en el ejercicio 3 de la página 73-->
+
+        <div class="validation"></div>
+        <label for="apellidos">Apellidos</label>
+        <input type="submit" name="enviar" value="enviar">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>load demo</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("#new-projects").load("resources/load.html #projects li",function(responsetxt,statustxt,xhr){
+				console.log(responsetxt);
+				console.log(statustxt);
+				console.log(xhr);
+
+				if (statustxt == "success") {
+					alert("External content loaded successfull");
+				}else{
+					if (statustxt == "error") {
+						alert("Error" + xhr.status + " " + xhr.statusText);
+					}
+				}
+			});
+
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<b>Projects:</b>
+	<ol id="new-projects"></ol>
+
+	<button type="button">Get external content</button>
+
+</body>
+</html>

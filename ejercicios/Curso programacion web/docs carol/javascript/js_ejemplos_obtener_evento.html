@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS tratar eventos</title>
+	<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+		// Información sobre los eventos de teclado
+		function manejador(event){
+			var evento = event || window.event;
+ 			var codechar = evento.charCode || evento.keyCode; 
+ 			console.log(codechar);
+			console.log(String.fromCharCode(codechar));
+			alert("El carácter pulsado es: " + String.fromCharCode(codechar)); 
+		}   
+
+		// Restringir los caracteres permitidos en un cuadro de texto 
+		function permite(elEvento, permitidos) {
+			// Variables que definen los caracteres permitidos
+			var numeros = "0123456789";
+			var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+			var numeros_caracteres = numeros + caracteres;
+			var teclas_especiales = [8, 37, 39, 46];
+			  	// 8 = BackSpace, 46 = Supr, 37 = flecha izquierda, 39 = flecha derecha
+		 
+		  console.log(permitidos);
+
+			// Seleccionar los caracteres a partir del parámetro de la función
+			var texto;
+			switch (permitidos) {
+				case 'num' :
+				// Code for value1
+					texto = numeros;
+					break;
+				case 'car' :
+					texto = caracteres;
+					break;
+				case 'num_car' :
+				// Code for other values
+					texto = numeros_caracteres;
+					break;
+			}
+
+			console.log(texto);
+
+			// Obtener la tecla pulsada
+			var evento = elEvento || window.elEvento;
+ 			var codchar = evento.charCode || evento.keyCode; 
+ 			var tecla = String.fromCharCode(codchar);
+
+ 			// tecla = elevento.key equivale a hacer los dos pasos codchar y tecla
+
+ 			console.log(tecla);
+
+			// Comprobar si la tecla pulsada es alguna de las teclas especiales
+		  	// (teclas de borrado y flechas horizontales)
+		  	var l_especial = false;
+			for (var i in teclas_especiales) {
+				if (codchar == teclas_especiales[i]){
+					l_especial = true;
+					break;
+				}
+			}
+			// Comprobar si la tecla pulsada se encuentra en los caracteres permitidos
+		  	// o si es una tecla especial
+		  	if (texto.indexOf(tecla)==-1 && !l_especial) {
+						return false;
+			}
+
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Datos del producto</h1>
+	<form method="post" action="/php/insertar_cv.php">
+
+		<!-- Información sobre los eventos de teclado -->
+		<label for=" onkeypress">onkeypress</label><br>
+		<input id=" onkeypress" type="text" name="name1" onkeypress="manejador(event)"><br>
+		<br>
+		<label for="onkeyup">onkeyup</label><br>
+		<input id="onkeyup" type="text" name="name2" onkeyup="manejador(event)"><br>
+		<hr>
+
+		<!-- Restringir los caracteres permitidos en un cuadro de texto -->
+		<label for="numeros">Sólo números</label><br>
+		<input id="numeros" type="text" name="numeros" onkeypress="return permite(event, 'num')"><br>
+		<hr>
+		<label for="letras">Sólo letras</label><br>
+		<input id="letras" type="text" name="letras" onkeypress="return permite(event,'car')"><br>
+		<hr>
+		<label for="letras">Sólo letras o números</label><br>
+		<input id="letras" type="text" name="letras" onkeypress="return permite(event,'num_car')"><br>
+
+	</form>
+</body>
+</html>

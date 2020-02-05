@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Reloj</title>
+   <style type="text/css">
+	   	body {
+	   		font-family: courier, sans-serif;
+	   		font-size: 2em;
+		}
+   </style>
+
+	<script type="text/javascript">
+
+		window.onload = function(){
+			 mostrarReloj(); // ponemos para que no tarde un segundo en mostrarse, sino nada más cargar. 	 
+		}
+	 
+		function mostrarReloj(){
+		   var fecha = new Date();
+		   var result = fecha.toLocaleTimeString();
+		   document.getElementById("reloj").innerHTML=result;
+
+		   setInterval(mostrarReloj, 1000);
+		}
+    </script> 
+
+</head>
+
+<body>
+   <div id="reloj"></div>
+</body>
+
+</html>

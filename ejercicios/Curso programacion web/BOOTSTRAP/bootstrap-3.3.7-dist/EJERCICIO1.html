@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="estilosbootstrap.css"> 
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+<body>
+  <nav class="navbar navbar-inverse-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Page 1</a></li>
+                  <li><a href="#">Page 2</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" ></span> Inicio de sesión</a></li>
+              </ul>
+              <form class="navbar-form navbar-right" action="/action_page.php">
+                  <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+              </form>
+    </div>
+    </nav>
+  <div class="container">
+    <div class="jumbotron text-left">
+
+      <h1>Plantilla Web</h1>
+    </div>
+
+	<div class="row">
+    	<div class="col-xs col-sm-6 col-md-6 col-lg-9">
+      		<h3>Articulo 1</h3>
+     		   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+     		   <p>Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.</p>
+             <h5>Tags:</h5>
+          <div class="btn-group">
+            <button type="button" class="btn">Lorem</button>
+            <button type="button" class="btn">Ipsum</button>
+            <button type="button" class="btn">Dolor</button>
+            <button type="button" class="btn">Sit</button>
+          </div>
+
+          <hr>
+
+          <h3>Articulo 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+            <p>Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.</p>
+             <h5>Tags:</h5>
+          <div class="btn-group"> 
+            <button type="button" class="btn">Lorem</button>
+            <button type="button" class="btn">Ipsum</button>
+            <button type="button" class="btn">Dolor</button>
+            <button type="button" class="btn">Sit</button>
+            <button type="button" class="btn">Amet</button>
+          </div>
+        
+      </div>
+    	<div class="col-xs col-sm-6 col-md-6 col-lg-3">
+          <ul class="list-group">
+            <li class="list-group-item">Nuevas noticias<span class="badge">12</span></li>
+            <li class="list-group-item">Temas en el foro<span class="badge">5</span></li>
+            <li class="list-group-item">Mensajes<span class="badge">3</span></li>
+          </ul>
+          <hr>
+      	<div>
+            <img class="img-responsive img-circle" src="../imagenes/spam.jpg" alt="spam">
+             <img class="img-responsive img-ronded" src="../imagenes/spam.jpg" alt="spam">
+          <img class="img-responsive img-circle" src="../imagenes/spam.jpg" alt="spam">
+        </div>
+
+    	</div>
+	</div>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Iniciar Sesion</h4>
+            <hr>
+          <div class="alert alert-warning alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Aviso!</strong> Introduzca nombre de usuario y contraseña
+          </div>
+
+        <div class="modal-body">
+
+
+          <form class="form-horizontal">
+              <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputEmail3" placeholder="Usiario">
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+              </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+              </div>
+            </div>
+          <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+          </div>
+        </form>
+
+      </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

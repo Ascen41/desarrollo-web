@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>APUNTES JQUERY</title>
+	<meta charset="utf-8">
+<script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	/*	APUNTES JQUERY
+
+Eventos: ejemplo .click(), .keypress()
+Asignación:
+
+$(elemento).click(nombre funcion)
+Esto sirve para aplicar funciones a elementos dentro del script en lugar del HTML.
+
+evento submit:
+
+Antes:
+<form onsubmit = "return funcion()"
+
+jQuery:
+$('form').submit(function(event){
+var valido = validar()
+if (!valido){
+	event.preventDefault() //impide el envío del formulario
+	}
+})
+*/
+
+$(document).ready(function(){ //no se ejecuta hasta que no se cargue la página
+	$('#miform').submit(function(event){
+			var ierror = false;
+			var error = false;
+
+		$(this).children('input:not(input[type=submit])').each(function(){
+	
+			var i= $(this);
+			console.log(i);
+			var rule = i.attr('data-rule').split(':');
+			switch(rule[0]){
+				case 'minleng':
+					if(i.val().length<parseInt(rule[1])){
+						ierror=true;
+						error=true;
+					}else{
+						ierror=false;
+					}
+				break;
+			}
+			if (ierror){
+				i.next('.validation').html(i.attr('data-msg'));
+			}
+		});
+			if(error) event.preventDefault();
+	});
+});
+
+
+</script>
+<style type="text/css">
+	.validation{
+		color:red;
+		font-size: 9px;
+	}
+</style>
+
+
+
+</head>
+<body>
+
+
+<form id="miform">
+	<label for="name">Nombre</label>
+	<input type="text" name="name" id="name" data-msg="Por favor entra al menos 4 carácteres" data-rule="minleng:4">
+	<div class="validation"></div>
+	<input type="submit" name="enviar" value="Enviar">
+</form>
+
+
+</body>
+</html>

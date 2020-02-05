@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 2</title>
+    <script>
+        window.onload = function() {
+            var palabra = prompt("Introduce una palabra");
+            var long = palabra.length;
+            var may = palabra.toUpperCase();
+            var min = palabra.toLocaleLowerCase();
+            var array = palabra.split("");
+            var suma = 0;
+            for (i in array) {
+                if (array[i] == "a" || array[i] == "e" || array[i] == "i" || array[i] == "o" || array[i] == "u") {
+                    suma++;
+                }
+            }
+
+            var longitud = "la cadena " + palabra + " contiene " + long + " caracteres";
+            var mayusculas = "la cadena en mayúsculas es: " + may;
+            var minusculas = "la cadena en minúsculas es: " + min;
+            var vocales = "La palabra " + palabra + " contiene " + suma + " vocales";
+
+            document.write(longitud)
+            document.write("<br>")
+            document.write(mayusculas)
+            document.write("<br>")
+            document.write(minusculas)
+            document.write("<br>")
+            document.write(vocales)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

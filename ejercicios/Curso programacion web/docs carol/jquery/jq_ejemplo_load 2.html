@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>load demo</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+ 
+  <b>Successful Response (should be blank):</b>
+  <div id="success"></div>
+
+  <b>Error Response:</b>
+  <div id="error"></div>
+  <div id="error2"></div>
+   
+  <b>Projects:</b>
+  <ol id="new-projects"></ol>
+
+  <script>
+    // Nos da el error pq nosotros no tenemos el archivo php
+    $( "#success" ).load( "/not-here.php", function( response, status, xhr ) {
+      if ( status == "error" ) {
+        var msg = "Sorry but there was an error: ";
+        $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+        $( "#error2" ).load( "resources/load.html #projects li" );
+      }
+    });
+
+    $( "#new-projects" ).load( "resources/load.html #projects li" );
+  </script>
+ 
+</body>
+</html>

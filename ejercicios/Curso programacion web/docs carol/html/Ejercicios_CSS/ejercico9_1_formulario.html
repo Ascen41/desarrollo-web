@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario Alta</title>
+	<style type="text/css">
+		form{
+			width: 80%;
+		}
+		fieldset {
+			width: 40%;
+			float: left;
+			border: none;
+		}
+		span{
+			color: red;
+			font-size: 1em; 
+		}
+		.email{
+			clear: both;
+		}
+		legend{
+			font-weight:bold;
+		}
+
+		div{
+			margin-bottom: 10px;
+		}
+
+		input, label{
+			display: block;
+		}
+
+		.col{
+			width: 50%;
+			float: left;
+		}
+
+       /*Btn dar de alta y línea*/
+		.limpiar{
+			clear: both;
+		}
+		.btn_sub{
+			/*clear: both;
+			float: right;
+			padding: 1px;
+			position: relative;
+			right: 23%;*/	
+			text-align: right;
+		}
+		.btn_sub input{
+			display: inline;
+		}
+
+		/*Modificaciones al pasar ratón por los bloques*/		
+		fieldset:hover{
+			background-color: #FF9;
+		}
+		input:focus {
+			outline-color: #E6B700;
+		}
+	</style>
+</head>
+<body>
+	<h1>Formulario de alta</h1>
+
+	<form method="post" action="/php/alta.php"> 
+		<!--Datos Personales ------------------------------------------------------------------->
+		<fieldset class="name">
+			<legend>Nombre y apellido <span>*</span></legend>
+			<div>
+				<input id="idfname" type="text" name="v_fname" maxlength="30" required>
+				<label for="idfname">Nombre</label>
+			</div>
+			<div>
+				<input id="idlnam1" type="text" name="v_lname1" maxlength="50" required>
+				<label for="idlnam1">Primer apellido</label>
+			</div>
+			<div>
+				<input id="idlnam2" type="text" name="v_lname2" maxlength="50" required>
+				<label for="idlnam2">Segundo apellido</label>
+			</div>
+		</fieldset>
+		<!--Datos Dirección ------------------------------------------------------------------->
+		<fieldset class="adress">
+			<legend>Dirección <span>*</span></legend>
+			<div>
+				<input id="idaddr" type="text" name="v_addr" maxlength="80" required>
+				<label for="idaddr">Calle, número, piso, puerta</label>
+			</div>
+			<div class="col">
+				<input id="idcode" type="text" name="v_code" maxlength="8" required>
+				<label for="idcode">código postal</label>
+			</div>
+			<div class="col">
+				<input id="idmun" type="text" name="v_num" maxlength="50" required>
+				<label for="idnum">Municipio</label>
+			</div>
+			<div class="col">
+				<select id="idprv" name="v_prv" required>
+					<option value="" disabled selected>--</option>
+					<optgroup label="Catalunya">
+						<option>Barcelna</option>	
+						<option>Tarragona</option>
+						<option>Girona</option>
+						<option>Lleida</option>
+					</optgroup>	
+					<optgroup label="C.Valenciana">		
+						<option>Castellón</option>	
+						<option>Valencia</option>	
+						<option>Alicante</option>	
+					</optgroup>
+					<optgroup label="Aragón">		
+						<option>Huesca</option>	
+						<option>Zaragoza</option>	
+						<option>Teruel</option>	
+					</optgroup>
+				</select>
+				<label for="idprv">Provincia</label>
+			</div>
+			<div class="col">
+				<select id="idland" name="v_land" required>
+					<option value="" disabled selected>--</option>
+					<optgroup label="Europa">
+						<option>España</option>	
+						<option>Portugal</option>
+						<option>Andorra</option>
+						<option>Francia</option>
+					</optgroup>	
+					<optgroup label="América">		
+						<option>Canadá</option>	
+						<option>Estados Unidos</option>	
+						<option>México</option>	
+						<option>Brasil</option>	
+					</optgroup>
+					<optgroup label="Asia">		
+						<option>...</option>	
+					</optgroup>
+					<optgroup label="África">		
+						<option>...</option>	
+					</optgroup>
+					<optgroup label="Oceanía">		
+						<option>...</option>	
+					</optgroup>
+				</select>
+				<label for="idland">País</label>
+			</div>
+		</fieldset>
+
+		<!--Datos Email ----------------------------------------------------------------------->
+		<fieldset class="email">
+			<legend>Email <span>*</span></legend>
+			<div>
+				<input id="idmail" type="text" name="v_email" maxlength="30" required>
+				<label for="idmail">nombre@direccion.com</label>
+			</div>
+		</fieldset>
+
+		<!--Datos Contacto- ------------------------------------------------------------------->
+		<fieldset class="phone">
+			<legend>Teléfono <span>*</span></legend>
+			<div class="col">
+				<input id="idfix" type="text" name="v_fix" maxlength="30" required>
+				<label for="ifix">Fijo</label>
+			</div>
+			<div class="col">
+				<input id="idmbl" type="text" name="v_mbl" maxlength="30" required>
+				<label for="idmbl">Móvil</label>
+			</div>
+		</fieldset>
+
+		<hr class="limpiar">
+		<div class="btn_sub">
+			<input type="submit" name="b_submit" value="Dar de alta ->">
+		</div>
+		<!--Botón Dar de alta- --------------------------------------------------------------->
+		
+
+	</form>
+</body>
+</html>

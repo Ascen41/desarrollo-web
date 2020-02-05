@@ -1,0 +1,15 @@
+h2::first-letter {
+  font-size: 200%;
+}
+h2 + p {
+	text-indent: 2em
+}
+a::before { 
+  content: "->";
+  color: blue;
+  font-weight: bold;
+}
+abbr::after{
+	content: "("attr(title)")";
+	font-family: Courier;
+}

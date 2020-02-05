@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo JS Eventos en Formularios</title>
+	<!-- ESTILOS --------------------------------------------->
+	<style type="text/css">
+		.error{
+			color:red; 
+			font-size:15px;
+			display:none;
+		}
+		.rojo{
+			background-color: red;
+		}
+		.blanco{
+			background-color: white;
+		}
+	</style>
+
+
+	<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+		//Validaciones de los parámetros que se han entrado en el formulario
+		function validar(){
+
+			var l_res = true;
+
+			//--Validación de los campos de entrada
+			if ( (!validar_long()) || (!validar_guion()) ){
+				l_res = false;
+			}
+
+			//--Validamos que uno de los radioButton esté marcado
+			if (!validar_radiobutton()) {
+				l_res = false;
+			}
+			if (!validar_condiciones()) {
+				l_res = false;
+			}
+
+			if (!validar_deportes())  {
+				l_res = false;
+			}
+
+			if(!validar_select()){
+				l_res = false;
+			}
+
+			//Validar email
+			if (!validar_email()) {
+				l_res = false;
+			}
+
+			if (!validar_formato_dni()) {
+				l_res = false;
+			}
+
+			if (!validar_letra_dni()){
+				l_res = false;
+			}
+
+			return l_res;
+		}//<--function validar
+
+		function validar_telefono(){
+			// \s indica espacio en blanco
+			// 1) +xx xxxxxxxxx     /^ \+\d{2} \s \d{9}) $/ 
+			// 2) xxx-xxx-xxx    	/^ \d{3}-\d{3}-\d{3} $/
+			// 3) xxx xx xx xx 		/^ \d{3}\s\d{2\s\d{2}\s\d{2}}$/
+		}
+
+		function validar_formato_dni(){
+
+			var l_dni = document.getElementById("dni").value;
+
+			//comprobamos que el formato sea correcto
+			// /^ ... $/ inidican inicio y fin de formato, se ha de poner siempre
+			//d{8} - indica que tenemos que poner 8 númros (d-dígitos)
+			// \d inidica poner 1 dígito, 
+			//		si quiero poner un número determinado de dígitos lo indicamos entre {}, \d{8}
+			//		n dígitos \d+
+			//[A-Z] poner una letra en mayúsculas, 
+			//[A-Z]+ si queremos más de una letras
+			//[A-Z]{2,6} entre 2 y 6 letras en mayúsculas
+			//[A-Za-z]{2,6} entre 2 y 6 letras en mayúsculas
+			if(!(/^\d{8}[A-Z]$/.test(l_dni)) ) {
+			  	document.getElementById("error_dni1").style.display="inline";
+				document.getElementById("dni").style.border="2px solid red";
+				return false;
+			}else{
+				document.getElementById("error_dni1").style.display="none";
+				document.getElementById("dni").style.border="1px solid grey";
+				return true;
+			}
+		}
+		
+		function validar_letra_dni(){
+
+			var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D',
+			'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E',
+			'T'];
+
+			var l_dni = document.getElementById("dni").value;
+
+			//Validamos que la letras sea correcta
+			if(l_dni.charAt(8) != letras[(l_dni.substring(0, 8))%23]) {
+				document.getElementById("error_dni2").style.display="inline";
+				document.getElementById("dni").style.border="2px solid red";
+  				return false;
+			}else{
+				document.getElementById("error_dni2").style.display="none";
+				document.getElementById("dni").style.border="1px solid grey";
+				return true;
+			}
+		}
+
+		function validar_email(){
+			var valor = document.getElementById("email").value;
+			//[\da-z_\.] - \permite digitos o letras de la a-z\ y se puede poner punto o guión. Las contrabarras del inicio y fin indican inicio y fi de la comparación
+			if( !(/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(valor)) ) {
+				document.getElementById("error_email").style.display="inline";
+				document.getElementById("email").style.border="2px solid red";
+  				return false;
+			}else{
+				document.getElementById("error_email").style.display="none";
+				document.getElementById("email").style.border="1px solid grey";
+				return true;
+			}
+		}//<--function validar_email
+
+		function validar_select(){
+			// Obtener la referencia a la lista
+			var lista = document.getElementById("opciones");
+			// Obtener el índice de la opción que se ha seleccionado
+			var indiceSeleccionado = lista.selectedIndex;
+			// Con el índice y el array "options", obtener la opción seleccionada
+			var opcionSeleccionada = lista.options[indiceSeleccionado];
+
+			if (lista.selectedIndex == 0) {
+				document.getElementById("error_select").style.display="block";
+				return	false;
+			}else{
+				document.getElementById("error_select").style.display="none";
+				alert(opcionSeleccionada.text);
+				alert(opcionSeleccionada.value);
+				return	true;
+			}
+		}//<--function validar_select
+
+		function validar_condiciones(){
+
+			if ( (document.getElementById("condiciones").checked) && (document.getElementById("privacidad").checked) ) {
+				document.getElementById("error_check").style.display="none";
+				return true;
+			}else{
+				document.getElementById("error_check").style.display="block";
+				return false;
+			}
+		}
+
+		function validar_deportes(){
+			var l_checked = false;
+			var la_inputs = document.getElementsByClassName('deporte');
+			for (var i = 0; i < la_inputs.length; i++) {
+	          	if (la_inputs[i].checked) {
+	          		l_checked = true;
+	          		break;
+	          	}        
+          	}
+          	if (l_checked){
+				document.getElementById("error_deporte").style.display="none";
+			}else{
+				document.getElementById("error_deporte").style.display="block";
+			}
+		
+			return l_checked;
+		}
+
+		
+		function validar_radiobutton(){
+			var l_checked = false;
+			var la_elementos = document.getElementsByName("pregunta");
+
+			for(var i=0; i<la_elementos.length; i++) {
+			  if(la_elementos[i].checked){ //no hace falta poner ==true pq esto incia ya true
+			  	l_checked = true;
+			  	break;
+			  }
+			}
+
+			if (l_checked){
+				document.getElementById("error_radio").style.display="none";
+			}else{
+				document.getElementById("error_radio").style.display="block";
+			}
+
+			return l_checked;
+
+		}//<--function validar_radiobutton
+
+		function validar_long() {
+			var l_text = document.getElementById("text1").value;
+			var l_long = l_text.length;
+			//(/^\s+$/.test(l_text) ) obliga a que el valor introducido por el usuario no sólo esté formado por espacios en blanco
+			if ( (l_long < 5) || (/^\s+$/.test(l_text)) ){
+				document.getElementById("errortext1").style.display="inline";
+				document.getElementById("text1").style.border="2px solid red";
+				document.getElementById("text1").focus();
+				return false;
+			}else{
+				alert('Se ha modificado el texto');
+				document.getElementById("errortext1").style.display="none";
+				document.getElementById("text1").style.border="1px solid grey";
+				return true;
+			}
+
+		} //<--function validar_long
+
+		function validar_guion(){
+			var l_texto = document.getElementById("text2").value;
+			if(l_texto.indexOf("-")<0 ){
+				document.getElementById("errortext2").style.display="inline";
+				document.getElementById("text2").style.border="2px solid red";
+				document.getElementById("text1").focus();
+				return false;
+			}else{
+				document.getElementById("errortext2").style.display="none";
+				document.getElementById("text2").style.border="1px solid grey";
+				return true;
+			}	
+		}//<--function validar_guion
+
+		function modificar_color() {
+		/*Añadir un botón al formulario que ponga todos los campos de texto de color rojo. 
+		Podemos hacerlo de dos maneras*/
+          var la_inputs = document.getElementsByTagName('input');
+          for (var i = 0; i < la_inputs.length; i++) {
+          	if (la_inputs[i].type == "text") {
+          		if (la_inputs[i].className == "rojo") {
+          			la_inputs[i].className = "white";
+
+          		}else{
+          			la_inputs[i].className = "rojo";
+          		}
+          	}        
+          }
+		}//<--function modificar_color
+
+	</script>
+
+</head>
+<body>
+<!--si usamos el evento onChange, la validacion la realiza al salir del campo, es decir, cuando pierde el focus, pero con el onkeyup valida mientras se va escribiendo-->
+    <form method="get" action="" name="nameform" onsubmit="return validar();">
+        <div>
+	        <label for="text1">Introducir texto 1: </label> 
+	        <input type="text" id="text1" name="vtext1" onkeyup="validar_long()">
+	        <p id="errortext1" class="error">* El texto ha de tener mímino 5 caracteres</p>
+        </div>
+        <div>
+	        <label for="text2">Introducir texto 2: </label>
+	       <!-- <input type="text" id="text2" name="text2" onkeyup="validar_guion()" onblur="alert('Ha perdido el focus')">-->
+	        <input type="text" id="text2" name="vtext2" onkeyup="validar_guion()">
+	        <p id="errortext2" class="error">* El texto ha de contener un guión</p>
+        </div>
+        <br>
+        <div>
+        	<label for="email">Email: </label>
+			<input id="email" type="text" name="vemail">	
+	        <p id="error_email" class="error">*El formato del email no es correcto</p>
+        </div>
+        <br>
+        <div>
+        	<label for="dni">D.N.I.: </label>
+			<input id="dni" type="text" name="vdni">	
+	        <p id="error_dni1" class="error">*Formato incorrecto </p>
+	        <p id="error_dni2" class="error">*DNI incorrecto: la letra no corresponde</p>
+        </div> 
+        <hr>
+        <dir>
+	    	<input type="radio" name="pregunta" value="si"   id="pregunta_si"/> SI
+			<input type="radio" name="pregunta" value="no"   id="pregunta_no"/> NO
+			<input type="radio" name="pregunta" value="nsnc" id="pregunta_nsnc"/> NS/NC
+			<p id="error_radio" class="error">* Se ha de seleccionar una opción</p>
+    	</dir>
+    	<hr>
+    	<div>
+    	 	<input type="checkbox" value="basquet" name="basquet" id="basquet" class="deporte" />Básquet 
+    	 	<br>
+			<input type="checkbox" value="hoquei" name="hoquei" id="hoquei" class="deporte"/>Hoquei 
+			<br>
+			<input type="checkbox" value="tenis" name="tenis" id="tenis" class="deporte"/>Tenis
+			<br>
+			<p id="error_deporte" class="error">* Se ha de seleccionar al menos un deporte</p>
+    	</div>
+    	<hr>
+    	<div>
+    		<input type="checkbox" value="condiciones" name="condiciones" id="condiciones"/>He leído y acepto las condiciones
+			<input type="checkbox" value="privacidad" name="privacidad" id="privacidad"/>He leído la política de privacidad 
+			<p id="error_check" class="error">* Obligatorio aceptar todas las condiciones</p>
+    	</div>
+    	<hr>
+    	<div>
+    	    <label for="opciones">Temas de interés:</label><br/>
+			<select id="opciones" name="vopciones">
+				<option disabled selected>-selecciona-</option>
+				<option>A</option>	
+				<option>B</option>
+				<option>C</option>
+				<option>D</option>
+				<option>E</option>
+			</select>
+			<p id="error_select" class="error">* Obligatorio Seleccionar una de las opciones de la lista</p>
+		</div>
+    	<hr>
+        <input type="submit" name="submit" value="Enviar">
+    </form>
+    <hr>
+    <div>
+    	<img src="img/navidad.jpg" alt="Árbol de Navidad" width="500" onmouseover="alert('está prohibida su copia')">
+    </div>
+    <hr>
+    <button type="button" onclick="modificar_color()">Click Me!</button>
+
+    
+</body>
+</html>

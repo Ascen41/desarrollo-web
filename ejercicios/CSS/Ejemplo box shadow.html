@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>documento de prueba</title>
+	<style type="text/css">
+		div{
+
+			width: 100px;
+			height: 80px;
+			border: 1px solid #000;
+			box-shadow: 10px 15px 5px 5px;	
+		}
+		h1 {
+			text-shadow: 2px 2px 5px red;
+		}
+
+
+		#grad1 {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(0deg, red, yellow); /* Standard syntax (must be last) */
+}
+
+#grad2 {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(90deg, red, yellow); /* Standard syntax (must be last) */
+}
+
+#grad3 {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(180deg, red, yellow); /* Standard syntax (must be last) */
+}
+
+#grad4 {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(-90deg, red, yellow); /* Standard syntax (must be last) */
+}
+	</style>
+
+</head>
+<body>
+	
+	<h1>Es una prueba</h1>
+	<div></div>
+	<h1>Tipos de degradados por grados</h1>
+	<div id="grad1" style="text-align:center;">0deg</div><br>
+	<div id="grad2" style="text-align:center;">90deg</div><br>
+	<div id="grad3" style="text-align:center;">180deg</div><br>
+	<div id="grad4" style="text-align:center;">-90deg</div>
+</body>
+</html>

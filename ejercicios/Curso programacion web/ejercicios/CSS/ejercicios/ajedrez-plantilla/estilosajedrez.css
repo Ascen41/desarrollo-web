@@ -1,0 +1,36 @@
+@font-face{
+font-family: "mifuente";
+	src: url("fredoka-one.woff");
+}
+*{
+	background-color: #34b2a4;
+}
+header, h3{
+	color:#005e54;
+}
+h3{
+	border-top: solid #005e54 4px;
+	font-family: "mifuente"
+}
+h1{
+	text-shadow: 1px -1px 0px white;
+	text-transform: uppercase;
+	font-family: "mifuente"
+}
+article{
+	font-family: verdana;
+}
+#A{
+	width: 100%;
+	float: left;
+}
+#texto{
+	width: 80%;
+	float: left;
+}
+img{
+	width: 20%;
+	float: right;
+	border: double black 10px;
+	
+}

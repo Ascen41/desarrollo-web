@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>load demo</title>
+    <style>
+        body {
+            font-size: 12px;
+            font-family: Arial;
+        }
+    </style>
+    <script src="https:/js/jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#contenido").load("load.html #projects li", function(response, status, xhr) {
+                    if (status == "success") {
+                        var msg = "NINGUN ERROR, contenido cargado con éxito ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                    if (status == "error") {
+                        var msg = "UPS!!! Hemos tenido un fallo: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="contenido">
+    </div>
+    <div id="error">
+    </div>
+    <button>
+        Cargar contenido
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        var eurovalor= 166.386;
+        function pesetaeuro(){
+            document.conversor.euro.value =
+    Math.round(parseInt(document.conversor.peseta.value) * 100 / eurovalor)
+    / 100;
+        }
+        function europeseta(element) {
+  document.conversor.peseta.value =
+    Math.round(parseInt(document.conversor.euro.value) * eurovalor);
+}    
+    </script>
+    <style>
+        #eu{
+            margin-top: 2em;
+
+        }
+        #pts{
+            margin-top: 2em;
+        }
+        fieldset{
+            border: solid 4px blueviolet;
+
+        }
+        legend{
+            font-size: 50px;
+            color: blueviolet;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        label{
+            color: blueviolet;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }  
+        #a, #b{
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background:blueviolet;
+            border: solid 2px rgb(70, 1, 70);
+        } 
+        #c, #d{
+            background: rgb(70, 1, 70);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<form name="conversor" >
+<fieldset>
+    <legend>Conversion a Euros</legend>
+    <div id="eu">
+        <label for="peseta">Pesetas</label>
+        <input type="text" name="peseta"id="c"> 
+        <input type="button"onclick="pesetaeuro(this)" value="Pasar a Euros"id="b">
+    </div>
+    <div id="pts">
+        <label for="euro">Euro</label>
+        <input type="text" name="euro"id="d">
+        <input type="button"onclick="europeseta(this)" value="Pasar a Pesetas"id="a">
+    </div>
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://www.arkaitzgarro.com/javascript/snippets/cap18/ej15.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ejercicio 15 - DOM básico y atributos XHTML</title>
+
+    <style type="text/css">
+        .oculto { display: none; }
+        .visible { display: inline; }
+    </style>
+    
+    <script type="text/javascript">
+        function muestra() {
+          var textoAdicional = document.getElementById("adicional");
+          if (textoAdicional.className == "visible"){
+          textoAdicional.className = "oculto";
+          }
+          else{
+            textoAdicional.className = "visible";
+          }
+  
+        }
+
+        //Ponemos window.onload pq para poder acceder al botón, este ha de estar cargado antes
+        //si no ponemos esto, intenta acceder al evento del botón cuando este no está cargado, en
+        // ese caso, deberíamos porner la llamada al final de la págian. s
+        window.onload = function(){
+          document.getElementById("idbtn").onclick = muestra;
+        }
+        function ponerFondo(color){
+          document.getElementById('adicional').style.background=color;
+
+        }
+        function mostrar(){
+          alert(document.getElementById("idtext").value);
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>
+        <input type="text" id="idtext" onkeyUp="mostrar();">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
+     
+         <!-- <span id="adicional" class="oculto" onmouseover="alert('prueba evento onmouseover')">-->
+           <span id="adicional" onmouseover="ponerFondo('red');" onmouseout="ponerFondo('white');" onmousedown=""> 
+            111 Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.
+        </span>
+    </p>
+    <a class="enlace" href="" onclick="muestra(); return false;">Seguir leyendo</a>
+
+    <button id="idbtn">Seguir leyendo</button> <!-- el script llamamos al evento onClick-->
+
+</body></html>

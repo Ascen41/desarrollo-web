@@ -1,0 +1,235 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+
+body {
+    width: 770px;
+    margin: auto;
+    padding: 0px;
+}
+
+
+/*-- Cabecera ---------------------------------------------------*/
+
+header h2 {
+    float: left;
+    padding-left: 20px;
+    padding-top: 40px;
+    margin: 0;
+    text-decoration: underline;
+}
+
+header div {
+    float: right;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+
+/*-- Menu ---------------------------------------------------*/
+
+nav {
+    float: left;
+    width: 100%;
+}
+
+
+/*-- contenido pagina ---------------------------------------------------*/
+
+#content {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+/*-- seccion principal ---------------------------------------------------*/
+
+section {
+    width: 530px;
+    float: left;
+}
+
+article {
+    margin-left: 20px;
+    float: left;
+}
+
+
+/*-- sección lateral ---------------------------------------------------*/
+
+aside {
+    width: 200px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*-- Pie de página ---------------------------------------------------*/
+
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+
+body {
+    background: linear-gradient(0deg, white, #BCBCFF);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #192666;
+    font-size: 0.9em;
+}
+
+header {
+    background: url(cabecera.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+}
+
+header h2 {
+    color: white;
+}
+
+nav {
+    background-color: #192666;
+}
+
+nav ul {
+    margin-bottom: 6px;
+    padding-left: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav li a {
+    background-color: #253575;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 6px 13px;
+}
+
+nav li a:hover {
+    background-color: #FFFFFF;
+    color: #FF9000;
+    font-weight: bold;
+}
+
+#content {
+    background-color: white;
+}
+
+#content section article {
+    background: url(fondo_articulo.jpg);
+    background-repeat: no-repeat;
+    padding: 1em 0 1em 1em;
+}
+
+#content section article p {
+    text-align: justify;
+    padding-right: 1em;
+}
+
+#content h1 {
+    background-color: #dee6fb;
+    padding: 6px;
+    margin-top: 4px;
+    text-decoration: underline;
+}
+
+#content section ul {
+    list-style: none;
+    margin: 0!important;
+    padding: .5em;
+    background-color: white;
+}
+
+#content ul li {
+    display: inline-block;
+    font-size: 0.8em;
+    padding: .5em;
+}
+
+#content section .clear {
+    padding-top: 25px;
+}
+
+#content aside {
+    background: url(fondo_columna.gif);
+    background-repeat: no-repeat;
+    background-color: #CBD9F9;
+}
+
+#content aside a[href^="miperfil"] {
+    color: #192666;
+}
+
+#content aside div h4 {
+    background-color: #afc1f3;
+    padding: 7px;
+    text-decoration: underline;
+}
+
+#content aside div+div h4 {
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+#content aside img {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#content aside img+p {
+    font-size: 0.7em;
+}
+
+#content aside img+p::first-line {
+    font-weight: bold;
+}
+
+#content aside div:nth-of-type(1) a {
+    padding-left: 8px;
+    font-size: .7em;
+}
+
+#content aside ul {
+    list-style: none;
+    margin: 0!important;
+    padding: 0 0 13px 0;
+}
+
+#content aside ul li {
+    border-bottom: 1px solid white;
+    display: block;
+    font-size: .7em;
+}
+
+#content aside ul li:hover {
+    background-color: #DEE3F5;
+    font-weight: bold;
+}
+
+#content aside ul li a {
+    margin: 6px 0 6px 6px;
+    text-decoration: none;
+    color: #192666;
+}
+
+#content aside ul li a::before {
+    content: url(icono_categoria.gif);
+    padding-right: 3px;
+}
+
+#content aside ul li:hover a::before {
+    content: url(icono_elemento_seleccionado.gif);
+    padding-right: 3px;
+}

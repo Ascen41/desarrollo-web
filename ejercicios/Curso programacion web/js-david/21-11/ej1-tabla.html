@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <script src="../../bootstrap/js/jquery-3.4.1.min.js"></script>
+  <script src="../../bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../css/21-11/ejercicio1bs-2.css">
+
+  <title>Ejercicio 1</title>
+</head>
+
+<body>
+  <div class="contenedor padding-lg">
+    <!--Menu-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Ejercicio 1</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="ej1-bootstrap.html">Home</a></li>
+            <li><a href="ej1-tabla.html">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" action="/action_page.php">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>
+                Login</a></li>
+          </ul>
+
+          <!-- Cabecera -->
+
+        </div>
+    </nav>
+    <div class="jumbotron">
+      <h1>Ejercicio Bootstrap</h1>
+    </div>
+    <div class="row ">
+      <div class="col-sm-12">
+
+        <!--modalll-->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Iniciar Sesión</h4>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-warning alert-dismissible">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <span><strong>Aviso:</strong> Introduzca su nombre de usuario y contraseña:</span>
+                </div>
+                <div class="form-group">
+                  <label for="usr">Usuario:</label>
+                  <input type="text" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Contraseña:</label>
+                  <input type="password" class="form-control" id="pwd">
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Submit">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  Finaliza Modal -->
+        <div class="table-responsive">
+          <table class="table-striped responsive">
+            <tr>
+              <th>Identificador</th>
+              <th>Título</th>
+              <th colspan="2">Contenido</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Artículo 1</td>
+              <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia dolorem necessitatibus dignissimos
+                repellat cum eaque incidunt non, repellendus modi assumenda veritatis et sapiente animi! Odio ab
+                accusantium laudantium. Tempore, necessitatibus. Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Provident dolorem rem nam? Excepturi cupiditate cumque voluptatum atque ducimus, eos quis enim
+                delectus, inventore, debitis reiciendis obcaecati dolore beatae itaque eum.</td>
+              <td><button type="button" class="btn btn-success">Editar</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Artículo 2</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, harum. Eum rem voluptatibus totam vel
+                adipisci voluptates iure reiciendis cumque et nobis. Reiciendis corrupti reprehenderit fuga quasi rerum,
+                neque maiores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat veritatis earum
+                aperiam non voluptatum totam adipisci unde molestias, quia explicabo similique nostrum esse dolorum
+                tempore culpa. Delectus quis doloremque doloribus.</td>
+              <td><button type="button" class="btn btn-success">Editar</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

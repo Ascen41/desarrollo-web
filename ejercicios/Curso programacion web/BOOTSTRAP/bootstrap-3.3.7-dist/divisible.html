@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>divisible</title>
+    <script type="text/javascript">
+        /*13.- Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro)
+                var n1 = prompt("Escribe un número");
+                if (n1 % 2 === 0 || n1 % 3 === 0 || n1 % 5 === 0 || n1 % 7 === 0) {
+                    document.write("Es divisible por 2, 3, 5 o 7");
+                } else {
+                    document.write("No es divisible ni por 2, ni por 3, ni por 5, ni por 7");
+                }
+                14.- Añadir al ejercicio anterior que nos diga por cual de los cuatro es divisible (hay que decir todos por los que es divisible)*/
+        var n1 = prompt("Escribe un número");
+        if (n1 % 2 === 0 || n1 % 3 === 0 || n1 % 5 === 0 || n1 % 7 === 0) {
+            if (n1 % 2 === 0) {
+                document.write("Es divisible por 2. ");
+            }
+            if (n1 % 3 === 0) {
+                document.write("Es divisible por 3. ");
+            }
+            if (n1 % 5 === 0) {
+                document.write("Es divisible por 5. ");
+            }
+            if (n1 % 7 === 0) {
+                document.write("Es divisible por 7. ");
+            }
+        } else {
+            document.write("No es divisible ni por 2, ni por 3, ni por 5, ni por 7");
+        }
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

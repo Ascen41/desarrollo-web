@@ -1,0 +1,57 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+body{
+	width: 770px;
+	margin: auto;
+	padding: 0px;
+}
+/*-- Cabecera ---------------------------------------------------*/
+header h2{
+	float: left;
+	padding-left: 20px;
+	padding-top: 40px;
+	margin: 0;
+}
+header div{
+	float: right;
+	padding-top: 40px;
+	padding-right: 20px;
+}
+/*-- Menu ---------------------------------------------------*/
+nav{
+	float: left;
+	width: 100%;
+}
+/*-- contenido pagina ---------------------------------------------------*/
+#content{
+	float: left;
+	width: 100%;
+	padding-top: 20px;
+}
+/*-- seccion principal ---------------------------------------------------*/
+section{
+	width: 530px;
+	float: left;
+}
+article{
+	margin-left: 20px;
+	float: left;
+}
+/*-- sección lateral ---------------------------------------------------*/
+aside{
+	width: 200px;
+	float: left;
+
+}
+.clear{
+	clear: both;
+}
+/*-- Pie de página ---------------------------------------------------*/
+
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */

@@ -1,0 +1,163 @@
+@font-face{
+		font-family: "fuente";
+	src: url("special-elite.woff2");
+}
+body{ 
+ text-align: left;
+ color: #000; 
+ background-color: #9ceec3; 
+}
+#contenedor{
+ float: left;
+}
+#images{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 30px;
+	width: 20%;
+	box-sizing: content-box;
+	float: left;
+}
+#texto{
+	padding-left: 30px;
+  	width: 70%;
+  	text-align: justify;
+  	float: left;
+  	box-sizing: border-box;
+}
+#tit{
+	margin-top: 10px;
+	letter-spacing: 10pt;
+	font-family: "fuente";
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	font-size: 2em;
+}
+#S, #A, #B{
+	letter-spacing: 5pt;
+	font-weight:bold;
+	border: solid #047634;
+	color: #561a8d;
+	font-size: 2em;
+	font-family: "fuente";
+}
+#sab{
+	letter-spacing: 1px;
+}
+
+#cabecera{
+	padding: 50px;
+}
+#primero{
+	border:solid #00b454;
+  	margin-bottom: 10px;
+  	float: left;
+  	margin-right: 30px;
+  	width: 100%;
+  	box-sizing: border-box;
+  	position: relative;
+}
+#caja1{ 
+  	padding-left: 30px;
+  	width: 70%;
+  	float:none;
+  	text-align: justify;
+}
+#tele{
+    width: 25%;
+    position: absolute;
+   	bottom: 0px;
+   	right: 0px;
+}
+.titulo23{
+	background-color: #00b454;
+	font-family: "fuente";
+	color: white;
+	font-size: 25px; 
+}
+#segundo{
+	border:solid #00b454;
+  	margin-bottom: 10px;
+  	padding-left: 30px;
+  	padding-bottom: 10px;
+  	padding-right: 10px;
+  	float: left;
+  	box-sizing: border-box;
+}
+#caja2{ 
+  	float: left;
+}
+#luna{
+	width: 100px;
+	padding: 2px;
+	float: right;
+	margin-right: 15px
+}
+
+#tercero{
+	border:solid #00b454;
+  	margin-bottom: 10px;
+  	padding-left: 30px;
+  	padding-bottom: 10px;
+  	padding-right: 10px;
+  	float: left;
+}
+#caja3{
+	position: static;
+	width: 100%;
+	float:left;
+}
+.rojo{
+	color: red;
+}
+.ocre{
+	color: #f8a804;
+}
+.azul{
+	color: blue;
+}
+.subrayado{
+	color: #04562e;
+	text-decoration-line: underline;
+  	text-decoration-style: double;
+}
+#allan{
+	width: 100%;
+	padding: 2px;
+	border: 2px solid #047634;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+#roald{
+	width: 100%;
+	padding: 2px;
+	border: 2px solid #047634;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+#yelena{
+	width: 100%;
+	padding: 2px;
+	border: 2px solid #047634;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;	
+}
+#letrasp1, #letrasp2, #letrasp3{
+	font-family: arial;
+	font-size: 16px;	
+
+}
+.footer{
+	float: right;
+	width: 75%;
+	border-top: 1px solid black;
+}
+.pie{
+
+	font-size: 12px;
+	width: 75%;
+}
+
+
+
+ 						

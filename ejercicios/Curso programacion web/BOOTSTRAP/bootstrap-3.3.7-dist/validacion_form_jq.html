@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ejercicio 7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+    <style>
+        .validation {
+            color: red;
+            font-size: 9px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#miForm").submit(function(event) {
+                $(this).children("input:not(input[type=submit], input[type=radio]), select, textarea").each(function() {
+                    var i = $(this);
+                    //this, en este caso, es el quivalente al formulario, con el .children me devolvera los hijos de mi formulario.para acotar dentro del children introducimos input, y asi filtramos para que me devielvan los hijos de tipo input.por el hecho que esta dentro del bucle el this en ese caso se refereiria a los inputs
+                    //con el .each(function())se recorre el array
+
+                    var rule = i.attr('data-rule').split(':');
+                    console.log(rule[0] + rule[1]);
+
+                    switch (rule[0]) {
+                        case 'minlen':
+                            if (i.val().length < parseInt(rule[1])) {
+                                i.next('.error').html(i.attr('data-msg'))
+                            } else {
+                                i.next('.error').html('')
+                            }
+                            break;
+                        case 'maxlen':
+                            if (i.val().length > parseInt(rule[1])) {
+                                i.next('.error').html(i.attr('data-msg'))
+                            } else {
+                                i.next('.error').html('')
+                            }
+                            break;
+                        case 'email':
+                            console.log(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/)
+                            if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/.test(i.val()))) {
+                                i.next('.error').html(i.attr('data-msg'))
+                            } else {
+                                i.next('.error').html('')
+                            }
+                            break;
+
+                        case 'select':
+
+                            break;
+                        case 'checbox':
+
+                            break;
+                    }
+
+
+                });
+                $(this).children("input[type= radio]").each(function() {
+                    if ($(this).is(":checked")) {
+                        error = true
+                        return false;
+                    }
+                    console.log("checked");
+                });
+                /*  $(this).children("select").each(function() {
+                      if ($(this).is("select index [0]")) {
+                          error = true
+                          return false;
+                      }
+                      console.log("select");
+                  });*/
+                event.preventDefault();
+            });
+        });
+        /*<form insubmint="return validar()" 
+                                // en JQuery accedo al formulario que tiene que tener un id...
+                                $("#miform").submit(function (event){
+                                    var valido=validar()
+                                    //declaramos la variable...
+                                    if(valido)
+                                    event.preventDefault() 
+                                    //impide el envio del formulario el evento por defecto...
+                                })
+                                //introducimos dos atributos nuevos en html, introduciomos el mensaje de error y los requisitos...mirar el xj mas abajo.*/
+    </script>
+
+</head>
+
+<body>
+    <form id="miForm">
+        <label for="name"> Nombre<span class="aster" style="color:red">*</span> </label>
+        <input type="text" name="name" id="name" data-msg="Por favor entra al menos 4 caracteres" data-rule="minlen:4">
+        <p class="error" style="color: red; font-size: 9px;"></p>
+        <!-- xj  <input type="text" name="nom" id="nom" onchange="validarNombre()" onblur="alert" data-msg="" data-rule="">-->
+        <!--como usamos en onchange en el ejercicio 3 de la página 73-->
+
+
+        <label for="apellidos">Apellidos<span class="aster" style="color:red">*</span></label>
+        <input type="text" name="apellidos" id="apellidos" data-msg="Por favor entra al menos 4 caracteres" data-rule="minlen:4">
+        <p class="error" style="color: red; font-size: 9px;"></p>
+        <br>
+        <br>
+        <label for="name"> Email<span class="aster" style="color:red">*</span> </label>
+        <input type="text" id="email" name="Direccion Email" data-msg='Por favor introduce un formato correcto' data-rule='email'>
+        <p class="error" style="color: red; font-size: 9px;"></p>
+
+
+
+        <label for="Password">Contraseña <span class="aster" style="color:red">*</span></label>
+        <input type="password" id="password" name="Password" data-msg="formato erróneo" data-rule="password">
+        <p class="error" style="color: red;font-size: 9px;"></p>
+        <br>
+        <br>
+
+
+        <label><p>Provincia</p></label>
+        <select name="entradalista" data-msg="debes seleccionar una opción" data-rule="select">
+			<option value>-selecciona-</option>
+			<option value>Barcelona</option>
+			<option value>Tarragona</option>
+			<option value>Girona</option>
+			<option value>Lleida</option>
+        </select>
+
+
+
+        <label for='comentario'>Comentarios <span class="aster" style="color:red">*</span></label>
+        <textarea name="comentarios" id="comment" onkeypress="return hola()" rows="2" cols="60" data-msg="Maximo 50 caracteres" data-rule="maxlen:50"></textarea>
+        <p class="error" style="color: red; font-size: 9px;"></p>
+        <br>
+        <input type="checkbox" name="condiciones" id="condiciones" data-msg="" data-rule="checbox">
+        <label for="condiciones">Aceptar Condiciones</label>
+
+
+
+
+        <br>
+        <input type="radio" name="pregunta" id="si" value="SI">SI
+        <input type="radio" name="pregunta" id="no" value="NO">NO
+        <input type="radio" name="pregunta" id="nsnc" value="NS/NC">NS/NC
+        <br>
+        <p class="error" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+        <br>
+        <input type="submit" value="Enviar" style="display: block;">
+        <div class="validation"></div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>algoritmo para calcular la letra del dni</title>
+
+    <script type="text/javascript">
+        //El algoritmo para calcular la letra del dni es el siguiente :
+        //El número debe ser entre 0 y 99999999
+        //Debemos calcular el resto de la división entera entre el número y el número 23.
+        //Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes:  (T, R, W, A, G, M, Y, F, P, D, X, B, N, J, Z, S, Q, V, H, L, C, K, E)
+        //Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.
+        //Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».
+
+
+
+        /*   //resultado = numero1 % numero2; // resultado = 0 //
+//El cálculo de la letra del Documento Nacional de Identidad (DNI) es un proceso matemático sencillo que se basa en obtener el resto de la división entera del número de DNI y el número 23. A partir del resto de la división, se obtiene la letra seleccionándola dentro de un array de letras. El array de letras es://
+    var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+    //En primer lugar (y en una sola instrucción) se debe comprobar si el número es menor que 0 o mayor que 99999999. Si ese es el caso, se muestra un mensaje al usuario indicando que el número proporcionado no es válido y el programa no muestra más mensajes.//
+    var num_dni= prompt("Introdude el numero del DNI");
+   if(num_dni < 0 || num_dni > 99999999){
+    alert("el número proporcionado no es válido")
+  }else{
+    //Si el número es válido, se calcula la letra que le corresponde según el método explicado anteriormente.//
+    var letra_dni= prompt("Introduce la letra de tu DNI");
+    var pos = num_dni % 23;
+    var letraclaculada= letras[pos];
+    if(letraclaculada==letra_dni){
+    alert("correcto")
+    }else{
+    alert("incorrecto")
+    }  
+  }*/
+
+
+        //declaramos las variables que vamos a usar 
+        var resto = 0;
+        var letra = "";
+        do {
+            var numero = prompt("Introduce tu dni");
+            if (Number(numero) == numero) {
+                numero = Number(numero);
+                if (numero >= 0 && numero <= 99999999) {
+                    //Calculamos el resto de dividir el número entre 23 (%23)
+                    resto = numero % 23;
+                    //Según sea el resto asiganmos un valor a la variable letra 
+                    switch (resto) {
+                        case 0:
+                            letra = "T";
+                            break;
+                        case 1:
+                            letra = "R";
+                            break;
+                        case 2:
+                            letra = "W";
+                            break;
+                        case 3:
+                            letra = "A";
+                            break;
+                        case 4:
+                            letra = "G";
+                            break;
+                        case 5:
+                            letra = "M";
+                            break;
+                        case 6:
+                            letra = "Y";
+                            break;
+                        case 7:
+                            letra = "F";
+                            break;
+                        case 8:
+                            letra = "P";
+                            break;
+                        case 9:
+                            letra = "D";
+                            break;
+                        case 10:
+                            letra = "X";
+                            break;
+                        case 11:
+                            letra = "B";
+                            break;
+                        case 12:
+                            letra = "N";
+                            break;
+                        case 13:
+                            letra = "J";
+                            break;
+                        case 14:
+                            letra = "Z";
+                            break;
+                        case 15:
+                            letra = "S";
+                            break;
+                        case 16:
+                            letra = "Q";
+                            break;
+                        case 17:
+                            letra = "V";
+                            break;
+                        case 18:
+                            letra = "H";
+                            break;
+                        case 19:
+                            letra = "L";
+                            break;
+                        case 20:
+                            letra = "C";
+                            break;
+                        case 21:
+                            letra = "K";
+                            break;
+                        case 22:
+                            letra = "E";
+                            break;
+                        default:
+                            //SI NO ES UN NÚMERO ENTRE 0 Y 22 MOSTRAMOS UN ERROR
+                            alert("Numero erroneo");
+                    }
+                }
+                //MOSTRAMOS MENSAJE CON EL DNI Y LA LETRA OBTENIDA
+                alert("Numero: " + numero + ", Letra: " + letra);
+            }
+            //SI NO ES UN NÚMERO
+            else {
+                //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO
+                if (numero != undefined) {
+                    alert(numero + " No es un numero");
+                }
+            }
+            //MIENTRAS NO SE PULSE CANCELAR VUELVE ARRIBA
+        } while (numero != undefined);
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

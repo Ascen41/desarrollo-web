@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicios 8 JavaScript</title>
+</head>
+
+<script type="text/javascript">
+
+//Ejercicio 8: Función numero impar
+	function func_parimpar(num){
+		if ((num % 2) !== 0){
+			return ("El número introducido es impar");
+		}
+		else{
+			return ("El número introducido es par");
+		}
+	}
+
+	var numero = parseInt(prompt("Escriba un número: ")); 
+	if (isNaN(numero)) {
+		alert("El parámetro introducido no es un número");
+	}
+	else{
+		var result = func_parimpar(numero);
+		alert(result);
+	}
+</script>
+
+<body>
+
+</body>
+</html>

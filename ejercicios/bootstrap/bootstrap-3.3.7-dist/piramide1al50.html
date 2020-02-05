@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Pirámide 1 al 50</title>
+
+    <script type="text/javascript">
+        //Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) 
+
+
+        //PEDIMOS EL NÚMERO POR TECLADO
+        var numrep = prompt("Introduce numero de repeticiones");
+        //SI LO INTRODUCIDO ES UN NÚMERO
+        if (Number(numrep) == numrep) {
+            //SI ES UN NÚMERO ENTRE 1 Y 50
+            if (numrep > 0 && numrep <= 50) {
+                var rep, i;
+                //BUCLE QUE VA DESDE 0 HASTA numrep
+                for (i = 0; i <= numrep; i++) {
+                    //BUCLE DESDE 1 HASTA i
+                    for (rep = 1; rep <= i; rep++) {
+                        document.write(rep);
+                    }
+                    document.write("<br>");
+                }
+            } else {
+                alert("El número introducido no es válido");
+            }
+        } else {
+            alert("No has introducido un número");
+        }
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

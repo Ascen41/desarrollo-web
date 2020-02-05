@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo stylos CSS dentro HTML</title>
+	<style type="text/css">
+		p{
+			color: green;
+		}
+		h1,#cl-rojo{
+			color: red;
+			text-decoration: underline;
+		}
+		.cl-blue{
+			color: blue;
+		}
+		.cl-yellow{
+			color: yellow;
+		}
+		p::selection{
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hola mundo</h1>
+	<p> Hola mundo, ¿qué tal?</p>
+	<p> Hola mundo, <span class="cl-blue">¿qué tal?</span></p>
+	<p id="cl-rojo"> Hola mundo, ¿qué tal?</p>
+	<p> Hola mundo, ¿qué tal? <span class="cl-yellow">¿cómo estáis?</span></p>
+</body>
+</html>

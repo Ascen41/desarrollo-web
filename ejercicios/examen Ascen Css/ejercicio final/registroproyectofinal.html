@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="proyectstyle.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>TITULO</h2>
+        <div id="search">
+            <input type="search" name="search">
+            <input type="submit" name="submit" value="Buscar">
+        </div>
+    </header>
+    <nav>
+        <ul id="menu">
+            <li><a href="#inicio">HOME</a></li>
+            <li><a href="#Blog">INFO</a></li>
+            <li><a href="#Sobremi">REGISTRO</a></li>
+            <li><a href="#Fotos">GALERIA</a></li>
+        </ul>
+    </nav>
+
+    <form method="GET" action="#" name="miForm" onsubmit="return validar()">
+
+        <fieldset>
+            <legend>Info Personal</legend>
+
+            <label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50"onchange="minombre()"></label>
+            <p id="nomerror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+
+            <label for="lapellido1"><strong> Apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50"onchange="miprimerapellido()"></label>
+            <p id="aperror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+            <label for="lapellido2"><strong>Direccion</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50"onchange="misegunapellido()"></label>
+            <p id="aperror2" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+
+
+
+
+            <label for="edad"><strong>Telefono</strong><input id="edad" type="text" name="apellido1" maxlength="50" size="50"onchange="miedad()"></label>
+            <p id="edadok" style="color: red; display: none;font-size: 9px;">Tienes que estar en el rango de 18 o 65 años</p>
+
+            <label for="ltelefono"><strong>Fecha de nacimiento</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onkeyup="mitelefono()">
+            <p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+            <label><strong>Género:</strong></label>
+
+            <label for="idhombre" class="inline">Hombre</label>
+            <input type="radio" id="idhombre" name="sexo" class="inline" onchange="migenero()">
+
+            <label for="idmujer" class="inline">Mujer</label>
+            <input type="radio" id="idmujer" name="sexo" class="inline" onclick="migenero()">
+            <p id="error_radio" style="color: red; display:none;font-size: 9px;">*Debe elegir una opción</p>
+        </fieldset>
+        <fieldset>
+            <legend>Info Laboral</legend>
+
+            <label for="lsel"><strong>Profesion</strong></label><select id="lsel" name="poblacion" onchange="mipoblacion()">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+				</select>
+            <p id="error_poblacion" style="color: red; display:none;font-size: 9px;">*Debe elegir al menos una opción</p>
+            <label for="ltelefono"><strong>Direccion</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onkeyup="mitelefono()">
+            <p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+            <label for="ltelefono"><strong>Telefono</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onkeyup="mitelefono()">
+            <p id="telerror" style="color: red; display: none;font-size: 9px;">Tienes que introducir un valor valido</p>
+
+        </fieldset>
+
+        <input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+        novedades y ofertas.</label>
+        <br>
+        <input id="laceptar" type="checkbox" name="aceptar" class="inline" onchange="aceptar()"><label for="laceptar" class="inline">Declaro haber leido y aceptar las
+        condiciones generales del programa y la normativa sobre protección de
+        datos. </label>
+
+        <input type="submit" name="envio" value="Enviar">
+        <footer>
+
+        </footer>
+
+</body>
+
+</html>

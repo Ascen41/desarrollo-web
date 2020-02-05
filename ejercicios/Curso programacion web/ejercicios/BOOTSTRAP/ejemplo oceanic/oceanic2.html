@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Oceanic</title>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/12-5/oceanic.css">
+    <script src="../../bootstrap/jquery-3.4.1.min.js"></script>
+    <script src="../../bootstrap/popper.min.js"></script>
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script>
+            function fondo(color) {
+                document.body.style.background = color;
+     
+            }
+            function titulo(title){
+                document.title=title;
+            }
+    </script>
+
+</head>
+<body>
+
+    <div id="todo">
+        <div id="jumbotron" class="jumbotron mb-0 py-md-3 p-sm-0">
+            <img src="../../imagenes/oceanic/oceanic-logo.png" alt="" class="w-25 p-sm-0">
+        </div>
+        <nav id="menu" class="navbar navbar-expand-md  navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"style="width:100%; background: rgb(29,59,152);"  >
+               <span class="navbar-toggler-icon"></span> 
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav w-100 text-center">
+                  <li class="nav-item w-100">
+                    <a class="nav-link text-center" href="#">Inicio</a>
+                  </li>
+                  <li class="nav-item w-100">
+                    <a class="nav-link text-center" href="#">Viajes</a>
+                  </li>
+                  <li class="nav-item w-100">
+                    <a class="nav-link text-center" href="#">Registro</a>
+                  </li>
+                  <li class="nav-item w-100">
+                    <a class="nav-link text-center" href="#">Contacto</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid px-0 ">
+            <div class="row mx-0">
+                <div id="lateral" class="col-sm-3 px-0 ">
+                        <ul id="menulateral" class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link " href="">Vuelo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Hotel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Vuelo+Hotel</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Escapadas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Camping</a> 
+                            </li>
+                        </ul>
+                    </div>
+                <div id="principal" class="col-sm-9">
+                    <h1 class="p-5"><u>Cambiando el titulo y el color de fondo</u></h1>
+                    <ul>
+                        <li><button onclick="titulo(this.textContent)" type="button">Pagina 1</button></li>
+                        <li><button onclick="titulo(this.textContent)" type="button">Oceanic Airlines</button></li>
+                        <li><button onclick="titulo(this.textContent)" type="button">Curso de Javascript</button></li>
+                        <li><button onclick="titulo(this.textContent)" type="button">Alberto</button></li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td style="background: black;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: blue;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: greenyellow;" onmouseover="fondo(this.style.background)"></td>
+                        </tr>
+                        <tr>
+                            <td style="background: red;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: violet;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: cyan;" onmouseover="fondo(this.style.background)"></td>
+                        </tr>
+                        <tr>
+                            <td style="background: yellow;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: olive;" onmouseover="fondo(this.style.background)"></td>
+                            <td style="background: lightgrey;" onmouseover="fondo(this.style.background)"></td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-9">
+                       <footer>Oceanic Airlines Copyright 2010, All rights reserved blablabla Tel: +34 93 896 72 00 Fax: +34 93 896 72 01</footer>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

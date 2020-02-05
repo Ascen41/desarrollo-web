@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>100numeros</title>
+    <script type="text/javascript">
+        /* Crea una función que genere 100 números aleatorios entre 1 y 1000 que no se repitan y luego muestralos por pantalla*/
+
+        //Función que genera un número aleatorio y lo devuelve
+        function aleatorio(min, max) {
+            var numero = Math.round((Math.random() * (max - min)) + min);
+            return numero;
+        }
+        //Creamos un array
+        var numeros = new Array();
+        var temp = 0;
+        var copia = true;
+        var j = 0;
+        //Bucle que da 100 vueltas
+        for (var i = 0; i < 100; i++) {
+            //En cada vuelta llama a la lunción aleatorio
+            //Y busca el número devuelto en el array
+            do {
+                j = 0;
+                copia = true;
+                temp = aleatorio(1, 1000);
+                for (var j = 0; j < numeros.length; j++) {
+                    if (temp == numeros[j]) {
+                        copia = false;
+                    }
+                }
+            } while (copia == false);
+            numeros[i] = temp;
+        }
+        //La función sort ordena el array de números
+        numeros.sort(function(a, b) {
+            return a - b
+        });
+        var cont = 0;
+        //Con un bucle escribe en pantalla los números
+        for (var i = 0; i < numeros.length; i++) {
+            document.write("Numero " + cont + ": " + numeros[i] + "<br>");
+            cont++;
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

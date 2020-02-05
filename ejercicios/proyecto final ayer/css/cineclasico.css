@@ -1,0 +1,131 @@
+body {
+    width: 770px;
+    margin: auto;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+}
+
+header {
+    background: url(../img/CINE.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+}
+
+header h2 {
+    font-size: 50px;
+    font-family: fantasy;
+    float: left;
+    padding-left: 20px;
+    padding-top: 40px;
+    margin: 0;
+    color: rgba(65, 54, 54, 0.425);
+    text-shadow: -1px -1px 0 #b1aaaa, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000;
+}
+
+header div {
+    float: right;
+    padding-top: 40px;
+    padding-right: 20px;
+}
+
+nav {
+    background-color: #555050;
+    float: left;
+    width: 100%;
+}
+
+nav ul {
+    margin-bottom: 6px;
+    padding-left: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav li a {
+    background-color: #383535;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 6px 13px;
+}
+
+nav li a:hover {
+    background-color: #FFFFFF;
+    color: rgb(207, 7, 7);
+    font-weight: bold;
+}
+
+#content {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url(../img/fondo.jpg);
+    background-position: left top, left top, right bottom, top left;
+    background-repeat: no-repeat;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+aside {
+    width: 200px;
+    float: left;
+    height: 1000px;
+}
+
+#content aside {
+    background-color: rgb(58, 59, 59);
+}
+
+#content aside ul {
+    list-style: none;
+    margin: 0!important;
+    padding: 0 0 13px 0;
+}
+
+#content aside ul li {
+    border-bottom: 1px solid white;
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#content aside ul li a:hover {
+    font-weight: bold;
+    color: rgb(207, 7, 7);
+    font-weight: bold;
+}
+
+#content aside ul li a {
+    margin: 6px 0 6px 6px;
+    text-decoration: none;
+    text-decoration: none;
+    padding: 6px 13px;
+    color: white;
+}
+
+#content aside ul li a::before {
+    content: url(../img/rollopeli.jpg);
+    padding-right: 3px;
+}
+
+#content aside ul li:hover a::before {
+    background-color: rgb(207, 7, 7);
+    font-weight: bold;
+    content: url(../img/clasicpeli.jpg);
+    padding-right: 3px;
+}
+
+img {
+    float: left;
+}
+
+#imagenes {
+    clear: both;
+}
+
+#galeria {
+    padding: 15px;
+}

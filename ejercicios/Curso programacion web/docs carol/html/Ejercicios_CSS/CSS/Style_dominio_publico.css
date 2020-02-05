@@ -1,0 +1,81 @@
+/*-- Cargar fuentes propias ------------------------------------------*/
+@font-face{
+	font-family: "FuentePractica";
+	src: url(../dominio_publico/font/righteous.woff2);
+}
+
+/*-- Body ------------------------------------------------------------*/
+body{
+	background-color: #ffa5007a;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#contenedor{
+	width: 100%;
+}
+
+/*-- Cabecera --------------------------------------------------------*/
+#cabecera{
+	width: 100%;
+	border: 1px solid #777;	
+	text-align: center;
+	box-sizing: border-box;
+}
+#titulo{
+	font-size: 200%;
+	position: relative;
+	bottom: 0.5em;
+}
+#copy_right{
+	font-size: 3.5em;
+  	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*-- Introducción ----------------------------------------------------*/
+#intro{
+	box-sizing: border-box;
+	width: 100%;
+	border: 5px dotted orange;
+	border-radius: 10px;	
+	padding: 10px;
+}
+
+/*-- Títulos textos --------------------------------------------------*/
+div.titulo{
+	font-size: 250%;
+	font-family:"FuentePractica"!important;
+}
+
+/*-- Textos------------------------------------------------------------*/
+#tit_2016, #tit_2017, #tit_2018, #tit_2019{
+	box-sizing: border-box;
+	border-left: 5px solid orange;
+	border-right: 5px solid orange;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*-- Foto ------------------------------------------------------------*/
+.foto{
+	border: 5px solid orange;
+	padding: 2px;
+}
+#tit_2017 img{
+	float: right;
+}
+
+img#foto1{
+	float: left;
+	margin-right: 10px;
+}
+
+img#foto2{
+	float: right;
+}
+
+
+
+
+
+
+

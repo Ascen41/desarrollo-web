@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Examen Javascript / Ejercico 1</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    var EntradaNumero = prompt("Introduce tu edad");
+    if (EntradaNumero < 1) {
+        alert("Has escrito un numero 0 o negativo");
+    } else {
+
+        if (!isNaN(EntradaNumero)) {
+
+            if (EntradaNumero < 18) {
+                alert("Eres menor de 18 años");
+            } else if (EntradaNumero > 65) {
+                alert("Estas jubilado");
+            } else {
+                alert("Todavía estás trabajando o en el paro");
+            }
+        } else {
+            alert("No has escrito numeros");
+        }
+    }
+</script>
+
+</html>

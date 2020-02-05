@@ -1,0 +1,34 @@
+ body{
+      background-color: #d6ded6;
+    }
+  .container-fluid{
+      background-color: #010044;
+    }
+    .jumbotron{
+      background-color: #008000;
+      color: white;
+      font-family: arial;
+    }
+    .list-group{
+      text-align: justify;
+    }
+    hr{
+      border-color: black;
+    }
+    .btn{
+      background-color: #c9f9b5;
+      color: #008000;
+    }
+    li a{
+      color: #d6ded6;
+    }
+.navbar-brand{
+   color: #d6ded6;
+}
+.form-horizontal .control-label {
+     width: 100%;
+    text-align: left;
+ }
+ .btn-default{
+  
+ }

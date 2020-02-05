@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 20 Formularios</title>
+</head>
+<body>
+	<h1>Rellena tu CV</h1>
+	<form method="post" action="/php/insertar_cv.php">
+		<fieldset>
+			<legend>Datos personales</legend>
+		
+			<label for="idreg">Provincia:</label><br/>
+			<select id="idreg" name="v_reg">
+				<option disabled selected>-selecciona-</option>
+				<option>Barcelona</option>	
+				<option>Tarargona</option>
+				<option>Girona</option>
+				<option>Lleida</option>
+			</select>
+			<br><br>
+			<label for="iddate">Fecha de nacimineto:</label><br/>
+			<input id="iddate" type="number" name="v_day" maxlength="2" min="1" max="31">
+			<label>de</label>
+			<select name="v_month">
+				<option disabled selected>-selecciona-</option>
+				<option>Enero</option>	
+				<option>Febrero</option>
+				<option>Marzo</option>
+				<option>Abril</option>
+				<option>Mayo</option>	
+				<option>Junio</option>
+				<option>Julio</option>
+				<option>Agosto</option>
+				<option>Septiembre</option>	
+				<option>Octubre</option>
+				<option>Noviembre</option>
+				<option>Diciembre</option>
+			</select>
+			<label>del</label>
+			<input type="number" name="v_year" maxlength="4" min="1900" >
+			<br><br>
+			<label for="idint">Temas de interés:</label><br/>
+			<select id="idint" name="v_int">
+				<option disabled selected>-selecciona-</option>
+				<option>Administración de bases de datos</option>	
+				<option>Análisis y programación</option>
+				<option>Arquitectura</option>
+				<option>Calidad</option>
+				<option>ERP, CRM business Intelligence</option>
+			</select>
+		</fieldset>
+	</form>
+</body>
+</html>

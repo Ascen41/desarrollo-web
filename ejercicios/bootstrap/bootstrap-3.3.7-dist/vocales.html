@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>vocales</title>
+    <script type="text/javascript">
+        /* Realiza un script que cuente el número de vocales que tiene un texto */
+
+        var cadena = prompt("Introduce una cadena de texto:");
+        var numchar = cadena.length; //Devuelve la longitud del string.
+        cadena = cadena.toUpperCase(); //Devuelve el string en mayúsculas.
+        var car;
+        var contador = 0;
+        var i;
+        for (i = 0; i < numchar; i++) {
+            car = cadena.charAt(i); //recupera el caracter i del string.
+            if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+                contador++;
+            }
+        }
+        document.write("Número de Vocales: " + contador++ + ".");
+        /* 10  Escribe un programa que pida una frase y escriba las vocales que aparecen
+        var text = prompt("Escribe una frase");
+        var nText = text.length;
+        var i;
+        for (i = 0; i < nText; i++) {
+        if (text.substr(i,1) === "a" || text.substr(i,1) === "e" || text.substr(i,1) === "i" || text.substr(i,1) === "o" || text.substr(i,1) === "u") {
+        document.write(text.substr(i,1);
+}
+}*/
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

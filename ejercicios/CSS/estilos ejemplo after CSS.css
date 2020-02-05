@@ -1,0 +1,6 @@
+p::after { 
+  content: "mas";
+  background-color: lightblue;
+  color: blue;
+  font-weight: bold;
+}

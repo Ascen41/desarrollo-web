@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo JavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        /*var x = "<javascript> \n \n Hola Mundo! \n Qué fácil es incluir \'comillas simples\' \n y \"comillas dobles \"";
+        alert(x);*/
+
+        /*
+                var numero = 5;
+                   // numero = numero + 1;
+                alert(numero++); // numero = 6
+                 alert(numero); 
+        */
+        /* Ejercicio 3
+        
+            var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+            
+            alert(meses[0]);
+            alert(meses[1]);
+            alert(meses[2]);
+            alert(meses[3]);
+            alert(meses[4]);
+            alert(meses[5]);
+            alert(meses[6]);
+            alert(meses[7]);
+            alert(meses[8]);
+            alert(meses[9]);
+            alert(meses[10]);
+            alert(meses[11]);
+         */
+
+
+
+        /*Ejercicio 4 
+        
+        var valores = [true, 5, false, "hola", "adios", 2];
+        var palabra1 = valores[3];
+        var palabra2 = valores[4];
+        var resultado = palabra1 > palabra2;
+        alert(resultado);
+        var num1 = valores[1];
+        var num2 = valores[5];
+        var suma = num1+num2;
+        var resta = num1-num2;
+        var div = num1 / num2;
+        var mult = num1*num2;
+        var resid = num1%num2;
+        alert("La suma de " + num1 + "+" + num2 + "=" + suma);
+        alert("La resta de " + num1 + "-" + num2 + "=" + resta);
+        alert("La división de " + num1 + "/" + num2 + "=" + div);
+        alert("La multiplicación de " + num1 + "*" + num2 + "=" + mult);
+        alert("El resto de " + num1 + "/" + num2 + "=" + resid);
+        */
+
+    /* Ejercicio 4-C
+        var valores = [true, 5, false, "hola", "adios", 2];
+        if (valores[3] > valores[4]) {
+            alert("\"" + valores[3] + "\"" +" es mayor que " + "\"" +valores[4]+ "\"" );
+
+        } else {
+            alert(valores[3] + " no es mayor que " + valores[4]);
+        }
+*/
+
+/* Ejercicio 5
+
+var numero1 = 5;
+var numero2 = 8;
+if(numero1<=numero2) {
+alert("numero1 no es mayor que numero2");
+}
+if(numero2 >= 0) {
+alert("numero2 es positivo");
+}
+if(numero1 < 0 || numero1 != 0) {
+alert("numero1 es negativo o distinto de cero");
+}
+if(++numero1<numero2) {
+alert("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+}
+*/
+
+var dnil = prompt("Introduzca su DNI");
+dnil =
+var letra =  dnil[dnil.length - 1];
+var dni =  dnil.splice(-[dnil.length - 1]);
+alert(dni);
+if (dni < 0 || dni > 99999999){
+    alert("El DNI introducido no es correcto");
+    var dni = prompt("Introduzca su DNI");
+}
+
+var resto = dni%23;
+var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D',
+'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E',
+'T'];
+var letraresto = letras[resto];
+if (letra != letraresto){
+    alert("La letra de su DNI no es correcta");
+}
+alert("Su DNI completo es " + dni + letraresto);
+    </script>
+</body>
+
+</html>

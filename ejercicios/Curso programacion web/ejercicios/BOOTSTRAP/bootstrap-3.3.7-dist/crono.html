@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Crono</title>
+    <script type="text/javascript">
+        /* Realiza un script que pida un nombre y dos apellidos e indique el tiempo que se tardó en introducir los datos. La salida sería algo así como : En introducir Luís Perez Alonso ha tardado 25 segundos.*/
+
+        //Guardamos la fecha actual
+        var fecha1 = new Date();
+        //Obtenemos la fecha Unix (Milisegundos desde 1970 hasta el objeto fecha).
+        var tiempo1 = fecha1.getTime();
+        //Pedimos los datos por teclado
+        var nombre = prompt("Introduce el Nombre:");
+        var ape1 = prompt("Introduce apellido 1:");
+        var ape2 = prompt("Introduce Apellido 2:");
+        //Volvemos a guardar la fecha actual
+        var fecha2 = new Date();
+        //Y obtenemos la fecha Unix de esa fecha
+        var tiempo2 = fecha2.getTime();
+        //Calculamos el total entre la fecha 1 y la 2
+        var total = (tiempo2 - tiempo1) / 1000;
+        //Le decimos que fije los decimales en 1
+        total = total.toFixed(1);
+        //Imprimimos el resultado
+        document.write("En introducir " + nombre + " " + ape1 + " " + ape2 + " ha tardado " + total + " segundos.");
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

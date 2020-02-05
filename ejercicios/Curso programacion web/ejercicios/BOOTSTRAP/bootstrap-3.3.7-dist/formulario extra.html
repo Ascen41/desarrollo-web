@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src=""></script>
+    <script>
+        function nombre() {
+            var valor = document.getElementById("text").value;
+            if (valor.length >= 5 && !(/^\s+$/.test(valor))) {
+                document.getElementById("text").style.border = "1px solid green";
+                document.getElementById("texterror-b").style.display = "none";
+                return true;
+            } else {
+                document.getElementById("text").style.border = "1px solid red";
+                document.getElementById("texterror-b").style.display = "inline";
+                return false;
+            }
+        }
+
+        function apellido() {
+            var apellidoarr = document.getElementById("text2").value.split("");
+            var guion = apellidoarr.includes("-");
+            if (guion == true && document.getElementById("text2").value != "") {
+                document.getElementById("text2").style.border = "1px solid green";
+                document.getElementById("texterror2-b").style.display = "none";
+                return true;
+            } else {
+                document.getElementById("text2").style.border = "1px solid red";
+                document.getElementById("texterror2-b").style.display = "inline";
+                return false;
+            }
+        }
+
+        function email() {
+            valor = document.getElementById("email").value;
+            if (!(/^([\dA-Za-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(valor))) {
+                document.getElementById("email_error").style.display = 'block';
+                return false;
+            } else {
+                document.getElementById("email_error").style.display = 'none';
+                return true;
+            }
+        }
+
+        function validar() {
+            var res = false;
+            var res1 = nombre();
+            var res2 = apellido();
+            var res3 = email();
+            var res4 = comentarios();
+            var res5 = select();
+            if (res1 && res2 && res3 && res4 && res5) {
+                res = true;
+            }
+            return res;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form method="GET" onsubmit="return validar();">
+        <p>Nombre: </p>
+        <input type="text" name="text" id="text" onkeyup="nombre()" style="display:block">
+        <p id="texterror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+        <p id="texterror-b" style="color: red; display: none;font-size: 9px;">*Mínimo de 5 letras</p>
+        <p>Apellido: </p>
+        <input type="text" name="text" id="text2" onkeyup="apellido()" style="display:block">
+        <p id="texterror2" style="color: red; display: none; font-size: 9px;">*Campo Requerido</p>
+        <p id="texterror2-b" style="color: red; display: none;font-size: 9px;">*Debe incluir un -</p>
+        <p>Direccion Email</p>
+        <input type="text" id="email" name="Direccion Email">
+        <p id="email_error" style="color: red; display:none;font-size: 9px;">formato erroneo</p>
+        <p>Comentarios</p>
+        <textarea name="comentarios" placeholder="Escribe tu comentario:" rows="2" cols="60">Escribe tu comentario
+                </textarea>
+        <br>
+        <br>
+        <input type="submit" value="Enviar" style="display: block;">
+    </form>
+</body>
+
+</html>

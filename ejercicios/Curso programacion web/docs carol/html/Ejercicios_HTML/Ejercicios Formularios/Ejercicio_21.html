@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 21 Formularios</title>
+</head>
+<body>
+	<h1>Información sobre el producto</h1>
+	<form method="post" action="/php/insertar_cv.php" enctype="multipart/form-data">
+		<fieldset>
+			<legend>Datos básicos</legend>
+
+			<label for="idmat">Nombre</label><br>
+			<input id="idmat" type="text" name="v_mat"><br>
+
+			<br>
+
+			<label for="idcmm">Descripción</label><br>
+			<textarea id="idcmm" name="v_comment" rows="10" cols="60" placeholder="Descripción..."></textarea>
+			<br/><br/>
+
+			<label for="idfile">Foto:</label>
+			<input id="idfile" type="file" name="v_foto"><br>
+			<br/><br>
+
+			<input type="checkbox" name="v_visit" id="idvisit" checked />
+			<label for="idvisit">Añadir contador de visitas</label><br/>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Datos económicos</legend>
+			<label for="idprice">Precio:</label>
+			<input id="idprice" type="number" name="v_price" style="width: 50px;" min="1" maxlength="5"> € 
+			&emsp;<!--tabulador-->
+			<label for="idtax">Impuestos:</label>
+			<select id="idtax" name="v_tax">
+				<option disabled selected>-selecciona-</option>
+				<option>4%</option>	
+				<option>7%</option>
+				<option>12%</option>
+				<option>21%</option>
+			</select>
+			<br><br>
+			<label>Promoción:</label><br/>
+			<input type="radio" name="v_promo" id="idnone" checked="checked" /><label for="idnone">Ninguna</label>
+			<br/>
+			<input type="radio" name="v_promo" id="idfree"/><label for="idfree">Transporte gratuito</label>
+			<br/>
+			<input type="radio" name="v_promo" id="iddsc5"/><label for="iddsc5">Descuento 5%</label>
+		</fieldset>
+
+	</form>
+</body>
+</html>

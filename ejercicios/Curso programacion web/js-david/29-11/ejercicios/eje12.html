@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0064)https://www.arkaitzgarro.com/javascript/snippets/cap18/ej15.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ejercicio 15 - DOM básico y atributos XHTML</title>
+
+    <style type="text/css">
+        .oculto { display: none; }
+        .visible { display: inline; }
+    </style>
+    <script>
+        function muestra() {
+            var span = document.getElementsByClassName("oculto");
+            span[0].className = "visible";
+        }
+       // function ponerfondo(color){
+         //   document.getElementById().style.background=color;
+       // }
+        function mostrar(element) {
+            console.log(element.value);
+        }
+        
+        //function validar() {
+/* 
+
+            var res=true;
+            
+            if(document.getElementById("text").value!=""){
+                document.getElementById("texterror").style.display="none";
+              
+            }else{
+                document.getElementById("texterror").style.display="inline";
+                document.getElementById("text").style.border="1px solid red";
+                res=false;
+            }
+            if (document.getElementById("text2").value!="") {
+                document.getElementById("texterror2").style.display="none";
+               
+            }else{
+                document.getElementById("texterror2").style.display="inline";
+                document.getElementById("text2").style.border="1px solid red";
+                res=false;
+            } */
+
+
+            
+// El campo de Nombre tenga un mínimo de 5 carácteres y el Apellido contenga un -
+//Validación del nombre
+          /*   var res=true;
+            var namevalue = document.getElementById("text").value;
+            if (namevalue.length>=5) {
+                document.getElementById("text").style.border="1px solid green";
+                document.getElementById("texterror-b").style.display="none";
+            }else{
+                document.getElementById("text").style.border="1px solid red";
+                document.getElementById("texterror-b").style.display="inline";
+                res=false;
+            }
+//Validación apellido
+            var apellidoarr = document.getElementById("text2").value.split("");
+            var guion = apellidoarr.includes("-");
+            if (guion == true) {
+                document.getElementById("text2").style.border="1px solid green";
+                document.getElementById("texterror2-b").style.display="none";
+            }else{
+                document.getElementById("text2").style.border="1px solid red";
+                document.getElementById("texterror2-b").style.display="inline";
+                res=false;
+            }
+    
+            return res;
+    } */
+
+
+function nombre(){
+            if (document.getElementById("text").value.length>=5 && document.getElementById("text").value!="") {
+                document.getElementById("text").style.border="1px solid green";
+                document.getElementById("texterror-b").style.display="none";
+                return true;
+            }else{
+                document.getElementById("text").style.border="1px solid red";
+                document.getElementById("texterror-b").style.display="inline";
+                return false;
+            }
+}
+
+function apellido(){
+            var apellidoarr = document.getElementById("text2").value.split("");
+            var guion = apellidoarr.includes("-");
+            if (guion == true && document.getElementById("text2").value!="") {
+                document.getElementById("text2").style.border="1px solid green";
+                document.getElementById("texterror2-b").style.display="none";
+                return true;
+            }else{
+                document.getElementById("text2").style.border="1px solid red";
+                document.getElementById("texterror2-b").style.display="inline";
+                return false;
+            }
+}
+
+function validar() {
+    var res=true;
+    if (!nombre() || !apellido()){
+        res=false
+    }
+    return res;
+}          
+       
+
+    </script>
+    
+</head>
+
+<body>
+
+    <p>
+        <form method="GET" onsubmit="return validar();">
+            <p>Nombre: </p>
+            <input type="text" name="text" id="text" onkeyup="nombre()" style="display:block">
+            <p id="texterror" style="color: red; display: none;font-size: 9px;">*Campo Requerido</p>
+            <p id="texterror-b" style="color: red; display: none;font-size: 9px;">*Mínimo de 5 letras</p>
+            <p>Apellido: </p>
+            <input type="text" name="text" id="text2" onkeyup="apellido()" style="display:block">
+            <p id="texterror2" style="color: red; display: none; font-size: 9px;">*Campo Requerido</p>
+            <p id="texterror2-b" style="color: red; display: none;font-size: 9px;">*Debe incluir un -</p>
+            <br>
+            <br>
+            <input type="submit" value="Enviar" style="display: block;">
+        </form>
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede.
+        <span id="adicional"class="adicional oculto" onmouseover="ponerfondo('red');" onmouseout="ponerfondo('white')">
+            Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.
+        </span>
+    </p>
+    <a class="enlace" onclick="muestra(); return false;" href="">Seguir leyendo</a>
+    
+    
+
+</body></html>

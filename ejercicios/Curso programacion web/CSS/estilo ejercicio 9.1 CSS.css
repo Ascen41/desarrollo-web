@@ -1,0 +1,75 @@
+
+*{
+	font-family:arial;
+}
+label{
+	display: block;
+	font-size: 9px;
+}
+#formulario1{
+	width: 100%;
+	margin-top: 50px;
+	display: block;
+}
+#enlinea{
+	float: left;
+	display: block;
+}
+#cp{
+	float: right;
+}
+#municipio{
+	float: left;
+}
+#formulario2{
+	width: 100%;
+	margin-top: 50px;
+	float: left;
+}
+#enlinea2{
+	clear: both;
+	float: left;
+}
+#pais{
+	float: left;
+}
+#provincia{
+	float: left;
+}
+#formulario3{
+	width: 100%;
+	margin-top: 50px;	
+	float: left;							
+}
+#formulario4{
+	width: 100%;
+	margin-top: 50px;
+	float: left;
+}
+#enlinea3{
+	float: left;
+	display: block;
+}
+#telefono{
+	float: left;
+}
+#movil{
+	float: right;
+}
+.rojo{
+	color: red;
+}
+.encabezados{
+	font-weight:bold;
+}
+#formulario1:hover, #formulario2:hover, #formulario3:hover, #formulario4:hover{
+	cursor: pointer;
+	background-color: lightyellow;
+}
+.clear {
+	clear: both;
+}
+#enviar{
+	clear: both;
+	float: right;
+}

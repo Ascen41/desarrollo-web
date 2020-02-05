@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 2: Contador de caracteres</title>
+</head>
+<script type="text/javascript">
+
+	var cadena = prompt("Introduzca una palabra:");
+
+	var vocales = ['a','e','o','u'];
+	var cont2 = 0;
+	var result = "";
+
+	for (var i = 0; i < cadena.length; i++) {
+		var caracter = cadena[i].toLowerCase();
+		switch (caracter){
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				cont2 ++;
+				break;
+			default:
+				break;
+		}
+
+	}
+
+    alert("La cadena contiene " + cadena.length + " caracteres");
+	alert(cadena.toUpperCase());
+	alert(cadena.toLowerCase());
+	alert("La cadena contiene " + cont2 + " vocales");
+
+
+</script>
+
+<body>
+
+</body>
+</html>

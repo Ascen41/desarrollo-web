@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercico</title>
+		<style type="text/css">
+		label{
+			width: 25%;
+			display: inline-block;
+		}
+		.boton{
+			/*clear: both;
+			float: right;
+			padding: 1px;
+			position: relative;
+			right: 23%;*/	
+			text-align: right;
+		}
+		/*Btn dar de alta y línea*/
+		.limpiar{
+			/*clear: both;*/
+		}
+		.obligatorio{
+			color: red;
+			font-size: 1em; 
+		}
+
+		.error{
+			color:red; 
+			font-size:15px;
+			display:none;
+		}
+
+	</style>
+
+</head>
+<body>
+	<form method="get" action="#" name="nameform" onsubmit="return validar();">
+	 	<!--Datos Personales ------------------------------------------------------------------->
+		<fieldset>
+			<legend>Datos Formulario</legend>
+			<div>
+				<label for="nombre">Nombre: <span class="obligatorio">*</span></label>
+				<input id="nombre" type="text" name="v_nombre" onchange="return validar_nombre('nombre','error_nombre')">
+				<p id="error_nombre" class="error"> *Campo obligatorio </p>
+			</div>
+			<br>
+			<div>
+				<label for="edad">Edad:</label>
+				<input id="edad" type="text" name="vedad" onkeypress="return validaNumericos(event,this.id,'error_num')" onchange="return validar_edad()">
+				<p id="error_edad" class="error"> *El rango de edad es de 18 a 65 años </p>
+				<p id="error_num"  class="error"> *No está permitido los caracteres </p>
+			</div>
+			<br>
+			<div>
+	        	<label for="email">Email: <span class="obligatorio">*</span></label>
+				<input id="email" type="text" name="vemail" onchange="return validar_email()">	
+		        <p id="error_email" class="error">*El formato del email no es correcto</p>
+			</div>
+			<br>			
+			<div>
+				<label for="passw">Contraseña:<span class="obligatorio">*</span></label>
+				<input id="passw" type="password" name="v_passw" onchange="return validar_password()">
+				<p id="error_passw" class="error">*El formato del email no es correcto</p>
+			</div>
+			<br>
+			<div>
+				<label for="coment">Comentarios (longitud máxima 50 caracteres): </label><br>
+				<textarea id="coment" name="v_comment" onkeydown="return validar_cometarios()" rows="10" cols="60" placeholder="Descripción..."></textarea>
+				<p id="error_coment" class="error">*Longitud máxima 50 caracteres</p>
+			</div>	
+		</fieldset>
+		<!--Botón Dar de alta- --------------------------------------------------------------->
+		<hr class="limpiar">
+		<div class="boton">
+			<input type="submit" name="b_submit" value="Enviar"> 
+		</div>
+	</form>
+</body>
+<!-- FUNCIONES ------------------------------------------->
+	<script type="text/javascript">
+		var g_cont=0;
+
+		//Validaciones de los parámetros que se han entrado en el formulario
+		function validar(){
+			var l_res = true;
+
+			//if (!validar_nombre('nombre','error_nombre')){
+			//	l_res = flase;
+			//}
+
+			//--Validar que la edad esté compredida entre 18 y 65 años
+			if (!validar_edad()) {
+				l_res = false;
+			}
+
+			if (!validar_email()) {
+				l_res = false;
+			}
+
+			if (!validar_password()){
+				l_res = false;
+			}
+
+			if (!validar_cometarios()){
+				l_res = false;
+			}
+
+			return l_res;
+		}//<--validar()
+
+		function validar_nombre(idparam,iderror){
+			var l_nombre = document.getElementById(idparam).value;
+
+			// Si nombre vacío o todo en blanco, error
+			if  ( (l_nombre.length == 0) || (/^\s+$/.test(l_nombre)) ){
+				document.getElementById(iderror).style.display="inline";
+				document.getElementById(idparam).style.border="2px solid red";	
+				return false;
+			}else{
+				document.getElementById(iderror).style.display="inline";
+				document.getElementById(idparam).style.border="2px solid red";	
+				return true;
+			}
+
+		}//<--validar_nombre()
+
+		function validaNumericos(p_event,idparam,iderror){
+
+			// Obtener la tecla pulsada
+			var l_evento = p_event || window.p_event;
+ 			var l_codchar = l_evento.charCode || l_evento.keyCode; 
+ 			var l_tecla = String.fromCharCode(l_codchar);
+
+		    if (isNaN(l_tecla)){
+		    	// Si no es un número	
+		    	document.getElementById(iderror).style.display="inline";
+				document.getElementById(idparam).style.border="2px solid red";	
+		    	return false;
+		    }else{
+		    	document.getElementById(iderror).style.display="none";
+				document.getElementById(idparam).style.border="2px solid grey";
+		    	return true; 
+			}
+		}//<--validaNumerico(p_event)
+
+		function validar_long(idparam,longmin) {
+									
+			var l_text = document.getElementById(idparam).value;
+
+			//(/^\s+$/.test(l_text) ) obliga a que el valor introducido por el usuario no sólo esté formado por espacios en blanco
+			if ( (l_text.length < longmin) || (/^\s+$/.test(l_text)) ){
+				return false;
+			}else{
+				return true;
+			}
+		} //<--function validar_long
+
+		function validar_edad(){
+			// Validad que úniacamente permita números y que esté en el rango de 18 a 65 años
+			var l_edad = document.getElementById("edad").value;
+
+			console.log(l_edad);
+
+			if ( (l_edad < 18 ) || (l_edad > 65) ){
+				document.getElementById("error_edad").style.display="inline";
+				document.getElementById("edad").style.border="2px solid red";
+				return false;
+			}else{
+				document.getElementById("error_edad").style.display="none";
+				document.getElementById("edad").style.border="2px solid grey";
+				return true;
+			}
+
+		}//<--validar_edad()
+
+		function validar_email(){
+
+			var l_email = document.getElementById("email").value;
+			
+			if( !(/^([\dA-Za-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(l_email)) ) {
+				document.getElementById("error_email").style.display="inline";
+				document.getElementById("email").style.border="2px solid red";
+  				return false;
+			}else{
+				document.getElementById("error_email").style.display="none";
+				document.getElementById("email").style.border="1px solid grey";
+				return true;
+			}
+
+		}//<--validar_email()
+
+		function validar_password(){
+			var l_passw = document.getElementById("passw").value;
+
+			// (?=.*[\d]) indica que la menos haya un dígito, al final antes del $/ se ha de poner el .+
+
+			//console.log(l_passw);
+
+			if ( (!validar_long("passw",'8')) || (!(/^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z]).+$/).test(l_passw)) ) {
+				document.getElementById("error_passw").style.display="inline";
+				document.getElementById("passw").style.border="2px solid red";
+				return false;
+			}else{
+				document.getElementById("error_passw").style.display="none";
+				document.getElementById("passw").style.border="1px solid grey";
+				return true;	
+			}
+
+		}//<--validar_password()
+
+
+		function validar_cometarios(){
+
+			var evento = event || window.event;
+			var codchar = evento.charCode || evento.keyCode; 
+			
+			//evento onkeypress sólo se activa con las teclas que se pueden visualizar por pantalla, pero on el onkeydown sí se invoca con cualquier tecla, incluso las especiales
+
+			if (codchar == 8){
+				document.getElementById("error_coment").style.display="none";
+				return true; //permite que la tecla borrar se ejecute
+			}else{
+
+				if (validar_long('coment','5')){
+					document.getElementById("error_coment").style.display="inline";
+					//document.getElementById("coment").style.border="2px solid red";
+					return false;
+				}else{
+					document.getElementById("error_coment").style.display="none";
+					//document.getElementById("coment").style.border="1px solid grey";
+					return true;	
+				}
+			}
+		}
+
+	</script>
+</html>

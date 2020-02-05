@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /* Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un Script que etraiga la cadena que se encuentra entre los paréntesis. Ejemplo; Si escribimos el texto "Hola (que) tal" se mostrará "que". Si no existe el signo "(" mostrará una cadena vacía y si exsite el signo "("pero no el signo")" mostrará desde el primer paréntesis hasta el final
+         */
+        window.onload = function() {
+            var cadenatexto = prompt("Introduce una cadena de texto:");
+            //   var palabras = cadenatexto.split("");
+            var abrir = -1;
+            var cerrar = -1;
+            for (var i = 0; i < cadenatexto.length; i++) {
+                if (cadenatexto[i] == '(') {
+                    abrir = i;
+                }
+                if (cadenatexto[i] == ')') {
+                    cerrar = i;
+                }
+            }
+            var res = cadenatexto.substring(abrir + 1, cerrar);
+            document.getElementById("parent").innerHTML = res;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="parent"></div>
+    <!--<script>
+        function extraer() {
+            var cadenatexto = prompt("Introduce una cadena de texto:");
+            //hola (que tal) como estas
+            var abrir = cadenatexto.indexOf("(");
+            var cerrar = cadenatexto.indexOf(")");
+            var res = cadenatexto.substring(abrir + 1, cerrar);
+            document.getElementById("parent").innerHTML = res;
+        }
+    </script>-->
+
+</body>
+
+</html>

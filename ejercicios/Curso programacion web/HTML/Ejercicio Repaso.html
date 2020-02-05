@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--En la HEAD reside información acerca del documento, y generalmente no se ve cuando se navega por él.
+-->
+	<!--Código ejecutable: script src = "url" - Indica la dirección del archivo que contiene el código.
+type = "tipo_de_contenido" - Permite "avisar" al navegador sobre el tipo de código que se incluye (normalmente JavaScript).-->
+	<!--Enlazar recursos: link Solamente se puede incluir dentro de la cabecera del documento.
+El uso habitual de la etiqueta <link> es el de enlazar las hojas de estilos CSS utilizadas por las páginas web.
+	Enlazar el favicon  
+<link rel="shortcut icon" href="/favicon.ico“ type="image/ico" />
+-->
+	<title>Comparativa de reproductores MP3</title>
+	<!--En la HEAD se pone el elemento <TITLE> que es una breve descripción que identifica la página-->
+	<!--Dentro de la HEAD puede utilizarse otro elemento: META-->
+	<META charset="utf-8">
+	<!--Indica la tabla de caracteres que se ha empleado al escribir la página-->
+	<META HTTP-EQUIV="Expires" CONTENT="Tue, 20 Aug 1996 14:25:27 GMT">
+	<META HTTP-EQUIV="Expires" CONTENT="0">
+	<!--Forzar la expiración inmediata en la caché del navegador de la página recibida-->
+	<META HTTP-EQUIV="Expires" CONTENT="no-cache">
+	<!--impedir directamente que el navegador guarde en caché la página-->
+	<META name="description" content="your description">
+	<link rel="shortcut icon" href="../imagenes/favicon.jpg"/>
+</head>
+<body>
+	<!-- El verdadero contenido de la página visible en ésta-->
+	<!-- Tiene parámetros que permiten modificar los márgenes por defecto-->
+	<!--Otra cosa que puede controlarse desde BODY es el color que tomarán los links que pongamos en la página.         <BODY LINK="#FFFF00" VLINK="#22AA22“ ALINK="#0077FF">-->
+		<h1>Ejemplo de título</h1>
+		<h2>Ejemplo de título</h2>
+		<h3>Ejemplo de título</h3>
+		<h4>Ejemplo de título</h4>
+		<h5>Ejemplo de título</h5>
+		<h6>Ejemplo de título</h6>
+<hr>
+<!--HTML permite incluir títulos que delimitan cada una de las secciones.<hx></hx> y párrafos <p></p> -->
+	<!--Para definir distintos tamaños de letra, en HTML se utiliza el elemento lleno <Hx> </Hx> donde x es un número que puede variar entre 1 y 6-->
+	<p><FONT SIZE=1>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=2>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=3>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=4>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=5>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=6>Otro ejemplo de tamaño de letra</FONT></p>
+	<p><FONT SIZE=7>Otro ejemplo de tamaño de letra</FONT></p>
+	<!--Otra forma de cambiar los tamaños de letra es utilizar el elemento <FONT > con el atributo VALOR, que es un número entre 1 y 7:-->
+<hr>
+	<FONT FACE="arial">Texto de prueba 12345 con tipo ARIAL</FONT>
+	<FONT FACE="verdana">Texto de prueba 12345 con tipo VERDANA</FONT>
+	<FONT FACE="times new roman">Texto de prueba 12345 con tipo TIMES NEW ROMAN</FONT>
+	<FONT FACE="bauhaus 93">Texto de prueba 12345 con tipo BAUHAUS 93</FONT>
+	<!--FACE: Este atributo permite forzar el tipo de letra que el diseñador de la página quiere que vea el cliente-->
+	<FONT FACE="impact" SIZE=6 COLOR="red">Texto de prueba </FONT>
+	<!--Los atributo son compatibles entre ellos:-->
+	<FONT FACE="lucida console" SIZE=3 COLOR="blue">Texto de prueba </FONT>
+	<!--HTML define 91 etiquetas que los diseñadores pueden utilizar para marcar los diferentes elementos que componen una página.
+Algunos ejemplos de etiquetas más importantes y utilizadas: 
+<div> define un area </div> 
+<p> párrafo </p> 
+<ul> lista </ul> 
+<li> elemento de lista </li> 
+<table> define una tabla </table> 
+<tr> fila de una tabla <tr> 
+<td> columna de una tabla <td> 
+<a> enlace </a> 
+<img> imagen </img> 
+<hr> Línea horizontal
+Ademas de etiquetas tambien contiene contenidos y atributos-->
+<hr>
+	<h2>Ejemplo de elementos en línea y elementos de bloque</h2>
+	<p>Los párrafos son elementos de bloque.</p>
+	<a href="http://www.google.com">Los enlaces son elementos en línea</a>
+	<p>Dentro de un párrafo, <a href="http://www.google.com">los enlaces</a> siguen siendo elementos en línea.</p>
+<!--El lenguaje HTML clasifica a todos los elementos en dos grupos: elementos en línea (inline elements en inglés) y elementos de bloque (block elements en inglés). -->
+<hr>
+	<h2>Marcado básico de texto</h2>
+	<p><em>Este texto sale en cursivas gracias a la etiqueta em</em></p>
+<!-- enfasis <em></em>-->
+	<p><strong>Este texto sale en negrita gracias a la etiqueta strong</strong></p>
+<!-- negrita <strong></strong>-->
+	<p><del>Este texto sale tachado gracias a la etiqueta del</del>
+<!-- tachado <del></del>-->
+	<p><ins>Este texto sale subrayado gracias a la etiqueta ins</ins></p>
+<!-- subrayado <ins></ins>-->
+	<blockquote cite="http://html.conclase.net/w3c/html401...def-BLOCKQUOTE">
+  <p> 
+    <strong>Nota.</strong> Recomendamos que las implementaciones de hojas
+    de estilo porporcionen un mecanismo para insertar signos de puntuación de citas
+    antes y después de una cita delimitada por un BLOCKQUOTE de un modo apropiado según 
+    el contexto del idioma actual y el grado de anidamiento de las citas. 
+  </p>
+</blockquote>
+<!-- cita <blockquote></blokquote>-->
+<hr>
+	<h2>Marcado avanzado de texto</h2>
+<br>
+	<p>La siguiente palabra <abbr title="Objeto Volante No Identificado">OVNI</abbr> es una abreviatura</p>
+<!--La etiqueta <abbr>, permite definir texto indicando que es una abreviatura o acrónimo, como pueden ser “WWW” o “NASA”.-->
+<br>
+	<p>Las siguientes letras<acronym title="World Wide Web">WWW</acronym> corresponden a un acronimo.</p>
+<!--La etiqueta <acronym> sirve para definir un acrónimo, es decir, las siglas de una palabra. Por ejemplo, WWW que son las siglas de "World Wide Web".-->
+<br>
+	<p>El <dfn>HTML</dfn> es un lenguaje de marcado para hipertextos.</p>
+<!-- Definición: Sirve para marcar el término que se quiere definir.-->
+	<p> <cite>Galileo</cite> dijo: "... y sin embargo, se mueve." </p>
+<!--cite -cita . Marca una referencia a una fuente, o el autor de un texto citado.-->
+<hr>
+	<h2>Enlaces</h2>
+<!--Los enlaces se utilizan para establecer relaciones entre dos páginas web, pero también es posible enlazar otros recursos como imágenes, documentos y archivos.-->
+<!--URL:  es un identificador único de cada recurso disponible en Internet. Permite incluir caracteres de otros idiomas que no sean el inglés pero no es completamente seguro, es posible que algunos navegadores no las interpreten de forma correcta.
+
+URL absoluta: http://www.ejemplo.com/ruta1/ruta2/pagina2.html
+URL relativa: pagina2.htm (en el mismo nivel)
+URL relativa: ../pagina2.htm (a un nivel superior)
+-->
+	<h3>Enlaces básicos: a</h3>
+<!-- atributos: name="___"Permite nombrar al enlace para que se pueda acceder desde otros enlaces en la misma página web y href="#___" donde se escribe la ubicación del archivo de destino que puede estar en la misma carpeta que el archivo que lo está llamando, en otra carpeta del mismo sitio o en otro sitio web.-->
+	<p><a name="inicio">inicio de página</a></p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<p><a href="#inicio">Volver al inicio de la página</a></p>
+<br>
+<!--Para poder volver al inicio del sitio web desde cualquier página web interior:-->
+	 <a href="/">Volver al inicio</a>
+<br>
+	<h4>Enlace a un email</h4>
+<br>
+	<a href=mailto:nombre@direccion.com title="Dirección de email para solicitar más información">Solicita más información</a>
+<br>
+	<h4>Enlace a un archivo FTP</h4>
+<br>
+	<a href=ftp://ftp.ejemplo.com/ruta/archivo.zip title= "Archivo comprimido de los contenidos">Descarga un ZIP con todos los contenidos</a>
+<hr>
+	<h2>Listas</h2>
+<br>
+	<h3>Listas no ordenadas</h3>
+<!--Una lista no ordenada es un conjunto de elementos relacionados entre sí pero para los que no se indica un orden o secuencia determinados-->
+	<h6>Menu</h6>
+	<ul>
+		<li>Inicio</li>
+		<li>Noticias</li>
+		<li>Artículos</li>
+		<li>Contacto</li>
+	</ul>
+<br>
+	<h3>Listas ordenadas</h3>
+<!--Son listas de palabras o frases marcadas con números o letras. La lista ordenada se define con la etiqueta <ol>. Los elementos de la lista se definen mediante la etiqueta <li>, la misma que se utiliza en las listas no ordenadas.-->
+	<h6>Menu</h6>
+	<ol>
+		<li>Inicio</li>
+		<li>Noticias</li>
+		<li>Artículos</li>
+		<li>Contacto</li>
+	</ol>
+	<h3>Otro tipo de listas ordenadas</h3>
+<!--La etiqueta <dl> crea la lista de definición y las etiquetas <dt> y <dd> definen respectivamente el término y la descripción de cada elemento de la lista.-->
+	<dl>
+		<dt>SGML</dt>
+		<dd>Metalenguaje para la definición de otros lenguajes de marcado</dd>
+		<dt>XML</dt>
+		<dd>Lenguaje basado en SGML y que se emplea para describir datos</dd>
+		<dt>RSS</dt>
+		<dt>GML</dt>
+		<dt>XHTML</dt>
+		<dt>SVG</dt>
+		<dt>XUL</dt>
+		<dd>Lenguajes derivados de XML para determinadas aplicaciones</dd>
+	</dl>
+<hr>
+	<h2>Imagenes</h2>
+<!--Los tipos de archivos más admitidos en entorno web son JPEG, PNG y GIF. Los archivos JPEG y PNG suelen utilizarse para representar fotografías, mientras que los de tipo GIF, para iconos e imágenes que no requieran de un número elevado de colores.-->
+<br>
+<!--- height: altura de la imágen (píxels) 
+- widht: anchura de la imágen (píxels)-->
+	<img src="Recetas de cocina/imagenes/Patatas fritas.jpg" alt="comida" height="230" width="250"></img> 
+	<h1>Mapa de imagenes</h1>
+<!--Un mapa de imagen permite definir diferentes zonas "pinchables" dentro de una imagen.-->
+	<img src="Imagenes/Billar.jpg" alt="Prueba de mapa de imágenes" width="300" height="214" border="0" usemap="#billar">
+<map name="billar">
+	<area alt="Si clícas aquí irás a la página de inicio del tutorial de html" shape="circle" coords="148,154,44" href="/curso-de-html/"><area alt="Si clícas aquí irás a la página que se indique" shape="poly" coords="148,59,142,49,135,41,128,38,121,34,125,25,135,16,155,11,177,19,188,27,187,36,177,39,168,46,162,52,160,61" href="/ruta de donde guardemos la info/">
+	<area alt="Si clícas aquí irás a la portada" shape="rect" coords="11,77,288,105">
+</map>
+<hr>
+	<h2>Objetos</h2>
+<table border="1" style="border-collapse:collapse;">
+	<caption><H1>Tabla comparativa de las características técnicas de los reproductores MP3</H1></caption>
+	<thead>
+		<tr>
+			<th></th>
+			<th colspan="3"><img src="Ejercicio14/imagenes/MP3.jpg" alt="MP3 pequeño"height="80" width="80">MP3 mini
+			</th>
+			<th colspan="2"><img src="Ejercicio14/imagenes/MP3grande.jpg" alt="MP3 grande"height="80" width="80">Mp3 grande 
+			</th>			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><strong>Capacidad de almacenamiento</strong></td>
+			<td>4GB (1000 Canciones)</td>		
+			<td>8GB (2000 Canciones)</td>
+			<td>16GB (4000 Canciones)</td>
+			<td>30GB (7500 Canciones)</td>
+			<td>80GB (20000 Canciones)</td>
+		</tr>
+		<tr>
+			<td><strong>Colores</strong></td>
+			<td><img src="Ejercicio14/imagenes/colorgris.jpg"alt="solo en color gris">
+			</td>
+			<td><img src="Ejercicio14/imagenes/botonescolores.jpg"alt="disponible en varios colores">
+			</td>
+			<td><img src="Ejercicio14/imagenes/gris oscuro.jpg"alt="solo en gris oscuro">
+			</td>
+			<th colspan="2"><img src="Ejercicio14/imagenes/dos colores.jpg"alt="solo en gris oscuro">
+			</th>
+		</tr>
+		<tr>
+			<td><strong>Pantalla</strong></td>
+			<th colspan="3">LCD de 3 cm (diagonal) con retroiluminación
+			</th>
+			<th colspan="2">LCD de 6 (Diagonal) con retroiluminacion
+			</th>
+		</tr>
+		<tr>	
+			<th rowspan="2"><strong>Tiempo de carga</strong></th>
+			<th rowspan="2"/colspan="3"><strong>Unas 3 horas</strong></th>
+			<th colspan="2">Unas 4 horas</th>		
+		</tr>
+		<tr>
+			<th rowspan="2"/colspan="2">Unas 2 hora para alcanzar el 80% de la capacidad</th>
+	</tbody>
+</table>
+</body>
+</html>

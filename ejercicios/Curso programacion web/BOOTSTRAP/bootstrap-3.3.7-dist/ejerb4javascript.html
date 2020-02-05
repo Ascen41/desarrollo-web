@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+
+  //1. Cread un script que, utilizando un bucle “for”, muestre con mensajes “confirm” una cuenta atrás empezando desde un número X (de 10 a 0, por ejemplo). Modificad el script para que, si el usuario pulsa “cancelar” en uno de los confirm, la cuenta atrás se detenga y se muestre un alert informando de ello. (la función confirm(…) devuelve true o false dependiendo del botón que se pulse)//
+  var x=10;
+
+  for (x; x >= 0; x--) {
+    var resultado = confirm(x);
+    if (resultado==false) {
+      alert("cancelacion del bucle");
+      break;
+    }
+  }
+
+//Modificad el script para que, si el usuario pulsa “cancelar” en uno de los confirm, la cuenta atrás se detenga y se muestre un alert informando de ello. (la función confirm(…) devuelve true o false dependiendo del botón que se pulse)//
+
+  
+ </script>
+ 
+</head>
+<body>
+    
+</body>
+</html>

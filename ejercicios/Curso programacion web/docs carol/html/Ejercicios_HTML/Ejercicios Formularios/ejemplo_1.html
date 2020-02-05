@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo Formularios</title>
+</head>
+<body>
+
+<!--
+PLACEHOLDER muestra info de lo que hay que hacer. Al poner encima para escribir desaparece. No es le texto por defecto como el VALUE
+Si en la etiqueta LABEL ponemos el atributo FOR y en INPUT en su atrib. ID ponemos el mismo identificador,al cliclar en la etiqueta en el formulario, el cursor se desplaza a la caja para entrar los datos. 
+MAXLENGTH delimita el número de caracteres que se puede escribir en un caja de input 
+REQUIRED campo obligatorio. Se puede hacer la validación mejor con java script pq así podemos controlar nosotros los mensajes o las acciones a realizar.
+
+Para includir un parámetro que nos pida un fichero tenemos que poner un nuevo atributo en la etiqueta FORM.
+El atributo es ENCTYPE="multipart/form-data y en añadir la etiqueta <input type="file" name="v_file">
+-->
+
+	<h1>Formulario</h1>
+	<form method="post" action="/action_page.php" enctype="multipart/form-data"> 
+<!-- <form method="get" action="/action_page.php"> -->
+		<label>First name: </label>
+		<input type="text" name="v_firstname" value="Alex" readonly>
+		<br>
+		<label for="idnom">Last name: </label> 
+		<input id="idnom" type="text" name="v_lastname" placeholder="Introduce tu nombre..." required>
+		<br><br>
+		
+		<label for="idemail">Email: </label>
+		<input id="idemail" type="email" name="v_email" placeholder="Introduce tu correo...">
+		<br><br>
+		
+		<label for="iddate">Fecha: </label>
+		<input id="iddate" type="date">
+		<br><br>
+		
+		<label for="idcolor">Color: </label>
+		<input id="idcolor" type="color">
+		<br><br>
+		
+		<!--type="password" no muestra el texto introducido por ser para contraseña-->
+		<LABEL for="psw">Contraseña</LABEL>
+		<input id="psw" type="password" name="v_psw">
+		<br><br>
+
+		<!-- Caja comentarios...-->
+		<label for="idcmm">Observaciones</Label><br>
+		<textarea id="idcmm" name="v_comment" rows="10" cols="60" maxlength="10" placeholder="Intro tus comentario..."></textarea>
+		<br><br>
+		
+		<label for="idlist">Texto con una lista de opciones</Label>
+		<input id="idlist" type="text" list="lst1">
+		<datalist id="lst1">
+			<option label="Principal" value="Opción 1">
+			<option label="Secundaria" value="Opción 2">
+		</datalist>
+		<br><br>
+
+		<label for="idlist2">Tratamiento</Label>
+		<input id="idlist2" type="text" list="lst2">
+		<datalist id="lst2">
+			<option value="Mr">
+			<option value="Mss">
+			<option value="XX">
+		</datalist>
+		<br><br>
+		
+		<label>Rango de edad:</label>
+		<input type="range" name="v_range" min="0" max="100" step="5">
+		<br><br>
+
+		<!-- checkbox...-->
+		<label>Selecciona tus intereses:</label><br/>
+		<input type="checkbox" name="v_peli" id="idfilm" /><label for="idfilm">Películas</label>
+		<br/>
+		<input type="checkbox" name="v_libr" id="idbook" checked="checked"/><label for="idbook">Libros</label>
+		<br/>
+		<input type="checkbox" name="v_inte" id="idint"/><label for="idint">Internet</label>
+		<br/><br/>
+
+		<!-- Radiobutton...-->
+		<label>Selecciona tu actividad favorita:</label><br/>
+		<input type="radio" name="v_interes" id="idpeli" checked="checked" /><label for="idpeli">Películas</label>
+		<br/>
+		<input type="radio" name="v_interes" id="idlibro" /><label for="idlibro">Libros</label>
+		<br/>
+		<input type="radio" name="v_interes" id="idinter"/><label for="idinter">Internet</label>
+		<br/><br/>
+
+		<!-- Llistes de selecció(Desplegable)...-->
+		<label>Elije solo una opción, como en los botones radio:</label><br/>
+		<select name="v_lista">
+			<option disabled selected>--</option>
+			<option value="Linea">Entrada de línea</option>	
+			<option>Entrada de contraseña</option>
+			<option>Entrada multi-línea</option>
+		</select>
+
+        <!-- Seleccionar una o más opción...-->
+		<br><br>
+		<label>Elije más de una opción, como los checkbox:</label><br/>
+		<select name="v_lista[]" multiple="multiple">
+			<option disabled selected>--</option>
+			<option value="Linea">Entrada de línea</option>	
+			<option>Entrada de contraseña</option>
+			<option>Entrada multi-línea</option>
+		</select>
+
+		<br><br>
+		<label>Multilista:</label><br/>
+		<select name="v_multilista">
+			<optgroup label="Entradas textuales">
+				<option value="Línea">Entrada de línea</option>	
+				<option selected="selected">Entrada de contraseña</option>
+				<option>Entrada multi-línea</option>
+			</optgroup>	
+			<optgroup label="Opciones">		
+				<option>Casillas de verificación</option>	
+				<option>Botones radio</option>	
+				<option>Listas</option>	
+			</optgroup>
+		</select>
+		<br/><br/>
+
+		<!-- Llistes de selecció(Desplegable) con selección multiple...-->
+		<!-- el NAME del select ha de llevar [], para poder enviar más de 1 respuesta-->
+		<label>Elije tantas opciones como quieras:</label><br/>	 
+		<select name="v_listamulti[]" multiple="multiple">	
+			<optgroup label="Entradas textuales">	
+				<option>Entrada de línea</option>		
+				<option>Entrada de contraseña</option>		
+				<option>Entrada multi-línea</option>	
+			</optgroup>
+			<optgroup label="Opciones">		
+				<option>Casillas de verificación</option>		
+				<option>Botones radio</option>		
+				<option>Listas</option>		
+			</optgroup>	
+		</select>
+
+		<!-- Añadir botones sin funcionalidad previa,se han de programar-->
+		<br/><br/>
+		<button type="button" name="b_button">
+			El <b>tag HTML</b> button
+			<br/> 	
+			permite contenido.
+		</button>
+
+		<input type="button" name="b_enviar" value="Enviar">
+		<input type="button" name="b_enviar" value="El tag HTML button permite contenido">
+
+		<!--Botones de enviar y restablecer con funcionalidad por defecto -->
+		<!--Type="Submit" crea el botón-->
+		<br/><br/>
+		<input type="submit" name="b_submit" value="Submit">
+		<input type="reset" name="b_reset" value="Restablecer valores por defecto">
+		<input type="image" name="b_image" src="favicon2.png" height='20' widht='20'>
+	</form>
+</body>
+

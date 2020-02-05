@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /* Realiza un script que pida una cadena de texto y la muestre poniendo el signo - en tre cada carácter sin usar el metodo replace. Por ejemplo, si tecleo "hola qué tal", deberá salir "h-o-l-a--q-u-e-t-a-l".
+         */
+        window.onload = function() {
+
+            var cadenatexto = prompt("Introduce una cadena de texto:");
+            var palabras = cadenatexto.split("");
+            var guiones = palabras.join("-");
+            document.getElementById("guion").innerHTML = guiones;
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="guion"></div>
+    </p>
+</body>
+
+</html>

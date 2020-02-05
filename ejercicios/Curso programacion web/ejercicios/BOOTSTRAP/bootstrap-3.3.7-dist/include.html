@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Include</title>
+    <script type="text/javascript">
+        /*Realiza el mismo ejercicio anterior pero utilizando el método includes. */
+        //DECLARACIÓN DEL ARRAY DE VOCALES
+        var vocales = ["a", "e", "i", "o", "u"];
+        var texto = prompt("Introduce un texto");
+        //PASAMOS EL TEXTO A MINÚSCULAS
+        var textomin = texto.toLowerCase();
+        var posicion = 0;
+        for (var i = 0; i < textomin.length; i++) {
+            if (vocales.includes(textomin.charAt(i))) {
+                posicion = i;
+                break;
+            }
+        }
+        document.write("<br>La primera vocal está en la posición " + posicion);
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+@font-face{
+    font-family: "fuente";
+src: url("fredoka-one.woff");
+}
+
+body{
+    background: #fca69c;
+    font-family: arial;
+    border: solid 20px #ff4e33;
+}
+#cabecera{
+    width: 70%;
+    border:solid 2px #ff4e33;
+    margin-top: 1em;
+    padding: 10px;
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+#gatoalegre{
+    float: left;
+    width: 7%;
+    box-sizing: content-box;
+}
+#gatoenfadado{
+    float: right;
+    width: 7%;
+    box-sizing: content-box;
+}
+h1{
+    letter-spacing: 2px;
+    font-size: 50px;
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;
+    font-family: "fuente";
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    box-sizing: content-box;
+    display: block;
+
+}
+#gato, #siames, #bosquesnoruega{
+    background: white;
+    border:solid 4px #cc1a04;
+}
+#gato{
+    width: 20%;
+    float: right;
+    margin: 15px;
+
+}
+#parrafo1{ 
+    float: left;
+    margin : 2em;
+    border: solid 9px #ff4e33;
+    display: inline;
+}
+#texto{
+    text-align: justify;
+    width: 70%;
+    float: left;
+}
+#parrafo2{
+    float: left;
+    margin: 2em;
+    border: solid 9px #ff4e33;
+    display: block;
+    position: relative;
+}
+#siames{
+    width: 20%;
+    float: left;
+    margin: 15px;
+}
+#subparrafo1, #subparrafo2, #subparrafo3{
+    background: #ff7a66;
+    box-sizing: border-box;
+    width: 92%;
+    float: left;
+    border: solid 15px #ff4e33;
+    margin: 3em;
+    color: white;
+ }
+#texto2{
+    width: 75%;
+    float: right;
+}
+
+#texto4{
+    width: 75%;
+    float: left;
+}
+#bosquesnoruega{
+    width: 20%;
+    float: right;
+    margin: 15px;
+
+}
+#piepg{
+   clear: both;
+}
+h2{
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;
+    color: white;
+    background: #ff4e33;
+    
+}
+.blanco{
+    background: white;
+}
+.granate{
+    color: #650f07;
+    text-transform: uppercase;
+}
+h3{
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+    outline: none;
+    background: #ff4e33;
+    color:black;
+}
+#texto, #texto2, #texto3,#texto4{
+    margin-left: 5px;
+}
+#piepg{
+    font-size: 10px;
+    margin-left: 3em;
+}
+
+
+
+
+
+
+

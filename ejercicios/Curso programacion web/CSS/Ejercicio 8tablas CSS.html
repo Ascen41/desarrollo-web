@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 8</title>
+	<meta charset="utf-8">
+<style type="text/css">
+	thead, tbody{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		border: 1px solid #333; 
+		font-family: arial;
+	}
+	.a{
+		margin: 0;
+		padding: 10px;
+		font-weight:bold;
+		background-color: #E6F3FF;
+	}
+    #e{
+    	display: block;
+    	background: url(imagenes/euro.png)no-repeat;
+    	width: 125px;
+    }
+    #d{
+    	display: block;
+    	background: url(imagenes/dolar.png)no-repeat;
+    	width: 125px;
+    }
+    #y{
+    	display: block;
+    	background: url(imagenes/yen.png)no-repeat;
+    	width: 125px;
+    }
+    #l{
+    	display: block;
+    	background: url(imagenes/libra.png)no-repeat;
+    	width: 125px;
+    }	
+    #encabezado{
+    	background: lightgrey;
+    	font-weight:bold;
+    }
+    .yellow{
+    	background-color: #FFFFCC;
+    }
+    .yellow:hover{
+    	cursor: pointer;
+			background: white
+			no-repeat;
+    }
+    .white:hover{
+    	cursor: pointer;
+			background: #FFFFCC
+			no-repeat;
+
+    }
+	
+</style>
+</head>
+<body>
+	<table border="1" style="border-collapse:collapse;">
+	<caption><strong>Cursos de diseño gráfico</strong></caption>
+	<thead>
+		<tr id="encabezado">
+			<th>Cambio</th>
+			<th>Compra</th>
+			<th>Venta</th>
+			<th>Maximo</th>
+			<th>Minimo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="a"><span id="e">Euro/Dolar</span></td>
+			<td class="yellow">1.2524</td>
+			<td class="yellow">1.2527</td>
+			<td class="yellow">1.2539</td>
+			<td class="yellow">1.2488</td>
+		</tr>
+		<tr>
+			<td class="a"><span id="d">Dolar/Yen</span></td>
+			<td class="white">119.01</td>
+			<td class="white">119.05</td>
+			<td class="white">119.82</td>	
+			<td class="white">119.82</td>
+		</tr>
+		<tr>
+
+
+			<td class="a"><span id="l">Libra/Dolar</span></td>
+			<td class="yellow">1.8606</td>
+			<td class="yellow">1.8611</td>
+			<td class="yellow">1.8651</td>
+			<td class="yellow">1.8522</td>		
+		</tr>
+		<tr>
+			<td class="a"><span id="y">Euro/Yen</span></td>
+			<td class="white">149.09</td>
+			<td class="white">149.13</td>
+			<td class="white">149.79</td>	
+			<td class="white">148.96</td>	
+		</tr>
+
+</body>
+</html>

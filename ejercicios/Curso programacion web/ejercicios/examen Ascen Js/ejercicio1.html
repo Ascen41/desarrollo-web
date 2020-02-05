@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Ejercicio 1</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+    <script>
+        /*Se considera una persona jubilada si es mayor que 65 años. Muestre por pantalla el mensaje “Estas jubilado” o “Todavía estás trabajando o en el paro” según la edad que indica el usuario.*/
+        /* window.onload = edad
+         var edad = prompt("Introduce tu edad");
+         if (edad > 65) {
+             alert("estas jubilado");
+         } else {
+             alert("Todabia esta trabajando o en el paro");
+         }
+         Esta funcion es un erro pueto que el onload no ha de ir con la funcion, no con la variable.*/
+        window.onload = function() {
+            var edad = prompt("Introduce tu edad");
+            if (edad > 65) {
+                alert("estas jubilado");
+            } else if (edad <= 65 && edad >= 0) {
+                alert("Todabia esta trabajando o en el paro"); /*añadimos este else if para que si introduciomos otro valor nos indique que el formato no es valido*/
+            } else {
+                alert("formato no valido")
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

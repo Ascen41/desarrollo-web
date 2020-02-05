@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>pvpiva</title>
+    <script type="text/javascript">
+        /* Crea una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, aplicará el 21 por ciento por defecto.*/
+
+        function masIva(precio, iva) {
+            iva = iva || 21
+            var coniva = (precio + precio * iva / 100);
+            return coniva;
+        }
+        var precio = Number(prompt("Introduce un precio"));
+        var iva = Number(prompt("Introduce el iva"));
+        if (iva > 0) {
+            var resultado = masIva(precio, iva);
+        } else {
+            var resultado = masIva(precio);
+        }
+        document.write("Precio sin iva: " + precio);
+        document.write("<br>Precio más Iva: " + resultado);
+    </script>
+</head>
+
+<body>
+    <p>
+        <div id="delreves"></div>
+    </p>
+</body>
+
+</html>

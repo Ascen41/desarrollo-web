@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 10 JS: Palíndromo</title>
+
+	<script type="text/javascript">
+
+		function f_palindromo(cadena){
+			
+			cadena = cadena.toUpperCase();
+			cadena = cadena.replace(/ /g, ""); // quitar espacios en blanco
+			
+			var l_array = cadena.split("");// transforma la cadena en un array
+			l_array.reverse(); //invertir array
+
+			var cadenaInvertida = l_array.join(""); // pasamos a string el array. Si no ponemos "", une los elmentos del array con "," por defecto
+			if (cadenaInvertida == cadena){
+				return "es palíndromo";
+			}else{
+				return "no es palíndromo";
+			}
+		}
+		var texto = prompt();
+		var result = f_palindromo(texto);
+		alert("El texto '" +texto+"' " +result);
+	
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

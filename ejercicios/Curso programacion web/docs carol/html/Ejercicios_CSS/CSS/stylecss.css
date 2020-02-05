@@ -1,0 +1,25 @@
+		p{
+			color: green;
+		}
+
+		p.cl-pink
+		{
+			color: blue;
+		}
+
+		h1,#cl-rojo
+		{
+			color: red;
+			text-decoration: underline;
+		}
+
+		.cl-blue
+		{
+			color: blue;
+		}
+
+		.cl-yellow
+		{
+			color: yellow;
+		}
+

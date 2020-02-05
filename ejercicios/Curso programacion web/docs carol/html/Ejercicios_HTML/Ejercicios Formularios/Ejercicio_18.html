@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejercicio 18 Formularios</title>
+	<style type="text/css">
+		label{
+			width: 25%;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Rellena tu CV</h1>
+
+	<form method="post" action="/php/insertar_cv.php" enctype="multipart/form-data"> 
+		<div>
+			<label for="idfname">Nombre: </label>
+			<input id="idfname" type="text" name="v_firstname" maxlength="30" placeholder="Introdir nombre..." required>
+		</div>
+		<div>
+			<label for="idlname">Apellidos: </label> 
+			<input id="idlname" type="text" name="v_lastname" maxlength="80" placeholder="Introducir apellidos..." required>
+		</div>
+		<div>
+			<LABEL for="idpsw">Contraseña</LABEL>
+			<input id="idpsw" type="password" name="v_psw" maxlength="10" required>
+		</div>
+		<div>
+			<LABEL for="iddni">DNI:</LABEL>
+			<input id="iddni" type="text" name="v_dni" maxlength="9" pattern="[0_9]{8}[A_Z]" required>
+		</div>
+		
+		<div>
+			<label>Sexo:</label>
+			<div>
+				<input type="radio" name="v_sexo" id="idman" checked="checked" />
+				<label for="idman">Hombre</label>
+			</div>
+			<div>
+				<input type="radio" name="v_sexo" id="idwoman" />
+				<label for="idwoman">Mujer</label>
+			</div>
+		</div>
+		<div>
+			<label for="idfile">Incluir mi foto:</label>
+			<!--ell botón de elegir aparece automáticamente por ser de tipo FILE--> 
+			<input id="idfile" type="file" name="v_file">
+		</div>
+		<div>
+			<input type="checkbox" name="v_suscribir" id="idsusc" checked />
+			<label for="idsusc">Suscribirme al boletín de novedades</label>
+		</div>
+		<div>
+			<input type="submit" name="b_enviar" value="Guardar cambios">
+			<input type="reset" name="b_reset" value="Borrar los datos introducidos">
+		</div>
+	</form>
+
+</body>

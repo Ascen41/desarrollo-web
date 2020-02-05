@@ -1,0 +1,157 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+*{
+	font-family: verdana;
+}
+
+body{
+	width:100%;
+	margin: auto;
+	padding: 0px;
+	background-image: url(cabecera.jpg), linear-gradient(-15deg,#c0c0ff,white), url(fondo_artculo.jpg);
+	list-style-type: none;
+	background-repeat: no-repeat;
+	float: left;
+}
+/*-- Cabecera ---------------------------------------------------*/
+
+header h2{
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-family: verdana;
+	width: 37%;
+	float: left;
+}
+header div{
+	margin:0;
+	padding: 0;
+	box-sizing: content-box;
+	width: 63%;
+	float: right;
+	
+
+}
+/*-- Menu ---------------------------------------------------*/
+nav{
+	float: left;
+	width: 100%;
+	margin: 0;
+}
+#menu{			
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			float: left;
+			font-size: 15px;
+			background-color: #192666;
+			padding: 25px;
+			margin: 25px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+}
+ #menu li{
+			float: left;
+			text-align: center;
+			border-bottom: none;
+			border-bottom: 0;
+			margin-left: 3px;
+		}
+#menu li a{
+	padding: 0;
+	margin: 0;
+	background-color: #253575;
+
+}
+ nav #menu a:hover{
+	cursor: pointer;
+	background-color:#FFFFFF; 
+	text-decoration: none; 
+}
+nav #menu a:visited{
+	color: #FF9000;
+}
+
+/*-- contenido pagina ---------------------------------------------------*/
+#content{
+	clear: none;
+	width: 100%;
+	padding-top: 20px;
+	
+}
+
+article ul li{
+
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+	font-size: 10px;
+	background-color: white;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+
+article h1 {
+
+	color: white;
+	background: 
+}
+/*-- seccion principal ---------------------------------------------------*/
+section{
+	width: 530px;
+	float: left;
+}
+article{
+	margin-left: 20px;
+	float: left;
+}
+/*-- sección lateral ---------------------------------------------------*/
+aside{
+	width: 200px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	border-top-right-radius: 30px;
+	box-shadow: -1px -4px 12px 0px  #253575 inset;
+}
+aside ul li a {
+	margin: 0;
+	padding: 2px;
+	font-weight:bold;
+	background-color: #c0c0ff;
+}
+ul{
+	border-bottom: 1px solid #7C7C7C;
+	border-top: 1px solid #FFF;
+	background-color: #c0c0ff;
+	list-style-type: none;
+}
+
+}
+h4{
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	border: 1px solid #333;
+	text-decoration-line: underline;
+	color: navy;
+}
+
+.clear{
+	clear: both;
+}
+/*-- Pie de página ---------------------------------------------------*/
+
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */

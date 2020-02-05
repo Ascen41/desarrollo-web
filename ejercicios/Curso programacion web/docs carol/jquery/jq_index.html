@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+      color: yellow;
+    }
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script type="text/javascript">
+
+    function tratamiento_error(response,status,xhr){
+      console.log(status);
+
+      if (status == "success"){
+          $("error").html("External content loaded successfull");
+      }
+      if (status == "error") {
+        console.log("1");
+
+        var msg = "Sorry but there was an error: ";
+        $("#error" ).html( msg + xhr.status + " " + xhr.statusText );
+        $("content").html(" ");
+      }
+      
+    }
+
+    $(document).ready(function(){
+
+      /*
+      $("#news").click(function(){
+        $("#content").load("resources2/load.html #projects li",function(responsetxt,statustxt,xhr){
+
+          tratamiento_error(responsetxt,statustxt,xhr);
+
+        });
+      });
+
+      $("#contact").click(function(){
+        $("#content").load("resources/load1.html #projects li",function(responsetxt,statustxt,xhr){
+
+          tratamiento_error(responsetxt,statustxt,xhr);
+
+        });
+      });
+
+      $("#about").click(function(){
+        $("#content").load("resources/load2.html",function(responsetxt,statustxt,xhr){
+
+          tratamiento_error(responsetxt,statustxt,xhr);
+
+        });
+      });
+      */
+      //Optimizamos código. Añadimos Id al UL y los data-link a los enlaces. 
+      $('ul#menu li a').click(function(){
+          var i = $(this);
+          $("#content").load(i.attr('data-link'),function(responsetxt,statustxt,xhr){
+            tratamiento_error(responsetxt,statustxt,xhr);
+          });
+      });
+
+    }); //<--$(document).ready   
+  
+  </script>
+
+</head>
+<body>
+
+  <ul id="menu">
+    <li><a class="active">Home</a></li>
+    <li><a id="news" data-link="resources2/load.html #projects li">News</a></li>
+    <li><a id="contact" data-link="resources/load1.html #projects li">Contact</a></li>
+    <li><a id="about" data-link="resources/load2.html">About</a></li>
+  </ul>
+
+  <div id="content"></div>
+  <div id="error"></div>
+
+</body>
+</html>

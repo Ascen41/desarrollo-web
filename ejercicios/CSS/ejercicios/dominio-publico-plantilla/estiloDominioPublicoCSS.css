@@ -1,0 +1,94 @@
+@font-face{
+	font-family: "fuente";
+	src: url("righteous.woff2");
+}
+*{
+	font-family: "fuente";
+}
+*{
+	background-color: #dcba8c;
+}
+body {
+	border-left: 30px solid #bc8a44;
+}
+#copyrigth {
+	margin-left: 20px;
+	font-size: 6.5em;
+}
+
+#titulo {
+
+	font-family: arial;
+	font-size: 3em;
+}
+#primer p {
+	font-family: arial;
+	border: dashed #bc8a44;
+  	border-radius: 10px;
+  	margin-left: 25px;
+  	margin-right: 25px;
+}
+#bloque1 {
+	border-left: 5px solid #bc8a44;
+  	margin-left: 20px;
+  	border-right: 5px solid #bc8a44;
+  	margin-right: 20px; 
+}
+#segundo p{
+	font-family:arial;
+}
+#bloque2 {
+	border-left: 5px solid #bc8a44;
+  	margin-left: 20px;
+  	border-right: 5px solid #bc8a44;
+  	margin-right: 20px; 
+}
+#robert{
+	width: 100px;
+	padding: 2px;
+	border: 2px solid #bc8a44;
+	float: right;
+	margin-right: 15px
+}
+#tercero p{
+		font-family:arial;
+}
+
+#edith{
+	width: 100px;
+	padding: 2px;
+	border: 2px solid #bc8a44;
+	margin-left: 15px;
+	float: left;
+}
+#lovecraft{
+	width: 100px;
+	padding: 2px;
+	border: 2px solid #bc8a44;
+	margin-right: 15px;
+	float: right;
+
+}
+
+#bloque3 {
+	border-left: 5px solid #bc8a44;
+  	margin-left: 20px;
+  	border-right: 5px solid #bc8a44;
+  	margin-right: 20px; 
+  	clear: both;
+}
+#cuarto p{
+	font-family:arial;
+}
+#bloque4 {
+	border-left: 5px solid #bc8a44;
+  	margin-left: 20px;
+  	border-right: 5px solid #bc8a44;
+  	margin-right: 20px; 
+}
+#quinto p{
+		font-family:arial;
+}
+#primerafecha, #segundafecha, #tercerafecha, #cuartafecha{
+	font-size: 50px
+}

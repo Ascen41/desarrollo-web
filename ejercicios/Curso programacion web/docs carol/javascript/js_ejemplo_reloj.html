@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS ejemplo reloj</title>
+	<script type="text/javascript">
+
+// podemos encontrar los ejemplos en https://uniwebsidad.com/libros/javascript/capitulo-8/relojes-contadores-e-intervalos-de-tiempo
+// http://myapa.es/javascript/reloj-digital-en-javascript/
+		window.onload = function() {
+
+			var fechaHora = new Date();
+
+			document.getElementById("reloj").innerHTML = fechaHora;
+
+			//----------------------------------------------------------------------------------------------------------------
+			var horas = fechaHora.getHours();
+			var minutos = fechaHora.getMinutes();
+			var segundos = fechaHora.getSeconds();
+			var diasem = fechaHora.getDay(); // el número del dia de la semana del 1 al 7
+			var diames = fechaHora.getDate(); // día el mes
+			var mes = fechaHora.getMonth(); // número del mes
+			var any = fechaHora.getFullYear(); 
+
+ 
+			document.getElementById("reloj2").innerHTML = horas+':'+minutos+':'+segundos;
+
+			
+		   //----------------------------------------------------------------------------------------------------------------
+		   //Si la hora, minuto o segundo son menores que 10, JavaScript no añade el 0 por delante
+
+			if(horas < 10) { horas = '0' + horas; }
+			if(minutos < 10) { minutos = '0' + minutos; }
+			if(segundos < 10) { segundos = '0' + segundos; }
+
+			document.getElementById("reloj3").innerHTML = horas+':'+minutos+':'+segundos;
+
+		   //----------------------------------------------------------------------------------------------------------------
+		    var idioma = prompt('Idioma (ES,CA)').toUpperCase();
+
+			var semana = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+			var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+			var semana_cat = ['Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte','Diumenge'];
+			var meses_cat = ['Gener','Febrer','Març','Abril','Maig','Juny','Juliol','Agost','Setembre','Octubre','Novembre','Decembre'];
+
+			var resultado;
+			switch (idioma){
+				case 'ES':
+					resultado = 'Hoy es '+semana[diasem]+' '+diames+' '+meses[mes]+' del ' +any;
+					break;
+				case 'CA':
+					resultado = 'Avui es '+semana_cat[diasem]+' '+diames+' '+meses_cat[mes]+' del ' +any;
+					break;
+				default:
+					alert('Idioma no correcto. Por defecto CA');
+					resultado = 'Avui es '+semana_cat[diasem]+' '+diames+' '+meses_cat[mes]+' del ' +any;
+			}
+			document.getElementById("fecha_actual").innerHTML = resultado;
+
+			//----------------------------------------------------------------------------------------------------------------
+			//Para completar el reloj, sólo falta que se actualice su valor cada segundo.
+			//La función se ha de llamar sin lo (), sino no funciona. y ha de ir en window.onload = function() {} al principio en el head
+			mostrar_reloj();
+			
+		}
+
+		function mostrar_reloj(){
+			
+			var fechaHora = new Date();
+
+			var horas = fechaHora.getHours();
+			var minutos = fechaHora.getMinutes();
+			var segundos = fechaHora.getSeconds();
+
+			if(horas < 10) { horas = '0' + horas; }
+			if(minutos < 10) { minutos = '0' + minutos; }
+			if(segundos < 10) { segundos = '0' + segundos; }
+
+			document.getElementById('reloj4').innerHTML = horas+':'+minutos+':'+segundos;
+
+			setInterval(mostrar_reloj, 1000);
+		}
+	</script>
+</head>
+<body>
+	<p> Formato de la fecha en UTC</p>
+	<div id="reloj"></div>
+	<br>
+	<p> Formato hh:mm:ss</p>
+	<div id="reloj2"></div>
+	<p> Si la hora, minuto o segundo son menores que 10, JavaScript no añade el 0 por delante</p>
+	<div id="reloj3"></div>
+	<br>
+	<p> Mostrar reloj en tiempo real</p>
+	<div id="reloj4"></div>
+	<br>
+	<p id="fecha_actual"></p>
+</body>
+</html>

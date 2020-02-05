@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Mayor de edad</title>
+
+    <script type="text/javascript">
+        //Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
+
+
+        //declaramos una variable donde vamos a concatenar las cadenas que llamaremos resultado
+        var resultado = "";
+        //se usa el bucle do...while para introducir varias cadenas
+        do {
+            //solicitamos a traves de un prompt que el usuario introduzca una cadena
+            var cadena = prompt("Introduce una cadena");
+            //si la variable resultado estuviese vacía...
+            if (resultado == "") {
+                //concatenamos sin usar guion
+                resultado = resultado + cadena;
+            }
+            //sinó
+            else {
+                //concatenaríamos con guión
+                resultado = resultado + "-" + cadena;
+            }
+            //mientras pulsemos aceptar nos comunicara si queremos seguir a traves de un confirm para ir introduciendo cadenas de testo para concatenar
+        } while (confirm("Desea seguir?"));
+        //una vez pulsamos depues de introducir las cadenas pulsamos cancelar y nos imprime la cena de texto completa separada por guiones, esto se consigue a traves del document.write(resultado)
+        document.write(resultado);
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

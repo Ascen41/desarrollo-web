@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<link rel="stylesheet" href="css/home.css">
+   		<script src="js/registro.js"></script>
+	</head>
+
+	<body>
+<!-- Contenedor -->
+<div id="contenedor">
+
+	<!-- Cabecera -->
+	<div id="cabecera">
+		<span class="titulo">SportMania</span>	
+	</div>
+	<!-- /Cabecera -->
+	<div class="clear"></div>
+
+	<!-- Menu principal -->
+	<div id="menu">
+		<ul id="menu_principal">
+			<li><a href="home.html">Home</a></li>
+			<li><a href="info2.html">Info</a></li>
+			<li><a href="registro2.html">Registro</a></li>
+			<li><a href="Galeria2.html">Galeria</a></li>
+		</ul>
+	</div>
+	<!-- /Principal -->
+	<div class="clear"></div>
+
+	<!-- Contenido -->
+	<div id="contenido">
+		<div id="form">
+		<form method="get" onsubmit=" return validar()">
+				<h2>Formulario de Registro</h2>
+				<fieldset>
+					<legend>Información personal</legend>
+						<label for="nombre"><strong>Nombre:<span>*</span></strong></label>
+						<input type="text" name="nombre"  id="nombre" onkeyup="validar_nombre()">
+						<p id="error_nombre" class="oculto">*Campo Obligatorio.*</p>
+						<br>
+						<br>
+						<label for="apellido"><strong>Apellido:<span>*</span></strong></label>
+						<input type="text" name="apellido"  id="apellido" onkeyup="validar_apellido()">
+						<p id="error_apellido" class="oculto">*Campo Obligatorio.*</p>
+						<br>
+						<br>
+						<label for="direc"><strong>Dirección:</strong></label>
+						<input type="text" name="direc"  id="direc">
+						<p id="error_direccion" class="oculto">Introduce tu direccion</p>
+						<br>
+						<br>
+						<label for="telefono"><strong>Teléfono:<span>*</span></strong></label>
+						<input id="telefono" name="telefono" type="text" size="50" onkeyup="validar_telefono()">
+						<p id="error_telefono" class="oculto">Porfavor, Introduzca su telefono </p>
+						<br>
+						<br>
+						<label for="date"><strong>Fecha de nacimiento:<span>*</span></strong></label>
+						<input type="date" name="date" id="date" onkeyup="validar_date()">
+						<p id="error_date" class="oculto">*Formato fecha no valido, porfavor vuelva a intentarlo*</p>
+          				<br>
+          				<br>
+						<label for="email"><strong>Email:<span>*</span></span></strong></label>
+						<input type="text" name="correo" id="email" onkeyup="validar_email()">
+						<p id="error_email" class="oculto">*Formato Email no valido, porfavor vuelva a intentarlo*</p>
+          				<br>
+          				<br>
+          				<label for="contrasena"><strong>Contraseña:<span>*</span></strong></label>
+          				<input type="password" name="contrasena" id="contrasena" onkeyup="validar_password()">
+          				<p id="error_password" class="oculto">*Campo incorrecto, la contraseña requiere de una longitud minima 8 digitos:
+          				1 Mayuscula.
+          				1 Minuscula.
+          				1 Numero.*</p>
+          				<br>
+          				<br>
+          				<label><strong>Género:<span>*</span></span></strong></label>
+				
+						<label for="idhombre">Hombre</label>
+						<input type="radio" id="idhombre" name="sexo" onchange="validar_radio()">
+						<label for="idmujer">Mujer</label>
+						<input type="radio" id="idmujer" name="sexo" onchange="validar_radio()">
+						<p id="error_radio" class="oculto">Selecciona una opción</p>
+						<br>		
+          		</fieldset>
+          				<br>
+          				<br>
+          		<fieldset>
+          				<legend>Información laboral</legend>
+          				<br>
+          				<br>
+						<label for="seleccion"><strong>Profesión:<span>*</span></strong></label>
+						<select id="seleccion" name="profesion" onchange="validar_list()">
+							<option value="">seleccione tu área de aplicación</option>
+							<option value="meca" >Mecanica</option>
+							<option value="info" >Informatica</option>
+							<option value="tel" >Telecos</option>
+							<option value="elec" >Electrica</option>
+						</select>
+						<p id="error_selec" class="oculto">Seleccione una opción de la lista</p>
+          				<br>
+          				<br>
+          				<label for="direccion"><strong>dirección:</strong></label>
+						<input type="text" name="direccion"  id="direccion">
+						<p id="error_direccion" class="oculto">Introduce tu direccion</p>
+						<br>
+						<br>
+						<label for="telefono"><strong>Teléfono:</strong></label>
+						<input id="telefono" name="telefono" type="text">
+						<p id="error_telefono" class="oculto">Porfavor, Introduzca su telefono </p>
+						<br>
+						<br>
+						<br>
+						<input type="checkbox" name="check" id="check" value="datos" onchange="validar_checkbox()">
+            			<label for="check">Aceptas la politica de protección de datos</label>
+            			<p id="error-checkbox" class="oculto">Debe aceptar la politica de protección de datos.</p>
+            			<br>
+            			<br>
+          				<input class="enviar" type="submit" name="" value="Registrarse">	
+          		</fieldset>	
+		</form>
+		</div>
+	</div>
+	<!-- /Contenido -->
+	<div class="clear"></div>
+
+	<hr>	
+	
+	 <!-- Pie -->
+	<div id="pie">
+		<span class="copyright"> &copy; SportMania Copyright 2020. All Rights Reserved</span>
+		<span>Tel: +34 938937220</span>
+		<span>FAX: +34 938935271</span>
+		<div class="clear"></div>
+	</div>
+	<!-- /Pie -->
+	
+
+</div>
+<!-- /Contenedor -->
+
+	</body>
+</html>

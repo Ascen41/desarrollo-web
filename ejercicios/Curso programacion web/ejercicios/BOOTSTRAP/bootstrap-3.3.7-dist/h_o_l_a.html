@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>h-o-l-a- -q-u-e- -t-a-l</title>
+    <script type="text/javascript">
+        /* Realiza un script que pida una cadena de texto y la muestre poniendo el signo – entre cada carácter sin usar el método replace. Por ejemplo, si tecleo “hola qué tal”, deberá salir “h-o-l-a- -q-u-e- -t-a-l” */
+
+        var cadena = prompt("Introduce una cadena de texto:");
+        var numchar = cadena.length; //Devuelve la longitud del string.
+        var caracter;
+        var i;
+        for (i = 0; i < numchar; i++) {
+            caracter = cadena.charAt(i); //recupera el caracter i del string.
+            if (i == numchar - 1) {
+                document.write(caracter);
+            } else {
+                document.write(caracter + "-");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

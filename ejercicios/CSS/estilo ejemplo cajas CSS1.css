@@ -1,0 +1,14 @@
+div {
+  background-color: lightgrey;
+  width: 10em;
+  border: 0.1em solid green;
+  padding: 10em;
+  margin: 5em;
+}
+#cabecera{
+	width: 10em;
+	border: 5em;
+	padding: 10em;
+	margin: 5em; 
+
+}

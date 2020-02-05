@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HOME</title>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/cineclasico.css">
+    <script type="text/javascript" src="js/genero.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>PELICULAS</h2>
+        <div id="search">
+            <input type="search" name="search">
+            <input type="submit" name="submit" value="Buscar">
+        </div>
+    </header>
+    <nav>
+        <ul id="menu">
+            <li><a href="homeproyect.html">Home</a></li>
+            <li><a href="infoproyect.html">Info</a></li>
+            <li><a href="registproyect.html">Registro</a></li>
+            <li><a href="galproyect.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <div class="clear"></div>
+    <div id="content">
+        <aside>
+            <h4>GENERO</h4>
+            <ul>
+                <li><a href="cineclasico.html">Clásico</a></li>
+                <li><a href="cineciencia.html">Ciencia ficción</a></li>
+                <li><a href="cineanimacion.html">Animación</a></li>
+                <li><a href="cinedrama.html">Drama</a></li>
+                <li><a href="cineterror.html">Terror</a></li>
+            </ul>
+        </aside>
+        <section>
+
+            <fieldset>
+                <legend>Visor de imagenes</legend>
+
+                <img src="img/expediente.JPG" width="70%" style="display: block;" id="galeria">
+                <p id="pie">Expediente Warren</p>
+                <div id="imagenes">
+                    <img src="img/expediente.JPG" onclick="grande(this)" alt="Expediente Warren">
+                    <img src="img/exorcista.JPG" onclick="grande(this)" alt="El Exorcista">
+                    <img src="img/resplandor.JPG" onclick="grande(this)" alt="El resplandor">
+            </fieldset>
+        </section>
+        </div>
+
+        <footer></footer>
+
+</body>
+
+</html>

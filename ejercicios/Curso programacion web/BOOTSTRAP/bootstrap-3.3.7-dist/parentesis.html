@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<META charset="utf-8">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>texto parentesis</title>
+    <script type="text/javascript">
+        /* Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un script que extraiga la cadena que se encuentra entre los paréntesis. Ejemplo: Si escribimoe el texto “Hola (que) tal” se mostrará “que”. Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo “(“pero no el signo “)” mostrará desde el primer paréntesis hasta el final. */
+
+        var cadena = prompt("Introduce un Texto que contenga paréntesis:");
+        //Longitud de la cadena
+        var numchar = cadena.length;
+        var j;
+        var car;
+        var salida = "";
+        var copiar = false;
+
+        for (j = 0; j < numchar; j++) {
+            car = cadena.charAt(j); //recupera el caracter i del string.
+            if (car == ")") {
+                copiar = false;
+            }
+            if (copiar) {
+                salida = salida + car;
+            }
+            if (car == "(") {
+                copiar = true;
+            }
+        }
+        document.write(salida);
+    </script>
+</head>
+
+<body>
+    <p></p>
+</body>
+
+</html>

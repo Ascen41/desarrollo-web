@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LISTADOS</title>
+	<meta charset="utf-8">
+	<style>
+		#menu{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			float: left;
+			font-size: 15px;
+			background-color: lightgrey;
+			padding: 25px;
+			margin: 25px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+	}
+		li{
+			float: left;
+			text-align: center;
+			border-bottom: none;
+			border: 2px solid darkblue;
+			border-bottom: 0;
+		}
+		#el1{
+			color: white;
+			font-family: "arial";
+			background-color: #2196f3;
+			border-top-right-radius: 25px;
+
+		}
+		#el2{
+			font-family: "arial";
+			color: white;
+			background-color: #21c3f3;
+			border-top-right-radius: 25px;
+		}
+		#el3{
+			font-family: "arial";
+			color: white;
+			background-color: #4ac7ff;
+			border-top-right-radius: 25px;
+		}
+		
+		#el4{
+			font-family: "arial";
+			color: white;
+			background-color: lightblue;
+			border-top-right-radius: 25px;
+		}
+		ul li a{
+			display: block;
+			text-decoration: none; 
+			padding: 20px;
+			background: url(imagenes/favicon.jpg)no-repeat;
+		}
+		ul li a:hover{
+			cursor: pointer;
+			background: url(imagenes/favicon2.jpg)
+			no-repeat;
+		}
+/*siguiente ejercicio formularios con estilo*/
+		label{
+			width:25%;
+			display: inline-block;
+		}
+		fieldset{
+			float: left;
+		}
+	
+	</style>
+</head>
+<body>
+		<ul id="menu">
+			<li id="el1"><a href="a.html">Elemento 1</a></li>
+			<li id="el2"><a href="a.htm2">Elemento 2</a></li>
+			<li id="el3"><a href="a.htm3">Elemento 3</a></li>
+			<li id="el4"><a href="a.htm3">Elemento 4</a></li>
+		</ul>
+<hr>
+		<h1>Revista abierta</h1>
+		<form method="get" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Datos personales</legend>
+		<div>	
+			<label for="nom"/>Nombre: </label>
+			<input id="nom" type="test"name="nom" placeholder="Introduce tu nombre" />
+		</div>
+			<label for="Primer Apellido">Primer Apellido: </label>
+			<input id="Primer Apellido"  type="test"name="Primer Apellido" placeholder="Primer Apellido" />
+		<div>
+			<label for="Segundo Apellido">Segundo Apellido: </label>
+			<input id="Segundo Apellido"  type="test"name="Segundo Apellido" placeholder="Segundo Apellido" />
+		</div>
+<br>
+<br>
+		<div>
+			<label for="Direccion">Direccion </label>
+			<input id="Direccion"  type="Direccion" name="Direccion" placeholder="Direccion" />
+		</div>
+<br>
+<br>	
+		<div>
+			<label for="password">Contraseña: </label>
+			<input id="password"  type="password"name="password" placeholder="Introduce tu Contraseña" />
+		</div>
+<br>
+<br>
+
+			<label for="sexo"><p>Sexo</p></label>
+		<div>
+			<input name="boton" type="radio"id="Varon" value="Varon" />
+			<label for="boton">Varón
+			</label>
+		</div>
+		<div>
+			<input name="boton" type="radio" id="Mujer" value="Mujer" checked="checked" />
+			<label for="boton">Mujer
+			</label>
+		</div>
+</fieldset>
+<fieldset>
+	<legend>Nivel de esturdios e intereses</legend>
+	<label for="Nivel de Estudios">Nivel de estudios</label>
+	<input name="Nivel de estudios" type="radio"id="Peliculas" value="peliculas" />
+	<label for="Peliculas">Películas
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="libros" value="libros" />
+	<label for="libros">Libros
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Internet" value="internet" checked="checked" />
+	<label for="Internet"/>Internet
+	</label>
+<br>
+<br>
+	<input name="Nivel de estudios" type="radio"id="Peliculas" value="peliculas" />
+	<label for="Peliculas">Películas
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="libros" value="libros" />
+	<label for="libros">Libros
+	</label>
+<br>
+	<input name="Nivel de estudios" type="radio" id="Internet" value="internet" checked="checked" />
+	<label for="Internet"/>Internet
+	</label>
+<br>
+</fieldset>
+
+
+</body>
+</html>

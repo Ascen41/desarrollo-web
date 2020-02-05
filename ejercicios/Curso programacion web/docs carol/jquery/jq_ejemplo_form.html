@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JQ Evento Submit</title>
+	<script src="jquery/jquery341.min.js"></script>
+	<style type="text/css">
+		.validacion{
+			color:red;
+			font-size:15px;
+		}
+		.obligatorio{
+			color:red;
+		}
+		div.block label{
+			width: 20%;
+			display: inline-block;
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){ // no se ejecuta hasta que no se cargue toda la página
+
+			$('#miform').submit(function(event){
+
+				var error= false;
+				var ierror= false;
+				// la función .children nos devuelve un array de los hijos del form, en este caso son directamente los inputs, labels y div. Si los inputs y labels los tenemos dentro de un div o un fieldset, los inputs dejan de ser hijos del form para pasar a serlo del div o fieldset que lo contenga. Con lo cual, en ese caso .children no funcionaria y se ha de usar .find. Todemos en este caso tb find. de esta amnera si modificamos la estructura del formualrio no se ve afectado el scrip.
+
+				// .each es un bucle para recorrer el array.
+				// :not(input[type=submit]) si no lo ponemos, toma los dos inputs. Esto hace que no pille el input del submit. Esto son una mezcla de los selectores del CSS elemento[atributo=“valor”] diapo 17  y elemento:not(.especial) diap 22.
+				
+				/*
+				$(this).children('input:not(input[type=submit]),label').each(function(){
+					var i = $(this); //this hace referencia a los elementos que le indicamos , en este caso input y labels. En la 1ra iteracion tenemos el label del nombre y el this hace referencia a este label y podemos acceder a todos los atributos del label. en la 2da iteración this hace referencia al input. ...
+					console.log(i)
+					console.log(i.attr('id'));
+				});
+				*/
+				$(this).find('input:not(input[type=submit],input[type=radio]),textarea,select').each(function(){
+					var i = $(this); 
+					var rule = i.attr('data-rule').split(':');
+
+					console.log(i);
+					console.log(i.next('.validacion'));
+
+					switch(rule[0]){
+						case 'minleng':
+							if ( (i.val().length<parseInt(rule[1])) || (/^\s+$/.test(i.val())) ){
+								ierror =true;
+								error = true;
+							}else{
+								ierror = false;
+							}
+							break;
+						case 'email':
+							if( !(/^([\dA-Za-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(i.val())) ) {
+								ierror = true;
+								error = true;
+							}else{
+								ierror = false;
+							}
+							break;
+						case 'password':
+							if ( (i.val().length<parseInt(rule[1])) || (!(/^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z]).+$/).test(i.val())) ){
+								ierror =true;
+								error = true;
+							}else{
+								ierror = false;
+							}
+							break;	
+						case 'comment':
+							if (i.val().length>parseInt(rule[1])) {
+								ierror =true;
+								error = true;
+							}else{
+								ierror = false;
+							}	
+						case 'select':
+							if (i.val() == null){
+								ierror =true;
+								error = true;
+							}else{
+								ierror = false;
+							}				
+					};
+
+					if(ierror){// mostrar mensaje de error 
+				    	// Pilla el primer elemento después del input que tenga la class="validacion", en este caso en el div
+				    	//html equivale al innerHtml 
+				    	i.next('.validacion').html(i.attr('data-msgerror')); 
+					}else{
+						i.next('.validacion').html("");
+					}
+
+				}); //$(this).find('....').each(function()
+
+				
+				// tratamos el radiobutton
+				var i = $('input[name="sexo"]');
+				console.log(i);
+				console.log(i.next(),'Hola');
+
+				if (i.is(':checked')){
+					console.log("radio ok");
+					i.parent().find('.validacion').html("");
+				}else{
+					console.log("radio ko");
+
+					i.parent().find('.validacion').html(i.attr('data-msgerror'));
+					error = true;
+				}
+
+				if (error){ 
+			  		event.preventDefault(); // impide que se envía el formulario 
+							       			//(equivale al return false, <form onsubmit = “return false”>
+				}else{
+					alert("Se enviará el formulario");
+				}
+				
+			});//<-- $('#miform').submit(function(event)
+
+		});//<<--$(document).ready(function()
+
+
+	</script>
+</head>
+<body>
+
+	<form id="miform" > 
+			<div class="block">
+				<label for="name">Nombre <span class="obligatorio" class="block" >*</span> </label>
+				<!-- data- es predefinido, pero lo que viene después no. Podemos poner el nombre que queramos, ya que es el nick por el que lo llamaremos-->
+		        <input type="text" Id="name"  name="name" data-msgerror="*Error formato: mínimo 4 caracteres" data-rule="minleng:4">
+		        <div class="validacion"></div>
+		        
+		        <label for="apellido">Apellido <span class="obligatorio">*</span></label>
+		        <input type="text" Id="apellido"  name="apellido" data-msgerror="*Campo obligatorio" data-rule="minleng:1">
+		        <div class="validacion"></div>
+
+		        <label for="email">Email</label>
+		        <input type="text" Id="email"  name="email" data-msgerror="*Formato incorrecto" data-rule="email:0">
+		        <div class="validacion"></div>
+
+		       	<label for="password">Password</label>
+		        <input type="text" Id="password"  name="password" data-msgerror="*Formato incorrecto" data-rule="password:8">
+		        <div class="validacion"></div>
+
+		        <br>
+		        <!-- Select...-->
+		        <div>
+					<label >Población:</label>
+					<select name="lista" data-msgerror="*Campo obligatorio" data-rule="select:0">
+						<option value= "" disabled selected>--</option>
+						<option value="Alicante">Alicante</option>	
+						<option value="Madrid">Madrid</option>
+						<option value="Sevilla">Sevilla</option>
+						<option value="Valencia">Valencia</option>
+					</select>
+					<div class="validacion"></div>
+				</div>
+			</div>
+			<br>
+
+			<!-- Radiobutton-->
+			<div>
+				<label>Sexo:</label>
+				<div>
+					<input id="idman" type="radio" name="sexo" data-msgerror="*Campo obligatorio"/>
+					<label for="idman">Hombre</label>
+					<input id="idwoman" type="radio" name="sexo"/>
+					<label for="idwoman">Mujer</label>
+					<div class="validacion"></div>
+				</div>
+
+			</div>
+			<br>
+		
+			<!-- Textarea...-->
+			<div>
+				<label for="coment">Comentarios: </label><br>
+				<textarea id="coment" name="comment" rows="10" cols="60" placeholder="Descripción..." data-msgerror="*La long no puede ser superior a 50" data-rule="comment:5"></textarea>
+				<div class="validacion"></div>
+			</div>
+			<br>
+
+			<!-- checkbox...-->
+			<!--
+			<div>
+				<input id="idverif" type="checkbox" name="v_verif" checked />
+				<label for="idverif">Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos</label>
+				<div class="validacion"></div>
+			</div>
+			-->
+			<br>
+			<!-- Submit-->	
+	        <input type="submit" name="enviar" value="Enviar.">
+	        
+	</form>
+
+	<span></span>
+
+</body>
+</html>

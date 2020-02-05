@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+      //funcion conccat y +
+      var text1="HOLA";
+      var text2=" mundo";
+      alert(text1+text2)
+      alert(text1.concat (text2));
+      //funcion toUpperXase(), toLowerCase()
+      var text1="hola";
+      var text2=" mundo";
+      alert(text2.toUpperCase());
+      alert(text1.toLocaleLowerCase());
+      //funcion charAt(posicion)
+      var text1="hola";
+      var text2=" mundo";
+      for(var i =0; i< text2.length; i++){
+      alert(text2[i]);
+    }
+    alert(text2.charAt(4));
+    //spilt(separador) convierte una cadena en un array de cadenas de texto
+    //xj var mensaje="Hola mundo, soy una cadena de texto!";
+    //   var palabras= mensaje.split(" ");
+    //palabras= ["Hola", "mundo,", "soy", "una", "cadena", "de", "texto!"];
+    //var palabra = "Hola";
+    //var letras = palabra.split(""); // letras = ["H", "o", "l", "a"]
+    //subsrting(inicio, final), estrae una porcion de una cadena de texto. el incio 
+    //es obligatorio mientras que el final es opcional.
+
+    var text1 ="Hola Mundo";
+    alert(text1.substring(1, 8))
+//pop(), elimina el último elemento del array y lo devuelve.
+//El array original se modifica y su longitud disminuye en 1 elemento. modifica el array original
+//push(), añade un elemento al final del array. El array original se modifica y aumenta su longitud en 1 elemento. 
+//shift(), elimina el primer elemento del array y lo devuelve. El array original se ve modificado y su longitud disminuida en 1 elemento.
+//unshift(), añade un elemento al principio del array. El array original se modifica y aumenta su longitud en 1 elemento. 
+//reverse(), modifica un array colocando sus elementos en el orden inverso a su posición original:
+    var array =[1,2,3];
+    alert (array.pop());
+    
+    var array =[1,2,3];
+    alert (array.push("h"));
+
+    var array =[1,2,3];
+    alert (array.shift());
+
+    var array =[1,2,3];
+    alert (array.unshift("r"));
+
+
+      
+ </script>
+ 
+</head>
+<body>
+    
+</body>
+</html>

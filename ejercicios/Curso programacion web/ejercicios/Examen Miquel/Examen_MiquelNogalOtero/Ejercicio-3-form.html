@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta HTTP-EQUIV="Expires" CONTENT="no-cache">
+    <meta charset="UTF-8">
+    <meta name="description" content="Formulario">
+    <title>Formulario de registro - Mi web</title>
+    <style>
+        label:not(.inline),
+        input:not(.inline),
+        textarea {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="GET" action="#" name="miForm" onsubmit="return ValidarFormulario()">
+        <h2>Formulario de registro</h2>
+        <label for="lnombre"><strong>Nombre:</strong><input id="lnombre" type="text" name="nombre" maxlength="50" size="50" onchange="ValidarNombre()"></label>
+
+        <label for="lapellido1"><strong>Primer apellido:</strong><input id="lapellido1" type="text" name="apellido1" maxlength="50" size="50" onchange="ValidarPrimerApellido()"></label>
+
+        <label for="lapellido2"><strong>Segundo apellido</strong><input id="lapellido2" type="text" name="apellido2" maxlength="50" size="50" onchange="ValidarSegundoApellido()"></label>
+
+        <label for="edad"><strong>Edad:</strong><input id="ledad" type="text" name="edad" maxlength="50" size="50" onchange="ValidarEdad()"></label>
+
+        <label for="ltelefono"><strong>Teléfono:</strong></label><input id="ltelefono" name="telefono" type="text" size="50" onchange="ValidarNumero()">
+
+        <label><strong>Género:</strong></label>
+
+        <label for="idhombre" class="inline">Hombre</label>
+        <input type="radio" id="idhombre" name="sexo" class="inline" onchange="ValidarGenero()">
+
+        <label for="idmujer" class="inline">Mujer</label>
+        <input type="radio" id="idmujer" name="sexo" class="inline" onchange="ValidarGenero()">
+
+        <label for="lsel"><strong>Población: </strong></label><select id="lsel" name="poblacion" onchange="ValidarPoblacion()">
+				<option value="">---------</option>
+				<option value="Alicante" >Alicante</option>
+				<option value="Madrid" >Madrid</option>
+				<option value="Sevilla" >Sevilla</option>
+				<option value="Valencia" >Valencia</option>
+				</select>
+
+        <label><strong>Comentarios:</strong></label><textarea name="comentarios" rows="10" cols="50">Tus comentarios aquí...
+			</textarea>
+
+        <input id="lpublicidad" type="checkbox" name="publicidad" class="inline"><label for="lpublicidad" class="inline">Deseo recibir información sobre
+novedades y ofertas.</label>
+        <br>
+        <input id="laceptar" type="checkbox" name="aceptar" class="inline" onchange="ValidarDerechos()"><label for="laceptar" class="inline">Declaro haber leido y aceptar las
+condiciones generales del programa y la normativa sobre protección de
+datos. </label>
+
+        <input type="submit" name="envio" value="Enviar">
+
+
+
+
+</body>
+
+<script>
+    function ValidarNombre() {
+
+        var Nombre = document.getElementById("lnombre").value;
+        if (isNaN(Nombre)) {
+            console.log(Nombre.length);
+            if (Nombre.length > 0) {
+                console.log("true");
+                return true;
+            } else {
+                console.log("false");
+                alert("Tienes que introducir un nombre");
+                return false;
+            }
+        } else {
+            alert("campo incorrecto");
+            document.getElementById("lnombre").value = "";
+            return false;
+        }
+
+    }
+
+    function ValidarPrimerApellido() {
+        var Nombre = document.getElementById("lapellido1").value;
+        if (isNaN(Nombre)) {
+            console.log(Nombre.length);
+            if (Nombre.length > 0) {
+                console.log("true");
+                return true;
+            } else {
+                console.log("false");
+                alert("Tienes que introducir tu primer apellido");
+                return false;
+            }
+        } else {
+            alert("campo incorrecto");
+            document.getElementById("lapellido1").value = "";
+            return false;
+        }
+    }
+
+    function ValidarSegundoApellido(params) {
+
+        var Nombre = document.getElementById("lapellido2").value;
+        if (isNaN(Nombre)) {
+            console.log(Nombre.length);
+            if (Nombre.length > 0) {
+                console.log("true");
+                return true;
+            } else {
+                console.log("false");
+                alert("Tienes que introducir tu segundo apellido");
+                return false;
+            }
+        } else {
+
+            alert("campo incorrecto");
+            document.getElementById("lapellido2").value = "";
+            return false;
+        }
+    }
+
+    function ValidarEdad() {
+        var Nombre = document.getElementById("ledad").value;
+        if (!isNaN(Nombre)) {
+            if ((Nombre >= 18) && (Nombre <= 65)) {
+                console.log("Soy true");
+                return true;
+            } else {
+                alert("Tienes que tener mas o igual de 18 años y menos o igual de 65 años");
+                console.log("Soy numero false");
+                return false;
+            }
+        } else {
+            alert("campo incorrecto");
+            document.getElementById("ledad").value = "";
+        }
+    }
+
+    function ValidarNumero() {
+
+        var Nombre = document.getElementById("ltelefono").value;
+
+        if (/^[\+]?[0-9]{2}[-\s\.]{0,1}([0-9]{3})+(-)+([0-9]{2})+(-)+([0-9]{2})+(-)+([0-9]{2})$/i.test(Nombre)) {
+            return true;
+            console.log("soy numero");
+        } else {
+            alert("Formato incorrecto");
+            return false;
+        }
+    }
+
+    function ValidarGenero() {
+
+        var selecionado = false;
+        var elementos = document.getElementsByName('sexo');
+        for (let index = 0; index < elementos.length; index++) {
+            if (elementos[index].checked) {
+                console.log("true");
+                selecionado = true;
+                break;
+            }
+            if (!selecionado) {
+
+            }
+        }
+        return selecionado;
+    }
+
+    function ValidarPoblacion() {
+
+        var elementos = document.getElementById("lsel");
+        if (elementos.options[0].selected) {
+            console.log("retorno falseeeee");
+            alert("formato incorrecto");
+            return false;
+        } else {
+            console.log("retorno trueee");
+            return true;
+        }
+    }
+
+    function ValidarDerechos() {
+
+        console.log("Entro");
+        var selecionado = false;
+        var elementos = document.getElementsByName("aceptar");
+        for (let index = 0; index < elementos.length; index++) {
+            if (elementos[index].checked) {
+                console.log("true");
+                selecionado = true;
+                break;
+            }
+            if (!selecionado) {
+
+
+
+            }
+        }
+        console.log(selecionado);
+        return selecionado;
+    }
+
+
+    function ValidarFormulario() {
+        // ValidarNombre();
+        if (ValidarNombre() && ValidarPrimerApellido() && ValidarSegundoApellido() && ValidarEdad() && ValidarNumero() && ValidarGenero() && ValidarPoblacion() && ValidarDerechos()) {
+
+
+            return true;
+        } else {
+
+            return false;
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejercicio 7</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <!--Ejercicio 5 (estructura if…else)-->
+  <script>
+
+  /*Definir una función que determine si la cadena
+   de texto que se le pasa como parámetro es un 
+   palíndromo, es decir, si se lee de la misma forma
+    desde la izquierda y desde la derecha. Ejemplo de
+     palíndromo complejo: "La ruta nos aportó otro 
+    paso natural".*/
+
+
+function palindromo(cadena){
+    cadena =cadena.toUpperCase();
+    var cadena=cadena.replace(/ /g,"");
+    console.log(cadena);
+    var array=cadena.split("");
+    array.reverse()
+    var cadenainvertida=array.join("");
+
+    if (cadena == cadenainvertida) {
+        res= "Palindromo";
+    }else{
+        res= "No palindromo";
+}
+return res;
+}
+
+var x = prompt("Introduce una frase");
+var res=palindromo(x);
+var mensaje="La ruta nos aportó otro paso natural";
+alert ("la frase "+ x +" es "+res);
+
+</script>
+
+</head>
+<body>
+</body>
+</html>
