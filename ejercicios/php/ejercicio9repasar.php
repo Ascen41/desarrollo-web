@@ -9,7 +9,7 @@ esta fecha en formato europeo.*/
 
 function formatearfecha1($fecha){
     setlocale(LC_TIME,"esp","es_ES.UTF-8");
-    return strftime("%A,%d de %B del %Y", mktime(0,0,0, explode("/",$fecha[1]),explode("/",$fecha[0]));
+    return strftime("%A,%d de %B del %Y", mktime(0,0,0, explode("/",$fecha[1]),explode("/",$fecha[0])));
 }
 function formatearfecha2($fecha){
     setlocale(LC_TIME,"esp","es_ES.UTF-8");
